@@ -1,0 +1,18 @@
+|demux_1x4_if_else
+S0 => process_0.IN0
+S0 => process_0.IN0
+S0 => process_0.IN0
+S1 => process_0.IN1
+S1 => Y.OUTPUTSELECT
+S1 => process_0.IN1
+S1 => process_0.IN1
+X => Y.DATAB
+X => Y.DATAB
+X => Y.DATAB
+X => Y.DATAB
+Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[1] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[2] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+Y[3] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,17 @@
+|coffe_machine
+bin_buttons[2] => Add0.IN6
+bin_buttons[2] => Equal0.IN2
+bin_buttons[1] => Add0.IN5
+bin_buttons[1] => Equal0.IN1
+bin_buttons[0] => Add0.IN4
+bin_buttons[0] => Equal0.IN0
+coffe_out[7] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[6] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[5] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[4] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[3] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[2] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[1] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+coffe_out[0] <= coffe_out.DB_MAX_OUTPUT_PORT_TYPE
+
+

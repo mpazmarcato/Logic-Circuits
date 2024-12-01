@@ -1,0 +1,14 @@
+# What standard to use. This is optional and defaults to VHDL2008.
+standard = "2008"
+# File names are either absolute or relative to the parent folder of the vhdl_ls.toml file
+[libraries]
+lib2.files = ['pkg2.vhd']
+lib1.files = ['pkg1.vhd', 'tb_ent.vhd']
+
+# Wildcards are supported
+lib3.files = ['test/*.vhd', 'src/*.vhd', 'src/*/*.vhd']
+
+
+[lint]
+unused = 'error'                 # Upgrade the 'unused' diagnostic to the 'error' severity
+unnecessary_work_library = false # Disable linting for the 'library work;' statement

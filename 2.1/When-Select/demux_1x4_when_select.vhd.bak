@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity demux_1x4_when_select is
+  port (
+  S0, S1 : in std_logic;
+  X			 : in std_logic;
+  Y			 : out std_logic_vector(3 downto 0)
+  );
+end entity demux_1x4_when_select; 
+
+architecture whenselect of demux_1x4_when_select is
+
+begin
+
+	with S0 & S1 select 
+		Y <= "1000" when "00",
+				 "0100" when "10",
+				 "0010" when "01",
+				 "0001" when "11",
+				 "0000" when others;
+
+  process(X)
+  begin
+    if X = '0' then
+      Y <= "0000";
+    end if;
+  end process;
+
+end architecture whenselect;
