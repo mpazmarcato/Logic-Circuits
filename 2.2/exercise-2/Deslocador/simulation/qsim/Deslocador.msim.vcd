@@ -1,0 +1,178 @@
+$comment
+	File created using the following command:
+		vcd file Deslocador.msim.vcd -direction
+$end
+$date
+	Tue Dec  3 15:01:48 2024
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module deslocador_vhd_vec_tst $end
+$var wire 1 ! DESLOCA [1] $end
+$var wire 1 " DESLOCA [0] $end
+$var wire 1 # E [7] $end
+$var wire 1 $ E [6] $end
+$var wire 1 % E [5] $end
+$var wire 1 & E [4] $end
+$var wire 1 ' E [3] $end
+$var wire 1 ( E [2] $end
+$var wire 1 ) E [1] $end
+$var wire 1 * E [0] $end
+$var wire 1 + S [7] $end
+$var wire 1 , S [6] $end
+$var wire 1 - S [5] $end
+$var wire 1 . S [4] $end
+$var wire 1 / S [3] $end
+$var wire 1 0 S [2] $end
+$var wire 1 1 S [1] $end
+$var wire 1 2 S [0] $end
+
+$scope module i1 $end
+$var wire 1 3 gnd $end
+$var wire 1 4 vcc $end
+$var wire 1 5 unknown $end
+$var wire 1 6 devoe $end
+$var wire 1 7 devclrn $end
+$var wire 1 8 devpor $end
+$var wire 1 9 ww_devoe $end
+$var wire 1 : ww_devclrn $end
+$var wire 1 ; ww_devpor $end
+$var wire 1 < ww_E [7] $end
+$var wire 1 = ww_E [6] $end
+$var wire 1 > ww_E [5] $end
+$var wire 1 ? ww_E [4] $end
+$var wire 1 @ ww_E [3] $end
+$var wire 1 A ww_E [2] $end
+$var wire 1 B ww_E [1] $end
+$var wire 1 C ww_E [0] $end
+$var wire 1 D ww_DESLOCA [1] $end
+$var wire 1 E ww_DESLOCA [0] $end
+$var wire 1 F ww_S [7] $end
+$var wire 1 G ww_S [6] $end
+$var wire 1 H ww_S [5] $end
+$var wire 1 I ww_S [4] $end
+$var wire 1 J ww_S [3] $end
+$var wire 1 K ww_S [2] $end
+$var wire 1 L ww_S [1] $end
+$var wire 1 M ww_S [0] $end
+$var wire 1 N \S[0]~output_o\ $end
+$var wire 1 O \S[1]~output_o\ $end
+$var wire 1 P \S[2]~output_o\ $end
+$var wire 1 Q \S[3]~output_o\ $end
+$var wire 1 R \S[4]~output_o\ $end
+$var wire 1 S \S[5]~output_o\ $end
+$var wire 1 T \S[6]~output_o\ $end
+$var wire 1 U \S[7]~output_o\ $end
+$var wire 1 V \E[0]~input_o\ $end
+$var wire 1 W \DESLOCA[1]~input_o\ $end
+$var wire 1 X \E[1]~input_o\ $end
+$var wire 1 Y \DESLOCA[0]~input_o\ $end
+$var wire 1 Z \Mux7~0_combout\ $end
+$var wire 1 [ \E[2]~input_o\ $end
+$var wire 1 \ \Mux6~0_combout\ $end
+$var wire 1 ] \Mux6~1_combout\ $end
+$var wire 1 ^ \E[3]~input_o\ $end
+$var wire 1 _ \Mux5~0_combout\ $end
+$var wire 1 ` \Mux5~1_combout\ $end
+$var wire 1 a \E[4]~input_o\ $end
+$var wire 1 b \Mux4~0_combout\ $end
+$var wire 1 c \Mux4~1_combout\ $end
+$var wire 1 d \E[5]~input_o\ $end
+$var wire 1 e \Mux3~0_combout\ $end
+$var wire 1 f \Mux3~1_combout\ $end
+$var wire 1 g \E[6]~input_o\ $end
+$var wire 1 h \Mux2~0_combout\ $end
+$var wire 1 i \Mux2~1_combout\ $end
+$var wire 1 j \E[7]~input_o\ $end
+$var wire 1 k \Mux1~0_combout\ $end
+$var wire 1 l \Mux1~1_combout\ $end
+$var wire 1 m \Mux0~0_combout\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+03
+14
+x5
+16
+17
+18
+19
+1:
+1;
+1N
+0O
+1P
+0Q
+1R
+0S
+1T
+0U
+0V
+0W
+1X
+1Y
+1Z
+0[
+0\
+0]
+1^
+1_
+1`
+0a
+0b
+0c
+1d
+1e
+1f
+0g
+0h
+0i
+1j
+1k
+1l
+0m
+0!
+1"
+1#
+0$
+1%
+0&
+1'
+0(
+1)
+0*
+1<
+0=
+1>
+0?
+1@
+0A
+1B
+0C
+0D
+1E
+0F
+1G
+0H
+1I
+0J
+1K
+0L
+1M
+0+
+1,
+0-
+1.
+0/
+10
+01
+12
+$end
+#1000000

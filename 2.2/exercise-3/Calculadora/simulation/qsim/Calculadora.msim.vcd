@@ -1,0 +1,236 @@
+$comment
+	File created using the following command:
+		vcd file Calculadora.msim.vcd -direction
+$end
+$date
+	Wed Dec  4 16:59:22 2024
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module calculator_8bit_vhd_vec_tst $end
+$var wire 1 ! A [7] $end
+$var wire 1 " A [6] $end
+$var wire 1 # A [5] $end
+$var wire 1 $ A [4] $end
+$var wire 1 % A [3] $end
+$var wire 1 & A [2] $end
+$var wire 1 ' A [1] $end
+$var wire 1 ( A [0] $end
+$var wire 1 ) B [7] $end
+$var wire 1 * B [6] $end
+$var wire 1 + B [5] $end
+$var wire 1 , B [4] $end
+$var wire 1 - B [3] $end
+$var wire 1 . B [2] $end
+$var wire 1 / B [1] $end
+$var wire 1 0 B [0] $end
+$var wire 1 1 Luz1 $end
+$var wire 1 2 Luz2 $end
+$var wire 1 3 OP $end
+$var wire 1 4 S [7] $end
+$var wire 1 5 S [6] $end
+$var wire 1 6 S [5] $end
+$var wire 1 7 S [4] $end
+$var wire 1 8 S [3] $end
+$var wire 1 9 S [2] $end
+$var wire 1 : S [1] $end
+$var wire 1 ; S [0] $end
+
+$scope module i1 $end
+$var wire 1 < gnd $end
+$var wire 1 = vcc $end
+$var wire 1 > unknown $end
+$var wire 1 ? devoe $end
+$var wire 1 @ devclrn $end
+$var wire 1 A devpor $end
+$var wire 1 B ww_devoe $end
+$var wire 1 C ww_devclrn $end
+$var wire 1 D ww_devpor $end
+$var wire 1 E ww_A [7] $end
+$var wire 1 F ww_A [6] $end
+$var wire 1 G ww_A [5] $end
+$var wire 1 H ww_A [4] $end
+$var wire 1 I ww_A [3] $end
+$var wire 1 J ww_A [2] $end
+$var wire 1 K ww_A [1] $end
+$var wire 1 L ww_A [0] $end
+$var wire 1 M ww_B [7] $end
+$var wire 1 N ww_B [6] $end
+$var wire 1 O ww_B [5] $end
+$var wire 1 P ww_B [4] $end
+$var wire 1 Q ww_B [3] $end
+$var wire 1 R ww_B [2] $end
+$var wire 1 S ww_B [1] $end
+$var wire 1 T ww_B [0] $end
+$var wire 1 U ww_OP $end
+$var wire 1 V ww_S [7] $end
+$var wire 1 W ww_S [6] $end
+$var wire 1 X ww_S [5] $end
+$var wire 1 Y ww_S [4] $end
+$var wire 1 Z ww_S [3] $end
+$var wire 1 [ ww_S [2] $end
+$var wire 1 \ ww_S [1] $end
+$var wire 1 ] ww_S [0] $end
+$var wire 1 ^ ww_Luz1 $end
+$var wire 1 _ ww_Luz2 $end
+$var wire 1 ` \S[0]~output_o\ $end
+$var wire 1 a \S[1]~output_o\ $end
+$var wire 1 b \S[2]~output_o\ $end
+$var wire 1 c \S[3]~output_o\ $end
+$var wire 1 d \S[4]~output_o\ $end
+$var wire 1 e \S[5]~output_o\ $end
+$var wire 1 f \S[6]~output_o\ $end
+$var wire 1 g \S[7]~output_o\ $end
+$var wire 1 h \Luz1~output_o\ $end
+$var wire 1 i \Luz2~output_o\ $end
+$var wire 1 j \A[0]~input_o\ $end
+$var wire 1 k \B[0]~input_o\ $end
+$var wire 1 l \FA0|Sum~combout\ $end
+$var wire 1 m \B[1]~input_o\ $end
+$var wire 1 n \OP~input_o\ $end
+$var wire 1 o \FA0|Cout~0_combout\ $end
+$var wire 1 p \A[1]~input_o\ $end
+$var wire 1 q \FA1|Sum~combout\ $end
+$var wire 1 r \FA1|Cout~0_combout\ $end
+$var wire 1 s \B[2]~input_o\ $end
+$var wire 1 t \A[2]~input_o\ $end
+$var wire 1 u \FA2|Sum~0_combout\ $end
+$var wire 1 v \FA2|Cout~0_combout\ $end
+$var wire 1 w \A[3]~input_o\ $end
+$var wire 1 x \B[3]~input_o\ $end
+$var wire 1 y \FA3|Sum~0_combout\ $end
+$var wire 1 z \A[4]~input_o\ $end
+$var wire 1 { \FA3|Cout~0_combout\ $end
+$var wire 1 | \B[4]~input_o\ $end
+$var wire 1 } \FA4|Sum~0_combout\ $end
+$var wire 1 ~ \FA4|Cout~0_combout\ $end
+$var wire 1 !! \B[5]~input_o\ $end
+$var wire 1 "! \A[5]~input_o\ $end
+$var wire 1 #! \FA5|Sum~0_combout\ $end
+$var wire 1 $! \FA5|Cout~0_combout\ $end
+$var wire 1 %! \A[6]~input_o\ $end
+$var wire 1 &! \B[6]~input_o\ $end
+$var wire 1 '! \FA6|Sum~0_combout\ $end
+$var wire 1 (! \A[7]~input_o\ $end
+$var wire 1 )! \FA6|Cout~0_combout\ $end
+$var wire 1 *! \B[7]~input_o\ $end
+$var wire 1 +! \FA7|Sum~0_combout\ $end
+$var wire 1 ,! \ALT_INV_OP~input_o\ $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+11
+02
+03
+0<
+1=
+x>
+1?
+1@
+1A
+1B
+1C
+1D
+0U
+1^
+0_
+0`
+0a
+0b
+0c
+0d
+0e
+0f
+0g
+1h
+0i
+1j
+1k
+0l
+0m
+0n
+1o
+1p
+0q
+1r
+0s
+1t
+0u
+1v
+1w
+0x
+0y
+1z
+1{
+0|
+0}
+1~
+0!!
+1"!
+0#!
+1$!
+1%!
+0&!
+0'!
+1(!
+1)!
+0*!
+0+!
+1,!
+1!
+1"
+1#
+1$
+1%
+1&
+1'
+1(
+0)
+0*
+0+
+0,
+0-
+0.
+0/
+10
+1E
+1F
+1G
+1H
+1I
+1J
+1K
+1L
+0M
+0N
+0O
+0P
+0Q
+0R
+0S
+1T
+0V
+0W
+0X
+0Y
+0Z
+0[
+0\
+0]
+04
+05
+06
+07
+08
+09
+0:
+0;
+$end
+#1000000

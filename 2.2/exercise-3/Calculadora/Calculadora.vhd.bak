@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity calculadora_8bit is
+    Port (
+        A : in STD_LOGIC_VECTOR(7 downto 0);      -- Entrada A
+        B : in STD_LOGIC_VECTOR(7 downto 0);      -- Entrada B
+        OP : in STD_LOGIC;                        -- Seletor de operação (0: soma, 1: subtração)
+        S : out STD_LOGIC_VECTOR(7 downto 0);     -- Saída (resultado)
+        Luz1 : out STD_LOGIC;                     -- Acende para soma
+        Luz2 : out STD_LOGIC                      -- Acende para subtração
+    );
+end calculadora_8bit;
+
+architecture Behavioral of calculadora_8bit is
+    signal B_sub : STD_LOGIC_VECTOR(7 downto 0);  -- B ajustado para subtração
+    signal Cin : STD_LOGIC;                       -- Carry-in
+begin
+    -- Geração de B_sub (B para subtração usando complemento de dois)
+    B_sub <= B xor (OP & OP & OP & OP & OP & OP & OP & OP);  -- XOR com OP para inverter bits se OP = 1.
+    Cin <= OP;                                               -- Carry-in será 1 para subtração (complemento de dois).
+
+    -- Soma ou subtração utilizando um somador
+    S <= std_logic_vector(unsigned(A) + unsigned(B_sub) + unsigned(Cin)); 
+
+    -- Controle das luzes
+    Luz1 <= not OP;  -- Acende quando OP = 0 (soma).
+    Luz2 <= OP;      -- Acende quando OP = 1 (subtração).
+end Behavioral;
