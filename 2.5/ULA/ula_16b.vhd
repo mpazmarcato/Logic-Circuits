@@ -5,9 +5,9 @@ use ieee.std_logic_1164.all;
 entity ula_16b is
 	port (
 		M, S1, S0 : in std_logic;
-		A, B 			: in std_logic_vector(15 downto 0);
-		Result 		: out std_logic_vector(15 downto 0);
-		Cout 			: out std_logic
+		A, B      : in std_logic_vector(15 downto 0);
+		Result    : out std_logic_vector(15 downto 0);
+		Cout      : out std_logic
 	);
 end entity ula_16b;
 
