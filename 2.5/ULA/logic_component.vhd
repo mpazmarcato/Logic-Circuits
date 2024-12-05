@@ -37,7 +37,7 @@ begin
 				Cin <= '0';
 
 			when "011" => -- A >> 1
-				Ia <= A(14 downto 0) & '0';				
+				Ia <=  '0' & A(14 downto 0);
 				Ib <= (others => '0');
 				Cin <= '0';
 
