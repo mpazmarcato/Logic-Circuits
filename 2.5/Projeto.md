@@ -1,12 +1,3 @@
----
-id: Projeto
-aliases: 
-tags:
-  - VHDL
-  - CircuitosCombinacionais
-  - Deslocador
----
-
 # ULA de 16 bits
 
 O diagrama de blocos da implementação da nossa ULA é idêntico ao apresentado no slide de referência da disciplina, este é:
