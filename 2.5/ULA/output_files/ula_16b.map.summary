@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Dec  3 20:16:52 2024
+Analysis & Synthesis Status : Successful - Thu Dec  5 11:45:27 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : ula_16b
 Top-level Entity Name : ula_16b
 Family : Cyclone IV E
-Total logic elements : 102
-    Total combinational functions : 102
+Total logic elements : 104
+    Total combinational functions : 104
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 52

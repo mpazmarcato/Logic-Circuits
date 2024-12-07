@@ -72,7 +72,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "S1",
+					"name" : "B[0]",
 					"strict" : false
 				},
 				{
@@ -84,7 +84,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "B[0]",
+					"name" : "S1",
 					"strict" : false
 				},
 				{
@@ -108,11 +108,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "A[3]",
+					"name" : "B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "B[3]",
+					"name" : "A[3]",
 					"strict" : false
 				},
 				{

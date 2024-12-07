@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula_16b
-Tue Dec  3 20:16:52 2024
+Thu Dec  5 11:45:27 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -44,13 +44,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Dec  3 20:16:52 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec  5 11:45:27 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ula_16b                                        ;
 ; Top-level Entity Name              ; ula_16b                                        ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 102                                            ;
-;     Total combinational functions  ; 102                                            ;
+; Total logic elements               ; 104                                            ;
+;     Total combinational functions  ; 104                                            ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
 ; Total pins                         ; 52                                             ;
@@ -151,8 +151,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -162,48 +162,48 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                     ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                              ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
-; full_adder16b.vhd                ; yes             ; User VHDL File  ; /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder16b.vhd   ;         ;
-; ula_16b.vhd                      ; yes             ; User VHDL File  ; /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/ula_16b.vhd         ;         ;
-; full_adder1b.vhd                 ; yes             ; User VHDL File  ; /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder1b.vhd    ;         ;
-; logic_component.vhd              ; yes             ; User VHDL File  ; /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/logic_component.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
+; full_adder16b.vhd                ; yes             ; User VHDL File  ; /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder16b.vhd   ;         ;
+; ula_16b.vhd                      ; yes             ; User VHDL File  ; /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/ula_16b.vhd         ;         ;
+; full_adder1b.vhd                 ; yes             ; User VHDL File  ; /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder1b.vhd    ;         ;
+; logic_component.vhd              ; yes             ; User VHDL File  ; /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/logic_component.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 102     ;
-;                                             ;         ;
-; Total combinational functions               ; 102     ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 50      ;
-;     -- 3 input functions                    ; 49      ;
-;     -- <=2 input functions                  ; 3       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 102     ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 0       ;
-;     -- Dedicated logic registers            ; 0       ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 52      ;
-;                                             ;         ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-;                                             ;         ;
-; Maximum fan-out node                        ; M~input ;
-; Maximum fan-out                             ; 51      ;
-; Total fan-out                               ; 422     ;
-; Average fan-out                             ; 2.05    ;
-+---------------------------------------------+---------+
++--------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary            ;
++---------------------------------------------+----------+
+; Resource                                    ; Usage    ;
++---------------------------------------------+----------+
+; Estimated Total logic elements              ; 104      ;
+;                                             ;          ;
+; Total combinational functions               ; 104      ;
+; Logic element usage by number of LUT inputs ;          ;
+;     -- 4 input functions                    ; 59       ;
+;     -- 3 input functions                    ; 40       ;
+;     -- <=2 input functions                  ; 5        ;
+;                                             ;          ;
+; Logic elements by mode                      ;          ;
+;     -- normal mode                          ; 104      ;
+;     -- arithmetic mode                      ; 0        ;
+;                                             ;          ;
+; Total registers                             ; 0        ;
+;     -- Dedicated logic registers            ; 0        ;
+;     -- I/O registers                        ; 0        ;
+;                                             ;          ;
+; I/O pins                                    ; 52       ;
+;                                             ;          ;
+; Embedded Multiplier 9-bit elements          ; 0        ;
+;                                             ;          ;
+; Maximum fan-out node                        ; S0~input ;
+; Maximum fan-out                             ; 51       ;
+; Total fan-out                               ; 435      ;
+; Average fan-out                             ; 2.09     ;
++---------------------------------------------+----------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,9 +211,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name     ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
-; |ula_16b                                  ; 102 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |ula_16b                                                    ; ula_16b         ; work         ;
-;    |full_adder16b:i1|                     ; 36 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1                                   ; full_adder16b   ; work         ;
-;       |full_adder1b:\gen_adders:0:adder|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:0:adder  ; full_adder1b    ; work         ;
+; |ula_16b                                  ; 104 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |ula_16b                                                    ; ula_16b         ; work         ;
+;    |full_adder16b:i1|                     ; 37 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1                                   ; full_adder16b   ; work         ;
+;       |full_adder1b:\gen_adders:0:adder|  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:0:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:10:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:10:adder ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:11:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:11:adder ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:12:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:12:adder ; full_adder1b    ; work         ;
@@ -221,15 +221,15 @@ https://fpgasoftware.intel.com/eula.
 ;       |full_adder1b:\gen_adders:14:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:14:adder ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:15:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:15:adder ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:1:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:1:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:2:adder|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:2:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:3:adder|  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:3:adder  ; full_adder1b    ; work         ;
+;       |full_adder1b:\gen_adders:2:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:2:adder  ; full_adder1b    ; work         ;
+;       |full_adder1b:\gen_adders:3:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:3:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:4:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:4:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:5:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:5:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:6:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:6:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:7:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:7:adder  ; full_adder1b    ; work         ;
+;       |full_adder1b:\gen_adders:7:adder|  ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:7:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:8:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:8:adder  ; full_adder1b    ; work         ;
 ;       |full_adder1b:\gen_adders:9:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:9:adder  ; full_adder1b    ; work         ;
-;    |logic_component:i0|                   ; 66 (66)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|logic_component:i0                                 ; logic_component ; work         ;
+;    |logic_component:i0|                   ; 67 (67)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|logic_component:i0                                 ; logic_component ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -254,8 +254,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |ula_16b|logic_component:i0|Mux23 ;
-; 6:1                ; 15 bits   ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |ula_16b|logic_component:i0|Mux14 ;
+; 8:1                ; 14 bits   ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |ula_16b|logic_component:i0|Mux5  ;
+; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |ula_16b|logic_component:i0|Mux18 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
 
 
@@ -265,14 +265,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 52                          ;
-; cycloneiii_lcell_comb ; 102                         ;
-;     normal            ; 102                         ;
-;         2 data inputs ; 3                           ;
-;         3 data inputs ; 49                          ;
-;         4 data inputs ; 50                          ;
+; cycloneiii_lcell_comb ; 104                         ;
+;     normal            ; 104                         ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 59                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 16.00                       ;
-; Average LUT depth     ; 10.76                       ;
+; Average LUT depth     ; 10.60                       ;
 +-----------------------+-----------------------------+
 
 
@@ -291,38 +291,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Tue Dec  3 20:16:47 2024
+    Info: Processing started: Thu Dec  5 11:45:19 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula_16b -c ula_16b
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder16b.vhd
-    Info (12022): Found design unit 1: full_adder16b-Structural File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder16b.vhd Line: 13
-    Info (12023): Found entity 1: full_adder16b File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder16b.vhd Line: 4
+    Info (12022): Found design unit 1: full_adder16b-Structural File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder16b.vhd Line: 13
+    Info (12023): Found entity 1: full_adder16b File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder16b.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file ula_16b.vhd
-    Info (12022): Found design unit 1: ula_16b-Structural File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/ula_16b.vhd Line: 14
-    Info (12023): Found entity 1: ula_16b File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/ula_16b.vhd Line: 5
+    Info (12022): Found design unit 1: ula_16b-Structural File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 14
+    Info (12023): Found entity 1: ula_16b File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder1b.vhd
-    Info (12022): Found design unit 1: full_adder1b-Behavioral File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder1b.vhd Line: 12
-    Info (12023): Found entity 1: full_adder1b File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder1b.vhd Line: 4
+    Info (12022): Found design unit 1: full_adder1b-Behavioral File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder1b.vhd Line: 12
+    Info (12023): Found entity 1: full_adder1b File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder1b.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file logic_component.vhd
-    Info (12022): Found design unit 1: logic_component-Behavioral File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/logic_component.vhd Line: 13
-    Info (12023): Found entity 1: logic_component File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/logic_component.vhd Line: 4
+    Info (12022): Found design unit 1: logic_component-Behavioral File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 13
+    Info (12023): Found entity 1: logic_component File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 4
 Info (12127): Elaborating entity "ula_16b" for the top level hierarchy
-Info (12128): Elaborating entity "logic_component" for hierarchy "logic_component:i0" File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/ula_16b.vhd Line: 21
-Warning (10492): VHDL Process Statement warning at logic_component.vhd(23): signal "select_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/logic_component.vhd Line: 23
-Info (12128): Elaborating entity "full_adder16b" for hierarchy "full_adder16b:i1" File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/ula_16b.vhd Line: 29
-Info (12128): Elaborating entity "full_adder1b" for hierarchy "full_adder16b:i1|full_adder1b:\gen_adders:0:adder" File: /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/full_adder16b.vhd Line: 22
+Info (12128): Elaborating entity "logic_component" for hierarchy "logic_component:i0" File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 21
+Warning (10492): VHDL Process Statement warning at logic_component.vhd(23): signal "select_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 23
+Info (12128): Elaborating entity "full_adder16b" for hierarchy "full_adder16b:i1" File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 29
+Info (12128): Elaborating entity "full_adder1b" for hierarchy "full_adder16b:i1|full_adder1b:\gen_adders:0:adder" File: /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/full_adder16b.vhd Line: 22
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 154 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 156 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 35 input pins
     Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 102 logic cells
+    Info (21061): Implemented 104 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Tue Dec  3 20:16:52 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:13
+    Info: Peak virtual memory: 425 megabytes
+    Info: Processing ended: Thu Dec  5 11:45:27 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:18
 
 
