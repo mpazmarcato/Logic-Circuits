@@ -3,7 +3,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- Entidade da calculadora de 8 bits
 entity calculator_8bit is
     Port (
         A : in STD_LOGIC_VECTOR(7 downto 0);    -- Operando A
@@ -12,19 +11,37 @@ entity calculator_8bit is
         S : out STD_LOGIC_VECTOR(7 downto 0);   -- Resultado
         Luz1 : out STD_LOGIC;                   -- Luz para soma
         Luz2 : out STD_LOGIC;                   -- Luz para subtração
-        LCD_Data : out STD_LOGIC_VECTOR(7 downto 0); -- Dados para o LCD
-        LCD_Enable : out STD_LOGIC              -- Habilitação para o LCD
+        Display : out STD_LOGIC_VECTOR(20 downto 0) -- Dados para 3 displays de 7 segmentos
     );
 end calculator_8bit;
 
--- Arquitetura
-architecture Structural of calculator_8bit is
+architecture Behavioral of calculator_8bit is
 
     signal B_inverted : STD_LOGIC_VECTOR(7 downto 0);
     signal carry : STD_LOGIC_VECTOR(7 downto 0);
-    signal result_bcd : STD_LOGIC_VECTOR(11 downto 0); -- Para exibição (máximo de 3 dígitos decimais)
+    signal temp_S : STD_LOGIC_VECTOR(7 downto 0); -- Sinal intermediário para resultado
+    signal result_bcd : STD_LOGIC_VECTOR(11 downto 0); -- Para exibição em BCD
+
+    -- Função para converter 4 bits (hexadecimal) em 7 segmentos
+    function hex_to_7seg(input : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
+    begin
+        case input is
+            when "0000" => return "1000000"; -- 0
+            when "0001" => return "1111001"; -- 1
+            when "0010" => return "0100100"; -- 2
+            when "0011" => return "0110000"; -- 3
+            when "0100" => return "0011001"; -- 4
+            when "0101" => return "0010010"; -- 5
+            when "0110" => return "0000010"; -- 6
+            when "0111" => return "1111000"; -- 7
+            when "1000" => return "0000000"; -- 8
+            when "1001" => return "0010000"; -- 9
+            when others => return "1111111"; -- Desligado (todos apagados)
+        end case;
+    end function;
 
 begin
+
     -- Inverte B se OP = '1' (realizando o complemento de dois)
     B_inverted <= B xor (OP & OP & OP & OP & OP & OP & OP & OP);
 
@@ -33,100 +50,48 @@ begin
     Luz2 <= OP;      -- Acende quando OP = '1' (subtração)
 
     -- Instâncias dos somadores completos
-    FA0: entity work.full_adder port map (
-        A => A(0),
-        B => B_inverted(0),
-        Cin => OP,
-        Sum => S(0),
-        Cout => carry(0)
-    );
-
-    FA1: entity work.full_adder port map (
-        A => A(1),
-        B => B_inverted(1),
-        Cin => carry(0),
-        Sum => S(1),
-        Cout => carry(1)
-    );
-
-    FA2: entity work.full_adder port map (
-        A => A(2),
-        B => B_inverted(2),
-        Cin => carry(1),
-        Sum => S(2),
-        Cout => carry(2)
-    );
-
-    FA3: entity work.full_adder port map (
-        A => A(3),
-        B => B_inverted(3),
-        Cin => carry(2),
-        Sum => S(3),
-        Cout => carry(3)
-    );
-
-    FA4: entity work.full_adder port map (
-        A => A(4),
-        B => B_inverted(4),
-        Cin => carry(3),
-        Sum => S(4),
-        Cout => carry(4)
-    );
-
-    FA5: entity work.full_adder port map (
-        A => A(5),
-        B => B_inverted(5),
-        Cin => carry(4),
-        Sum => S(5),
-        Cout => carry(5)
-    );
-
-    FA6: entity work.full_adder port map (
-        A => A(6),
-        B => B_inverted(6),
-        Cin => carry(5),
-        Sum => S(6),
-        Cout => carry(6)
-    );
-
-    FA7: entity work.full_adder port map (
-        A => A(7),
-        B => B_inverted(7),
-        Cin => carry(6),
-        Sum => S(7),
-        Cout => open   -- Não precisamos usar o carry final
-    );
-
-    -- Conversão de binário para BCD
-    process(S)
-        variable bcd : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
+    process(A, B_inverted, OP)
     begin
+        carry(0) <= OP;
         for i in 0 to 7 loop
-            bcd := bcd(10 downto 0) & S(7 - i);
-            if bcd(3 downto 0) > "0100" then
-                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
-            end if;
-            if bcd(7 downto 4) > "0100" then
-                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
-            end if;
-            if bcd(11 downto 8) > "0100" then
-                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+            temp_S(i) <= A(i) xor B_inverted(i) xor carry(i);
+            if i < 7 then
+                carry(i+1) <= (A(i) and B_inverted(i)) or (carry(i) and (A(i) xor B_inverted(i)));
             end if;
         end loop;
-        result_bcd <= bcd;
     end process;
 
-    -- Envio para o LCD
+    -- Atualiza a saída S com o valor de temp_S
+    S <= temp_S;
+
+    -- Conversão de binário para BCD
+    process(temp_S)
+        variable bcd : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
+    begin
+        bcd := (others => '0'); -- Inicializa a variável
+        for i in 0 to 7 loop
+            bcd := bcd(10 downto 0) & temp_S(7 - i); -- Desloca e adiciona o bit mais significativo
+
+            -- Ajustes para conversão BCD
+            if bcd(3 downto 0) > "0100" then
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011"; -- Ajuste para os 4 bits menos significativos
+            end if;
+            if bcd(7 downto 4) > "0100" then
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011"; -- Ajuste para os próximos 4 bits
+            end if;
+            if bcd(11 downto 8) > "0100" then
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011"; -- Ajuste para os 4 bits mais significativos
+            end if;
+        end loop;
+        result_bcd <= bcd; -- Atribuição final do resultado para o sinal result_bcd
+    end process;
+
+    -- Conversão para displays de 7 segmentos
     process(result_bcd)
     begin
-        LCD_Enable <= '1';
-        LCD_Data <= result_bcd(11 downto 8);  -- Envia dígito mais significativo
-        wait for 1 ms;                        -- Atraso para exibição
-        LCD_Data <= result_bcd(7 downto 4);   -- Envia dígito do meio
-        wait for 1 ms;
-        LCD_Data <= result_bcd(3 downto 0);   -- Envia dígito menos significativo
-        wait for 1 ms;
-        LCD_Enable <= '0';
+        Display(6 downto 0)   <= hex_to_7seg(result_bcd(3 downto 0));  -- Dígito menos significativo
+        Display(13 downto 7)  <= hex_to_7seg(result_bcd(7 downto 4));  -- Dígito do meio
+        Display(20 downto 14) <= hex_to_7seg(result_bcd(11 downto 8)); -- Dígito mais significativo
     end process;
 
-end Structural;
+end Behavioral;

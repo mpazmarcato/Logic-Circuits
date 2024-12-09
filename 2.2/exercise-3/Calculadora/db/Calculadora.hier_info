@@ -1,12 +1,19 @@
 |calculator_8bit
-A[0] => full_adder:FA0.A
-A[1] => full_adder:FA1.A
-A[2] => full_adder:FA2.A
-A[3] => full_adder:FA3.A
-A[4] => full_adder:FA4.A
-A[5] => full_adder:FA5.A
-A[6] => full_adder:FA6.A
-A[7] => full_adder:FA7.A
+A[0] => carry.IN1
+A[0] => carry.IN1
+A[1] => carry.IN1
+A[1] => carry.IN1
+A[2] => carry.IN1
+A[2] => carry.IN1
+A[3] => carry.IN1
+A[3] => carry.IN1
+A[4] => carry.IN1
+A[4] => carry.IN1
+A[5] => carry.IN1
+A[5] => carry.IN1
+A[6] => carry.IN1
+A[6] => carry.IN1
+A[7] => temp_S.IN1
 B[0] => B_inverted[0].IN0
 B[1] => B_inverted[1].IN0
 B[2] => B_inverted[2].IN0
@@ -23,130 +30,40 @@ OP => B_inverted[4].IN1
 OP => B_inverted[5].IN1
 OP => B_inverted[6].IN1
 OP => B_inverted[7].IN1
-OP => full_adder:FA0.Cin
+OP => temp_S.IN1
+OP => carry.IN1
 OP => Luz2.DATAIN
 OP => Luz1.DATAIN
-S[0] <= full_adder:FA0.Sum
-S[1] <= full_adder:FA1.Sum
-S[2] <= full_adder:FA2.Sum
-S[3] <= full_adder:FA3.Sum
-S[4] <= full_adder:FA4.Sum
-S[5] <= full_adder:FA5.Sum
-S[6] <= full_adder:FA6.Sum
-S[7] <= full_adder:FA7.Sum
-Luz1 <= OP.DB_MAX_OUTPUT_PORT_TYPE
-Luz2 <= OP.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA0
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA1
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA2
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA3
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA4
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA5
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA6
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calculator_8bit|full_adder:FA7
-A => Sum.IN0
-A => Cout.IN0
-A => Cout.IN0
-B => Sum.IN1
-B => Cout.IN1
-B => Cout.IN0
-Cin => Sum.IN1
-Cin => Cout.IN1
-Cin => Cout.IN1
-Sum <= Sum.DB_MAX_OUTPUT_PORT_TYPE
-Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+S[0] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[1] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[2] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[3] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[4] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[5] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[6] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+S[7] << temp_S.DB_MAX_OUTPUT_PORT_TYPE
+Luz1 << OP.DB_MAX_OUTPUT_PORT_TYPE
+Luz2 << OP.DB_MAX_OUTPUT_PORT_TYPE
+Display[0] << Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Display[1] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Display[2] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Display[3] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Display[4] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Display[5] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Display[6] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Display[7] << Mux13.DB_MAX_OUTPUT_PORT_TYPE
+Display[8] << Mux12.DB_MAX_OUTPUT_PORT_TYPE
+Display[9] << Mux11.DB_MAX_OUTPUT_PORT_TYPE
+Display[10] << Mux10.DB_MAX_OUTPUT_PORT_TYPE
+Display[11] << Mux9.DB_MAX_OUTPUT_PORT_TYPE
+Display[12] << Mux8.DB_MAX_OUTPUT_PORT_TYPE
+Display[13] << Mux7.DB_MAX_OUTPUT_PORT_TYPE
+Display[14] << Mux20.DB_MAX_OUTPUT_PORT_TYPE
+Display[15] << Mux19.DB_MAX_OUTPUT_PORT_TYPE
+Display[16] << Mux18.DB_MAX_OUTPUT_PORT_TYPE
+Display[17] << Mux17.DB_MAX_OUTPUT_PORT_TYPE
+Display[18] << Mux16.DB_MAX_OUTPUT_PORT_TYPE
+Display[19] << Mux15.DB_MAX_OUTPUT_PORT_TYPE
+Display[20] << Mux14.DB_MAX_OUTPUT_PORT_TYPE
 
 
