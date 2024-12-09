@@ -1,5 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Entidade da calculadora de 8 bits
 entity calculator_8bit is
@@ -9,7 +11,9 @@ entity calculator_8bit is
         OP : in STD_LOGIC;                      -- 0 para soma, 1 para subtração
         S : out STD_LOGIC_VECTOR(7 downto 0);   -- Resultado
         Luz1 : out STD_LOGIC;                   -- Luz para soma
-        Luz2 : out STD_LOGIC                    -- Luz para subtração
+        Luz2 : out STD_LOGIC;                   -- Luz para subtração
+        LCD_Data : out STD_LOGIC_VECTOR(7 downto 0); -- Dados para o LCD
+        LCD_Enable : out STD_LOGIC              -- Habilitação para o LCD
     );
 end calculator_8bit;
 
@@ -18,6 +22,7 @@ architecture Structural of calculator_8bit is
 
     signal B_inverted : STD_LOGIC_VECTOR(7 downto 0);
     signal carry : STD_LOGIC_VECTOR(7 downto 0);
+    signal result_bcd : STD_LOGIC_VECTOR(11 downto 0); -- Para exibição (máximo de 3 dígitos decimais)
 
 begin
     -- Inverte B se OP = '1' (realizando o complemento de dois)
@@ -91,5 +96,37 @@ begin
         Sum => S(7),
         Cout => open   -- Não precisamos usar o carry final
     );
+
+    -- Conversão de binário para BCD
+    process(S)
+        variable bcd : STD_LOGIC_VECTOR(11 downto 0) := (others => '0');
+    begin
+        for i in 0 to 7 loop
+            bcd := bcd(10 downto 0) & S(7 - i);
+            if bcd(3 downto 0) > "0100" then
+                bcd(3 downto 0) := bcd(3 downto 0) + "0011";
+            end if;
+            if bcd(7 downto 4) > "0100" then
+                bcd(7 downto 4) := bcd(7 downto 4) + "0011";
+            end if;
+            if bcd(11 downto 8) > "0100" then
+                bcd(11 downto 8) := bcd(11 downto 8) + "0011";
+            end if;
+        end loop;
+        result_bcd <= bcd;
+    end process;
+
+    -- Envio para o LCD
+    process(result_bcd)
+    begin
+        LCD_Enable <= '1';
+        LCD_Data <= result_bcd(11 downto 8);  -- Envia dígito mais significativo
+        wait for 1 ms;                        -- Atraso para exibição
+        LCD_Data <= result_bcd(7 downto 4);   -- Envia dígito do meio
+        wait for 1 ms;
+        LCD_Data <= result_bcd(3 downto 0);   -- Envia dígito menos significativo
+        wait for 1 ms;
+        LCD_Enable <= '0';
+    end process;
 
 end Structural;

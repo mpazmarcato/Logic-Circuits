@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Calculadora
-Wed Dec  4 14:19:00 2024
+Mon Dec  9 13:47:50 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -10,14 +10,7 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "full_adder:FA7"
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -44,20 +37,20 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec  4 14:19:00 2024          ;
+; Analysis & Synthesis Status        ; Failed - Mon Dec  9 13:47:50 2024              ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Calculadora                                    ;
 ; Top-level Entity Name              ; calculator_8bit                                ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 15                                             ;
-;     Total combinational functions  ; 15                                             ;
-;     Dedicated logic registers      ; 0                                              ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 27                                             ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0                                              ;
-; Embedded Multiplier 9-bit elements ; 0                                              ;
-; Total PLLs                         ; 0                                              ;
+; Total logic elements               ; N/A until Partition Merge                      ;
+;     Total combinational functions  ; N/A until Partition Merge                      ;
+;     Dedicated logic registers      ; N/A until Partition Merge                      ;
+; Total registers                    ; N/A until Partition Merge                      ;
+; Total pins                         ; N/A until Partition Merge                      ;
+; Total virtual pins                 ; N/A until Partition Merge                      ;
+; Total memory bits                  ; N/A until Partition Merge                      ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                      ;
+; Total PLLs                         ; N/A until Partition Merge                      ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -162,146 +155,28 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                    ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                             ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
-; Calculadora.vhd                  ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/Calculadora.vhd ;         ;
-; full_adder.vhd                   ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/full_adder.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 15       ;
-;                                             ;          ;
-; Total combinational functions               ; 15       ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 13       ;
-;     -- 3 input functions                    ; 1        ;
-;     -- <=2 input functions                  ; 1        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 15       ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 27       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; OP~input ;
-; Maximum fan-out                             ; 16       ;
-; Total fan-out                               ; 94       ;
-; Average fan-out                             ; 1.36     ;
-+---------------------------------------------+----------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Entity Name     ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-----------------+--------------+
-; |calculator_8bit           ; 15 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |calculator_8bit                ; calculator_8bit ; work         ;
-;    |full_adder:FA0|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA0 ; full_adder      ; work         ;
-;    |full_adder:FA1|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA1 ; full_adder      ; work         ;
-;    |full_adder:FA2|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA2 ; full_adder      ; work         ;
-;    |full_adder:FA3|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA3 ; full_adder      ; work         ;
-;    |full_adder:FA4|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA4 ; full_adder      ; work         ;
-;    |full_adder:FA5|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA5 ; full_adder      ; work         ;
-;    |full_adder:FA6|        ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA6 ; full_adder      ; work         ;
-;    |full_adder:FA7|        ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |calculator_8bit|full_adder:FA7 ; full_adder      ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+-----------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "full_adder:FA7"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; cout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 27                          ;
-; cycloneiii_lcell_comb ; 16                          ;
-;     normal            ; 16                          ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 1                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 13                          ;
-;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.24                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Dec  4 14:18:55 2024
+    Info: Processing started: Mon Dec  9 13:47:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Calculadora -c Calculadora
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Calculadora.vhd
-    Info (12022): Found design unit 1: calculator_8bit-Structural File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/Calculadora.vhd Line: 17
-    Info (12023): Found entity 1: calculator_8bit File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/Calculadora.vhd Line: 5
+    Info (12022): Found design unit 1: calculator_8bit-Structural File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/Calculadora.vhd Line: 21
+    Info (12023): Found entity 1: calculator_8bit File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/Calculadora.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file full_adder.vhd
-    Info (12022): Found design unit 1: full_adder-Behavioral File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/full_adder.vhd Line: 14
-    Info (12023): Found entity 1: full_adder File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/full_adder.vhd Line: 4
-Info (12127): Elaborating entity "calculator_8bit" for the top level hierarchy
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:FA0" File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Calculadora/Calculadora.vhd Line: 31
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 17 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 15 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 444 megabytes
-    Info: Processing ended: Wed Dec  4 14:19:00 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:13
+    Info (12022): Found design unit 1: full_adder-Behavioral File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/full_adder.vhd Line: 14
+    Info (12023): Found entity 1: full_adder File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/full_adder.vhd Line: 4
+Error (10309): VHDL Interface Declaration error in Calculadora.vhd(105): interface object "S" of mode out cannot be read. Change object mode to buffer. File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/Calculadora.vhd Line: 105
+Error (10309): VHDL Interface Declaration error in Calculadora.vhd(101): interface object "S" of mode out cannot be read. Change object mode to buffer. File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/Calculadora.vhd Line: 101
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 395 megabytes
+    Error: Processing ended: Mon Dec  9 13:47:50 2024
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:13
 
 
