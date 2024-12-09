@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity full_adder16b is
 	port (
-		A, B   : in std_logic_vector(15 downto 0);
-		Cin    : in std_logic;
-		Cout   : out std_logic;
+		A, B	 : in std_logic_vector(15 downto 0);
+		Cin		 : in std_logic;
+		Cout	 : out std_logic;
 		Result : out std_logic_vector(15 downto 0)
 	);
 end entity full_adder16b;

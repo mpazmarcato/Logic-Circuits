@@ -1,5 +1,5 @@
 Assembler report for ula_16b
-Thu Dec  5 11:45:33 2024
+Mon Dec  9 15:00:10 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -38,11 +38,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Dec  5 11:45:33 2024 ;
+; Assembler Status      ; Successful - Mon Dec  9 15:00:10 2024 ;
 ; Revision Name         ; ula_16b                               ;
-; Top-level Entity Name ; ula_16b                               ;
+; Top-level Entity Name ; view_altera                           ;
 ; Family                ; Cyclone IV E                          ;
-; Device                ; EP4CE6E22C6                           ;
+; Device                ; EP4CE115F29C7                         ;
 +-----------------------+---------------------------------------+
 
 
@@ -53,13 +53,13 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+---------------------------------------------------------------------------+
-; Assembler Generated Files                                                 ;
-+---------------------------------------------------------------------------+
-; File Name                                                                 ;
-+---------------------------------------------------------------------------+
-; /home/paz/4Periodo/github/Logic-Circuits/2.5/ULA/output_files/ula_16b.sof ;
-+---------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                    ;
++------------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                    ;
++------------------------------------------------------------------------------------------------------------------------------+
+; /home/dio/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/output_files/ula_16b.sof ;
++------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------+
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+----------------------+
 ; Option         ; Setting              ;
 +----------------+----------------------+
-; JTAG usercode  ; 0x000A3764           ;
-; Checksum       ; 0x000A3764           ;
+; JTAG usercode  ; 0x00583627           ;
+; Checksum       ; 0x00583627           ;
 +----------------+----------------------+
 
 
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Thu Dec  5 11:45:32 2024
+    Info: Processing started: Mon Dec  9 15:00:08 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off ula_16b -c ula_16b
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 360 megabytes
-    Info: Processing ended: Thu Dec  5 11:45:33 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 361 megabytes
+    Info: Processing ended: Mon Dec  9 15:00:10 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

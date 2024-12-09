@@ -1,0 +1,8 @@
+
+State Machine - |view_altera|current_state
+Name current_state.SHOW_RESULT current_state.ENTER_SECOND current_state.SELECT_OP current_state.ENTER_FIRST current_state.IDLE 
+current_state.IDLE 0 0 0 0 0 
+current_state.ENTER_FIRST 0 0 0 1 1 
+current_state.SELECT_OP 0 0 1 0 1 
+current_state.ENTER_SECOND 0 1 0 0 1 
+current_state.SHOW_RESULT 1 0 0 0 1 

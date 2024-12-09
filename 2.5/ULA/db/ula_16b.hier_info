@@ -1,4 +1,168 @@
-|ula_16b
+|view_altera
+CLK => B_reg[0].CLK
+CLK => B_reg[1].CLK
+CLK => B_reg[2].CLK
+CLK => B_reg[3].CLK
+CLK => B_reg[4].CLK
+CLK => B_reg[5].CLK
+CLK => B_reg[6].CLK
+CLK => B_reg[7].CLK
+CLK => B_reg[8].CLK
+CLK => B_reg[9].CLK
+CLK => B_reg[10].CLK
+CLK => B_reg[11].CLK
+CLK => B_reg[12].CLK
+CLK => B_reg[13].CLK
+CLK => B_reg[14].CLK
+CLK => B_reg[15].CLK
+CLK => A_reg[0].CLK
+CLK => A_reg[1].CLK
+CLK => A_reg[2].CLK
+CLK => A_reg[3].CLK
+CLK => A_reg[4].CLK
+CLK => A_reg[5].CLK
+CLK => A_reg[6].CLK
+CLK => A_reg[7].CLK
+CLK => A_reg[8].CLK
+CLK => A_reg[9].CLK
+CLK => A_reg[10].CLK
+CLK => A_reg[11].CLK
+CLK => A_reg[12].CLK
+CLK => A_reg[13].CLK
+CLK => A_reg[14].CLK
+CLK => A_reg[15].CLK
+CLK => current_state~1.DATAIN
+SW[0] => Selector20.IN2
+SW[0] => Selector36.IN2
+SW[1] => Selector19.IN2
+SW[1] => Selector35.IN2
+SW[2] => Selector18.IN2
+SW[2] => Selector34.IN2
+SW[3] => Selector17.IN2
+SW[3] => Selector33.IN2
+SW[4] => Selector16.IN2
+SW[4] => Selector32.IN2
+SW[5] => Selector15.IN2
+SW[5] => Selector31.IN2
+SW[6] => Selector14.IN2
+SW[6] => Selector30.IN2
+SW[7] => Selector13.IN2
+SW[7] => Selector29.IN2
+SW[8] => Selector12.IN2
+SW[8] => Selector28.IN2
+SW[9] => Selector11.IN2
+SW[9] => Selector27.IN2
+SW[10] => Selector10.IN2
+SW[10] => Selector26.IN2
+SW[11] => Selector9.IN2
+SW[11] => Selector25.IN2
+SW[12] => Selector8.IN2
+SW[12] => Selector24.IN2
+SW[13] => Selector7.IN2
+SW[13] => Selector23.IN2
+SW[14] => Selector6.IN2
+SW[14] => Selector22.IN2
+SW[15] => Selector5.IN2
+SW[15] => Selector21.IN2
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[0] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[1] => next_state.OUTPUTSELECT
+KEY[2] => next_state.OUTPUTSELECT
+KEY[2] => next_state.OUTPUTSELECT
+KEY[2] => next_state.OUTPUTSELECT
+KEY[2] => next_state.OUTPUTSELECT
+KEY[2] => next_state.OUTPUTSELECT
+OP_SW[0] => ula_16b:U1.S0
+OP_SW[1] => ula_16b:U1.S1
+OP_SW[2] => ula_16b:U1.M
+HEX0[0] << Mux6.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] << Mux13.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] << Mux12.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[2] << Mux11.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] << Mux10.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] << Mux9.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] << Mux8.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] << Mux7.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[0] << Mux20.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[1] << Mux19.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[2] << Mux18.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[3] << Mux17.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[4] << Mux16.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[5] << Mux15.DB_MAX_OUTPUT_PORT_TYPE
+HEX2[6] << Mux14.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[0] << Mux27.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[1] << Mux26.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[2] << Mux25.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[3] << Mux24.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[4] << Mux23.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[5] << Mux22.DB_MAX_OUTPUT_PORT_TYPE
+HEX3[6] << Mux21.DB_MAX_OUTPUT_PORT_TYPE
+HEX4[0] << <VCC>
+HEX4[1] << <VCC>
+HEX4[2] << <VCC>
+HEX4[3] << <VCC>
+HEX4[4] << <VCC>
+HEX4[5] << <VCC>
+HEX4[6] << <VCC>
+HEX5[0] << <VCC>
+HEX5[1] << <VCC>
+HEX5[2] << <VCC>
+HEX5[3] << <VCC>
+HEX5[4] << <VCC>
+HEX5[5] << <VCC>
+HEX5[6] << <VCC>
+HEX6[0] << <VCC>
+HEX6[1] << <VCC>
+HEX6[2] << <VCC>
+HEX6[3] << <VCC>
+HEX6[4] << <VCC>
+HEX6[5] << <VCC>
+HEX6[6] << <VCC>
+HEX7[0] << <VCC>
+HEX7[1] << <VCC>
+HEX7[2] << <VCC>
+HEX7[3] << <VCC>
+HEX7[4] << <VCC>
+HEX7[5] << <VCC>
+HEX7[6] << <VCC>
+LEDR[0] << ula_16b:U1.Result[0]
+LEDR[1] << ula_16b:U1.Result[1]
+LEDR[2] << ula_16b:U1.Result[2]
+LEDR[3] << ula_16b:U1.Result[3]
+LEDR[4] << ula_16b:U1.Result[4]
+LEDR[5] << ula_16b:U1.Result[5]
+LEDR[6] << ula_16b:U1.Result[6]
+LEDR[7] << ula_16b:U1.Result[7]
+LEDR[8] << ula_16b:U1.Result[8]
+LEDR[9] << ula_16b:U1.Result[9]
+LEDG[0] << LEDG[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDG[1] << LEDG.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[2] << <GND>
+LEDG[3] << <GND>
+LEDG[4] << <GND>
+LEDG[5] << <GND>
+LEDG[6] << <GND>
+LEDG[7] << <GND>
+
+
+|view_altera|ula_16b:U1
 M => logic_component:i0.M
 S1 => logic_component:i0.S1
 S0 => logic_component:i0.S0
@@ -53,7 +217,7 @@ Result[15] <= full_adder16b:i1.Result[15]
 Cout <= full_adder16b:i1.Cout
 
 
-|ula_16b|logic_component:i0
+|view_altera|ula_16b:U1|logic_component:i0
 A[0] => Ia.IN0
 A[0] => Ia.IN0
 A[0] => Ia.IN0
@@ -410,7 +574,7 @@ Ib[15] <= Mux16.DB_MAX_OUTPUT_PORT_TYPE
 Cin <= Mux32.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1
+|view_altera|ula_16b:U1|full_adder16b:i1
 A[0] => full_adder1b:gen_adders:0:adder.A
 A[1] => full_adder1b:gen_adders:1:adder.A
 A[2] => full_adder1b:gen_adders:2:adder.A
@@ -463,7 +627,7 @@ Result[14] <= full_adder1b:gen_adders:14:adder.Result
 Result[15] <= full_adder1b:gen_adders:15:adder.Result
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:0:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:0:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -476,7 +640,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:1:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:1:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -489,7 +653,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:2:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:2:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -502,7 +666,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:3:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:3:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -515,7 +679,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:4:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:4:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -528,7 +692,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:5:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:5:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -541,7 +705,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:6:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:6:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -554,7 +718,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:7:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:7:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -567,7 +731,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:8:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:8:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -580,7 +744,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:9:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:9:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -593,7 +757,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:10:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:10:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -606,7 +770,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:11:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:11:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -619,7 +783,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:12:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:12:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -632,7 +796,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:13:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:13:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -645,7 +809,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:14:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:14:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0
@@ -658,7 +822,7 @@ Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
 Result <= Result.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:15:adder
+|view_altera|ula_16b:U1|full_adder16b:i1|full_adder1b:\gen_adders:15:adder
 A => Result.IN0
 A => Cout.IN0
 A => Cout.IN0

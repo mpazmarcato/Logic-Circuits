@@ -1,5 +1,5 @@
 Flow report for ula_16b
-Thu Dec  5 11:45:37 2024
+Mon Dec  9 15:00:13 2024
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,22 +41,22 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec  5 11:45:37 2024          ;
+; Flow Status                        ; Successful - Mon Dec  9 15:00:13 2024          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ula_16b                                        ;
-; Top-level Entity Name              ; ula_16b                                        ;
+; Top-level Entity Name              ; view_altera                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 104 / 6,272 ( 2 % )                            ;
-;     Total combinational functions  ; 104 / 6,272 ( 2 % )                            ;
-;     Dedicated logic registers      ; 0 / 6,272 ( 0 % )                              ;
-; Total registers                    ; 0                                              ;
-; Total pins                         ; 52 / 92 ( 57 % )                               ;
-; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 0 / 276,480 ( 0 % )                            ;
-; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                 ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                                  ;
-; Device                             ; EP4CE6E22C6                                    ;
+; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
+; Total logic elements               ; 201 / 114,480 ( < 1 % )                        ;
+;     Total combinational functions  ; 201 / 114,480 ( < 1 % )                        ;
+;     Dedicated logic registers      ; 37 / 114,480 ( < 1 % )                         ;
+; Total registers                    ; 37                                             ;
+; Total pins                         ; 97 / 529 ( 18 % )                              ;
+; Total virtual pins                 ; 0                                              ;
+; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                  ;
 +------------------------------------+------------------------------------------------+
 
 
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/05/2024 11:45:19 ;
+; Start date & time ; 12/09/2024 14:59:49 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ula_16b             ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 925258364579.173340991908807           ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 171728317912831.173376718929416        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_timing_analysis               ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -86,10 +86,13 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --          ; eda_simulation                    ;
 ; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (Verilog)            ; <None>        ; --          ; --                                ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top                               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; view_altera ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; view_altera ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; view_altera ; Top                               ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; view_altera                            ; ula_16b       ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -98,26 +101,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 422 MB              ; 00:00:17                           ;
-; Fitter               ; 00:00:03     ; 1.0                     ; 930 MB              ; 00:00:04                           ;
-; Assembler            ; 00:00:01     ; 1.0                     ; 360 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.0                     ; 460 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 588 MB              ; 00:00:00                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:23                           ;
+; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 476 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:10     ; 1.0                     ; 1785 MB             ; 00:00:21                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 361 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 612 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 587 MB              ; 00:00:00                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; paz              ; Ubuntu 24.04.1 ; 24         ; x86_64         ;
-; Fitter               ; paz              ; Ubuntu 24.04.1 ; 24         ; x86_64         ;
-; Assembler            ; paz              ; Ubuntu 24.04.1 ; 24         ; x86_64         ;
-; Timing Analyzer      ; paz              ; Ubuntu 24.04.1 ; 24         ; x86_64         ;
-; EDA Netlist Writer   ; paz              ; Ubuntu 24.04.1 ; 24         ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++----------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                    ;
++----------------------+------------------+--------------------+--------------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name            ; OS Version         ; Processor type ;
++----------------------+------------------+--------------------+--------------------+----------------+
+; Analysis & Synthesis ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; Fitter               ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; Assembler            ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; Timing Analyzer      ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
+; EDA Netlist Writer   ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
++----------------------+------------------+--------------------+--------------------+----------------+
 
 
 ------------

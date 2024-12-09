@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 
 entity logic_component is
 	port (
-		A, B      : in std_logic_vector(15 downto 0);
+		A, B			: in std_logic_vector(15 downto 0);
 		M, S1, S0 : in std_logic;
-		Ia, Ib    : out std_logic_vector(15 downto 0);
-		Cin       : out std_logic
+		Ia, Ib 		: out std_logic_vector(15 downto 0);
+		Cin 			: out std_logic
 	);
 end entity logic_component;
 
