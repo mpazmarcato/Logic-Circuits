@@ -8,30 +8,30 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-Z0 d/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.1/MaquinaDeCafe/simulation/qsim
+Z0 d/home/dio/codeclusterfuck/Logic-Circuits/2.1/MaquinaDeCafe/simulation/qsim
 Ecoffe_machine
-Z1 w1733064792
+Z1 w1734374597
 Z2 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
 Z3 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
 Z4 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
 Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z6 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
 Z7 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
-!i122 4
+!i122 22
 R0
-Z8 8CoffeMachine.vho
-Z9 FCoffeMachine.vho
+Z8 8CoffeeMachine.vho
+Z9 FCoffeeMachine.vho
 l0
 L78 1
-VZWIGhMEO;6b=BcYT1b5SI2
-!s100 >=7h?AWlU:Y=Kg64SaJ;M2
+V=?E:^]G@UTK[D;]DU07ZE3
+!s100 C^?DLz`G?cF9YWj2eH=eQ3
 Z10 OV;C;2020.1;71
 32
-Z11 !s110 1733064792
+Z11 !s110 1734374598
 !i10b 1
-Z12 !s108 1733064792.000000
-Z13 !s90 -work|work|CoffeMachine.vho|
-Z14 !s107 CoffeMachine.vho|
+Z12 !s108 1734374598.000000
+Z13 !s90 -work|work|CoffeeMachine.vho|
+Z14 !s107 CoffeeMachine.vho|
 !i113 1
 Z15 o-work work
 Z16 tExplicit 1 CvgOpt 0
@@ -42,12 +42,12 @@ R4
 R5
 R6
 R7
-DEx4 work 13 coffe_machine 0 22 ZWIGhMEO;6b=BcYT1b5SI2
-!i122 4
-l138
-L99 325
-VIkD2FlGaZbeFccTj4;K8Q0
-!s100 ib=C>7i^dFXg]Yn]XHnFz3
+DEx4 work 13 coffe_machine 0 22 =?E:^]G@UTK[D;]DU07ZE3
+!i122 22
+l1061
+L106 12960
+V<[M?;MYCZmg>GKPf_KXG02
+!s100 @:S??;J;allhg97bi6O>l3
 R10
 32
 R11
@@ -59,13 +59,13 @@ R14
 R15
 R16
 Ecoffe_machine_vhd_vec_tst
-Z17 w1733064791
+R1
 R5
 R6
-!i122 5
+!i122 23
 R0
-Z18 8Waveform.vwf.vht
-Z19 FWaveform.vwf.vht
+Z17 8Waveform.vwf.vht
+Z18 FWaveform.vwf.vht
 l0
 L32 1
 V@S>IM=aBPB<OiM]YX5l`b0
@@ -75,27 +75,27 @@ R10
 R11
 !i10b 1
 R12
-Z20 !s90 -work|work|Waveform.vwf.vht|
-Z21 !s107 Waveform.vwf.vht|
+Z19 !s90 -work|work|Waveform.vwf.vht|
+Z20 !s107 Waveform.vwf.vht|
 !i113 1
 R15
 R16
 Acoffe_machine_arch
 R5
 R6
-Z22 DEx4 work 25 coffe_machine_vhd_vec_tst 0 22 @S>IM=aBPB<OiM]YX5l`b0
-!i122 5
-l45
-Z23 L34 37
-VH6L07TnadA47S>k]j^z_f1
-!s100 KIGfRl52VYU5NYK1hJIHm0
+Z21 DEx4 work 25 coffe_machine_vhd_vec_tst 0 22 @S>IM=aBPB<OiM]YX5l`b0
+!i122 23
+l47
+Z22 L34 70
+Z23 V75iVOmef>XeR=[<PDkPzg2
+Z24 !s100 J_X2?XAX_H@Tz`2oBbAjj3
 R10
 32
 R11
 !i10b 1
 R12
+R19
 R20
-R21
 !i113 1
 R15
 R16
@@ -107,7 +107,7 @@ R4
 R5
 R6
 R7
-!i122 4
+!i122 22
 R0
 R8
 R9
@@ -133,7 +133,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 4
+!i122 22
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0

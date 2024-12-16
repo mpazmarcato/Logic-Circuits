@@ -22,7 +22,7 @@ architecture rtl of view_altera is
 	signal Result		 : std_logic_vector(15 downto 0);
 	signal Cout			 : std_logic;
 
-	function hex_to_7seg(input : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
+	function hex_to_7seg(input : STD_LOGIC_VECTOR(3 downto 0)) return std_logic_vector is
 	begin
 		case input is
 				when "0000" => return "1000000"; -- 0
