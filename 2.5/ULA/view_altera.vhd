@@ -6,7 +6,7 @@ entity view_altera is
 	port (
 		-- Board Inputs
 		SW		: in	std_logic_vector(17 downto 0);	-- Switches on DE2-115
-		KEY		: in	std_logic_vector(3 downto 0);		-- Pushbuttons 
+		KEY	: in	std_logic_vector(3 downto 0);		-- Pushbuttons 
 
 		-- Board Outputs
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector(6 downto 0);
@@ -55,13 +55,12 @@ begin
 			M				<= '0';
 			S1			<= '0';
 			S0			<= '0';
-			Result	<= (others => '0');
 		elsif KEY(0) = '1' then
 			A_16bit <= SW(15 downto 0); -- Capture A
 		elsif KEY(1) = '1' then
 			B_16bit <= SW(15 downto 0); -- Capture B
 		elsif KEY(2) = '1' then
-			S1 <= SW(0); -- Configure ALU control
+			S1 <= SW(0); -- Configure ULA control
 			S0 <= SW(1);
 			M  <= SW(2);
 		end if;
@@ -79,13 +78,12 @@ begin
 		);
 
 	-- Drive LEDs for debugging
-	LEDR <= SW; -- Keep as debug output or modify to reflect other signals
+	LEDR <= SW; 
 
-	-- Drive the 7-segment displays
 	process(SW, KEY)
 	begin
 		if KEY(0) = '1' or KEY(1) = '1' or KEY(2) = '1' then
-			-- Display ALU result when performing an operation
+			-- Display ULA result when performing an operation
 			HEX0 <= hex_to_7seg(Result(3 downto 0));
 			HEX1 <= hex_to_7seg(Result(7 downto 4));
 			HEX2 <= hex_to_7seg(Result(11 downto 8));
