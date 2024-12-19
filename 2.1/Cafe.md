@@ -1,64 +1,37 @@
 # Implementação de máquina de café em VHDL
 
-Para esse projeto vamos usar usar o circuito combinacional **Decodificador**,
-visto que precisamos transformar um código binário (descrição do botão) em um
-conjunto de sinais de saída, onde um sinal é ativado por vez (saída do café).
+## Descrição do projeto
 
-Para alcançar tal objetivo, vamos usar dois `std_logic_vector`, um de tamanho 3
-para lidar com as codificações dos botões e outro de tamanho 8 para representar
-a saída da cafeteira. Portanto:
+A entidade `coffee_machine` recebe uma entrada `buttons` de 8 bits procura por duplicatas e gera a saída `coffee_out` de 8 bits, que representa as saídas de café. Além disso, há mais uma saída que representa um error ao processar a entrada, isto é, mais de um ou nenhum botão pressionado ao mesmo tempo.
 
-```vhd
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.numeric_std.all;
+![diagrama](./assets/diagrama-maquina-de-cafe.png)
 
-entity coffe_machine is
- port (
-  bin_buttons : in std_logic_vector(0 to 2);
-  coffe_out   : out std_logic_vector(0 to 7)
- );
-end entity coffe_machine;
-```
+## Tabela verdade
 
-Note que cada codificação do botão é um número binário que tem representação
-de 0 a 7. Como, a codificação do botão é ordem correspondente com a representação
-alfabética dos botões, podemos simplesmente converter o binário em decimal e ativar
-a saída correspondente a posição encontrada após a conversão.
+Seu comportamento é especificado por essa tabela.
 
-```vhd
-architecture Behavioral of coffe_machine is
-begin
-
- process(bin_buttons)
- begin
-  coffe_out <= (others => '0');
-  if bin_buttons = "000" then --- Saída H (7) para o botão 8 (000)
-   coffe_out(7) <= '1';
-  else
-   coffe_out(to_integer(unsigned(bin_buttons)) - 1) <= '1'; -- 001 (bin) → 1 (decimal), mas posição 0
-  end if;
- end process;
-
-end architecture Behavioral;
-```
-
-Se atentando ao indexamento dos bits que começa em 0, finalizamos a nossa implementação
-da máquina de café.
+| **Entrada (`buttons`)** | **Saída (`coffe_out`)** | **Erro (`error_flag`)** | **Descrição**                    |
+| ----------------------- | ----------------------- | ----------------------- | -------------------------------- |
+| `0000 0000`             | `0000 0000`             | `1`                     | Nenhum botão pressionado (erro). |
+| `0000 0001`             | `0000 0001`             | `0`                     | Botão 0 pressionado. Café 0.     |
+| `0000 0010`             | `0000 0010`             | `0`                     | Botão 1 pressionado. Café 1.     |
+| `0000 0100`             | `0000 0100`             | `0`                     | Botão 2 pressionado. Café 2.     |
+| `0000 1000`             | `0000 1000`             | `0`                     | Botão 3 pressionado. Café 3.     |
+| `0001 0000`             | `0001 0000`             | `0`                     | Botão 4 pressionado. Café 4.     |
+| `0010 0000`             | `0010 0000`             | `0`                     | Botão 5 pressionado. Café 5.     |
+| `0100 0000`             | `0100 0000`             | `0`                     | Botão 6 pressionado. Café 6.     |
+| `1000 0000`             | `1000 0000`             | `0`                     | Botão 7 pressionado. Café 7.     |
+| `XXXX XXXX`             | `0000 0000`             | `1`                     | Qualquer outra entrada (erro).   |
 
 ## Plano de simulação e Simulação
 
-Para assertar o funcionamento da nossa implementação, vamos testar apenas o botão 7
-representado por "111", o botão 8 ("000") e o botão 1 ("001").
+Para assertar o funcionamento da nossa implementação, vamos testar as seguintes entradas:
 
-- **Botão 7**:
+### Cenários de Teste para a Entidade `coffe_machine`
 
-![b7](./assets/coffe_machine_b7_sim.png)
-
-- **Botão 8**:
-
-![b8](./assets/coffe_machine_b8_sim.png)
-
-- **Botão 1**:
-
-![b1](./assets/coffe_machine_b1_sim.png)
+| **Caso de Teste** | **Entrada (`buttons`)** | **Saída Esperada (`coffe_out`)** | **Erro (`error_flag`)** | **Descrição**                                   |
+| ----------------- | ----------------------- | -------------------------------- | ----------------------- | ----------------------------------------------- |
+| **Teste 1**       | `0000 0100`             | `0000 0100`                      | `0`                     | Apenas o botão 2 foi pressionado. Café 2.       |
+| **Teste 2**       | `1000 0000`             | `1000 0000`                      | `0`                     | Apenas o botão 7 foi pressionado. Café 7.       |
+| **Teste 3**       | `0000 0000`             | `0000 0000`                      | `1`                     | Nenhum botão foi pressionado. Erro.             |
+| **Teste 4**       | `0000 1110`             | `0000 0000`                      | `1`                     | Mais de um botão pressionado (botões 1, 2 e 3). |
