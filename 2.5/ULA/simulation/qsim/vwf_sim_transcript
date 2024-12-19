@@ -7,22 +7,21 @@ Note: if both Questa Intel FPGA Edition and ModelSim executables are available, 
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ula_16b -c ula_16b --vector_source="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/Waveform.vwf" --testbench_file="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ula_16b -c ula_16b --vector_source="/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/Waveform1.vwf" --testbench_file="/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/Waveform1.vwf.vht"
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Tue Dec  3 20:18:39 2024Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ula_16b -c ula_16b --vector_source="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/Waveform.vwf" --testbench_file="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/Waveform.vwf.vht"Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-CPU time (on all processors): 00:00:00
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Wed Dec 18 19:50:05 2024Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ula_16b -c ula_16b --vector_source=/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/Waveform1.vwf --testbench_file=/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/Waveform1.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/" ula_16b -c ula_16b
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/" ula_16b -c ula_16b
 
-Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Tue Dec  3 20:18:40 2024Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/" ula_16b -c ula_16bWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file ula_16b.vho in folder "/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 580 megabytes    Info: Processing ended: Tue Dec  3 20:18:40 2024    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:00
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Wed Dec 18 19:50:06 2024Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/ ula_16b -c ula_16bWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file ula_16b.vho in folder "/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 592 megabytes    Info: Processing ended: Wed Dec 18 19:50:06 2024    Info: Elapsed time: 00:00:00    Info: Total CPU time (on all processors): 00:00:00
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-/home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/ula_16b.do generated.
+/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/ula_16b.do generated.
 
 Completed successfully. 
 
@@ -33,8 +32,9 @@ Completed successfully.
 Reading pref.tcl
 # 2020.1
 # do ula_16b.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:41 on Dec 03,2024# vcom -work work ula_16b.vho 
+# Start time: 19:50:06 on Dec 18,2024# vcom -work work ula_16b.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
@@ -46,30 +46,31 @@ Reading pref.tcl
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity ula_16b
 # -- Compiling architecture structure of ula_16b
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00
+# End time: 19:50:06 on Dec 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:41 on Dec 03,2024# vcom -work work Waveform.vwf.vht 
+# Start time: 19:50:06 on Dec 18,2024# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ula_16b_vhd_vec_tst
 # -- Compiling architecture ula_16b_arch of ula_16b_vhd_vec_tst
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00
+# End time: 19:50:07 on Dec 18,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
-# vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ula_16b_vhd_vec_tst # Start time: 20:18:41 on Dec 03,2024# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.ula_16b_vhd_vec_tst(ula_16b_arch)# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cycloneive.cycloneive_atom_pack(body)# Loading cycloneive.cycloneive_components# Loading work.ula_16b(structure)# Loading work.hard_block(structure)# Loading ieee.std_logic_arith(body)# Loading cycloneive.cycloneive_io_obuf(arch)# Loading cycloneive.cycloneive_io_ibuf(arch)# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)# ** Warning: Design size of 14217 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.# after#31
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00# Errors: 0, Warnings: 1
+# vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ula_16b_vhd_vec_tst # Start time: 19:50:07 on Dec 18,2024# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.ula_16b_vhd_vec_tst(ula_16b_arch)# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cycloneive.cycloneive_atom_pack(body)# Loading cycloneive.cycloneive_components# Loading work.ula_16b(structure)# Loading work.hard_block(structure)# Loading ieee.std_logic_arith(body)# Loading cycloneive.cycloneive_io_obuf(arch)# Loading cycloneive.cycloneive_io_ibuf(arch)# Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)# ** Warning: Design size of 13907 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.# Expect performance to be adversely affected.
+# after#33
+# End time: 19:50:07 on Dec 18,2024, Elapsed time: 0:00:00# Errors: 0, Warnings: 1
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/Waveform.vwf...
+Reading /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/Waveform1.vwf...
 
-Reading /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/ula_16b.msim.vcd...
+Reading /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/ula_16b.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to /home/leema/OneDrive/Cave/Projects/2024.2-UFRN/Courses/Circuitos Logicos/Atividades/Atividade 2.5/ULA/simulation/qsim/ula_16b_20241203201841.sim.vwf
+Writing the resulting VWF to /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/ula_16b_20241218195007.sim.vwf
 
 Finished VCD to VWF conversion.
 

@@ -1,6 +1,7 @@
 # do ula_16b.do
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:41 on Dec 03,2024
+# Start time: 19:50:06 on Dec 18,2024
 # vcom -work work ula_16b.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -13,20 +14,20 @@
 # -- Compiling architecture structure of hard_block
 # -- Compiling entity ula_16b
 # -- Compiling architecture structure of ula_16b
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00
+# End time: 19:50:06 on Dec 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:18:41 on Dec 03,2024
-# vcom -work work Waveform.vwf.vht 
+# Start time: 19:50:06 on Dec 18,2024
+# vcom -work work Waveform1.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity ula_16b_vhd_vec_tst
 # -- Compiling architecture ula_16b_arch of ula_16b_vhd_vec_tst
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00
+# End time: 19:50:07 on Dec 18,2024, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ula_16b_vhd_vec_tst 
-# Start time: 20:18:41 on Dec 03,2024
+# Start time: 19:50:07 on Dec 18,2024
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -41,8 +42,8 @@
 # Loading cycloneive.cycloneive_io_obuf(arch)
 # Loading cycloneive.cycloneive_io_ibuf(arch)
 # Loading cycloneive.cycloneive_lcell_comb(vital_lcell_comb)
-# ** Warning: Design size of 14217 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# ** Warning: Design size of 13907 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
 # Expect performance to be adversely affected.
-# after#31
-# End time: 20:18:41 on Dec 03,2024, Elapsed time: 0:00:00
+# after#33
+# End time: 19:50:07 on Dec 18,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
