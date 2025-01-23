@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ula_16b
-Wed Dec 18 19:23:00 2024
+Thu Jan 23 10:17:56 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -15,9 +15,10 @@ Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Port Connectivity Checks: "ula_16b:u_ula"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Dec 18 19:23:00 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan 23 10:17:56 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ula_16b                                        ;
-; Top-level Entity Name              ; ula_16b                                        ;
+; Top-level Entity Name              ; view_altera                                    ;
 ; Family                             ; Cyclone IV E                                   ;
-; Total logic elements               ; 100                                            ;
-;     Total combinational functions  ; 100                                            ;
+; Total logic elements               ; 65                                             ;
+;     Total combinational functions  ; 65                                             ;
 ;     Dedicated logic registers      ; 0                                              ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 52                                             ;
+; Total pins                         ; 96                                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0                                              ;
 ; Embedded Multiplier 9-bit elements ; 0                                              ;
@@ -67,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; ula_16b            ; ula_16b            ;
+; Top-level entity name                                            ; view_altera        ; ula_16b            ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -168,6 +169,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                           ; Library ;
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
+; view_altera.vhd                  ; yes             ; User VHDL File  ; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd     ;         ;
 ; full_adder16b.vhd                ; yes             ; User VHDL File  ; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/full_adder16b.vhd   ;         ;
 ; ula_16b.vhd                      ; yes             ; User VHDL File  ; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/ula_16b.vhd         ;         ;
 ; full_adder1b.vhd                 ; yes             ; User VHDL File  ; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/full_adder1b.vhd    ;         ;
@@ -175,63 +177,58 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 100      ;
-;                                             ;          ;
-; Total combinational functions               ; 100      ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 72       ;
-;     -- 3 input functions                    ; 26       ;
-;     -- <=2 input functions                  ; 2        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 100      ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 52       ;
-;                                             ;          ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; S0~input ;
-; Maximum fan-out                             ; 37       ;
-; Total fan-out                               ; 439      ;
-; Average fan-out                             ; 2.15     ;
-+---------------------------------------------+----------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 65          ;
+;                                             ;             ;
+; Total combinational functions               ; 65          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 47          ;
+;     -- 3 input functions                    ; 16          ;
+;     -- <=2 input functions                  ; 2           ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 65          ;
+;     -- arithmetic mode                      ; 0           ;
+;                                             ;             ;
+; Total registers                             ; 0           ;
+;     -- Dedicated logic registers            ; 0           ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 96          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; SW[1]~input ;
+; Maximum fan-out                             ; 24          ;
+; Total fan-out                               ; 379         ;
+; Average fan-out                             ; 1.47        ;
++---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                 ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name     ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
-; |ula_16b                                  ; 100 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |ula_16b                                                    ; ula_16b         ; work         ;
-;    |full_adder16b:i1|                     ; 40 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1                                   ; full_adder16b   ; work         ;
-;       |full_adder1b:\gen_adders:0:adder|  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:0:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:10:adder| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:10:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:11:adder| ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:11:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:12:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:12:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:13:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:13:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:14:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:14:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:15:adder| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:15:adder ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:1:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:1:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:2:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:2:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:3:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:3:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:4:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:4:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:5:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:5:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:6:adder|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:6:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:7:adder|  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:7:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:8:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:8:adder  ; full_adder1b    ; work         ;
-;       |full_adder1b:\gen_adders:9:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|full_adder16b:i1|full_adder1b:\gen_adders:9:adder  ; full_adder1b    ; work         ;
-;    |logic_component:i0|                   ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ula_16b|logic_component:i0                                 ; logic_component ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                      ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                           ; Entity Name     ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------+--------------+
+; |view_altera                                 ; 65 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 96   ; 0            ; |view_altera                                                                  ; view_altera     ; work         ;
+;    |ula_16b:u_ula|                           ; 50 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula                                                    ; ula_16b         ; work         ;
+;       |full_adder16b:i1|                     ; 18 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1                                   ; full_adder16b   ; work         ;
+;          |full_adder1b:\gen_adders:0:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:0:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:11:adder| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:11:adder ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:1:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:1:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:2:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:2:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:3:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:3:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:4:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:4:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:5:adder|  ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:5:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:6:adder|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:6:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:7:adder|  ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:7:adder  ; full_adder1b    ; work         ;
+;          |full_adder1b:\gen_adders:8:adder|  ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:8:adder  ; full_adder1b    ; work         ;
+;       |logic_component:i0|                   ; 32 (32)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |view_altera|ula_16b:u_ula|logic_component:i0                                 ; logic_component ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -250,14 +247,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
-; 8:1                ; 14 bits   ; 70 LEs        ; 56 LEs               ; 14 LEs                 ; No         ; |ula_16b|logic_component:i0|Mux5  ;
-; 8:1                ; 16 bits   ; 80 LEs        ; 32 LEs               ; 48 LEs                 ; No         ; |ula_16b|logic_component:i0|Mux18 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+; 8:1                ; 7 bits    ; 35 LEs        ; 14 LEs               ; 21 LEs                 ; No         ; |view_altera|ula_16b:u_ula|logic_component:i0|Mux28 ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |view_altera|ula_16b:u_ula|logic_component:i0|Mux12 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ula_16b:u_ula"                                                                          ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; a[15..7] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; b[15..7] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; cout     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -265,15 +273,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 52                          ;
-; cycloneiii_lcell_comb ; 100                         ;
-;     normal            ; 100                         ;
+; boundary_port         ; 96                          ;
+; cycloneiii_lcell_comb ; 70                          ;
+;     normal            ; 70                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 2                           ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 72                          ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 47                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 16.00                       ;
-; Average LUT depth     ; 10.29                       ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 8.48                        ;
 +-----------------------+-----------------------------+
 
 
@@ -292,7 +302,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Wed Dec 18 19:22:55 2024
+    Info: Processing started: Thu Jan 23 10:17:50 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ula_16b -c ula_16b
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -311,22 +321,59 @@ Info (12021): Found 2 design units, including 1 entities, in source file full_ad
 Info (12021): Found 2 design units, including 1 entities, in source file logic_component.vhd
     Info (12022): Found design unit 1: logic_component-Behavioral File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 13
     Info (12023): Found entity 1: logic_component File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 4
-Info (12127): Elaborating entity "ula_16b" for the top level hierarchy
-Info (12128): Elaborating entity "logic_component" for hierarchy "logic_component:i0" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 21
+Info (12127): Elaborating entity "view_altera" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at view_altera.vhd(25): object "Cout" assigned a value but never read File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 25
+Info (12128): Elaborating entity "ula_16b" for hierarchy "ula_16b:u_ula" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 65
+Info (12128): Elaborating entity "logic_component" for hierarchy "ula_16b:u_ula|logic_component:i0" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 21
 Warning (10492): VHDL Process Statement warning at logic_component.vhd(23): signal "select_signal" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/logic_component.vhd Line: 23
-Info (12128): Elaborating entity "full_adder16b" for hierarchy "full_adder16b:i1" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 29
-Info (12128): Elaborating entity "full_adder1b" for hierarchy "full_adder16b:i1|full_adder1b:\gen_adders:0:adder" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/full_adder16b.vhd Line: 22
+Info (12128): Elaborating entity "full_adder16b" for hierarchy "ula_16b:u_ula|full_adder16b:i1" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/ula_16b.vhd Line: 29
+Info (12128): Elaborating entity "full_adder1b" for hierarchy "ula_16b:u_ula|full_adder16b:i1|full_adder1b:\gen_adders:0:adder" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/full_adder16b.vhd Line: 22
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[0]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[1]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[2]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[3]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[4]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[5]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX6[6]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[0]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[1]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[2]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[3]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[4]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[5]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
+    Warning (13410): Pin "HEX7[6]" is stuck at VCC File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 152 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 35 input pins
-    Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 100 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 433 megabytes
-    Info: Processing ended: Wed Dec 18 19:23:00 2024
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 9
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/view_altera.vhd Line: 9
+Info (21057): Implemented 161 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 74 output pins
+    Info (21061): Implemented 65 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 441 megabytes
+    Info: Processing ended: Thu Jan 23 10:17:56 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 

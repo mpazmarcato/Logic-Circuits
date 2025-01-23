@@ -1,5 +1,5 @@
 EDA Netlist Writer report for ula_16b
-Wed Dec 18 19:50:06 2024
+Thu Jan 23 10:18:09 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -37,33 +37,33 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Wed Dec 18 19:50:06 2024 ;
+; EDA Netlist Writer Status ; Successful - Thu Jan 23 10:18:09 2025 ;
 ; Revision Name             ; ula_16b                               ;
-; Top-level Entity Name     ; ula_16b                               ;
+; Top-level Entity Name     ; view_altera                           ;
 ; Family                    ; Cyclone IV E                          ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                          ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
-; Option                                                                                            ; Setting                  ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
-; Tool Name                                                                                         ; Questa Intel FPGA (VHDL) ;
-; Generate functional simulation netlist                                                            ; On                       ;
-; Truncate long hierarchy paths                                                                     ; Off                      ;
-; Map illegal HDL characters                                                                        ; Off                      ;
-; Flatten buses into individual nodes                                                               ; Off                      ;
-; Maintain hierarchy                                                                                ; Off                      ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                      ;
-; Enable glitch filtering                                                                           ; Off                      ;
-; Do not write top level VHDL entity                                                                ; Off                      ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                      ;
-; Architecture name in VHDL output netlist                                                          ; structure                ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                      ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                      ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                             ;
++---------------------------------------------------------------------------------------------------+-----------------------------+
+; Option                                                                                            ; Setting                     ;
++---------------------------------------------------------------------------------------------------+-----------------------------+
+; Tool Name                                                                                         ; Questa Intel FPGA (Verilog) ;
+; Generate functional simulation netlist                                                            ; On                          ;
+; Truncate long hierarchy paths                                                                     ; Off                         ;
+; Map illegal HDL characters                                                                        ; Off                         ;
+; Flatten buses into individual nodes                                                               ; Off                         ;
+; Maintain hierarchy                                                                                ; Off                         ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                         ;
+; Enable glitch filtering                                                                           ; Off                         ;
+; Do not write top level VHDL entity                                                                ; Off                         ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                         ;
+; Architecture name in VHDL output netlist                                                          ; structure                   ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                         ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                         ;
++---------------------------------------------------------------------------------------------------+-----------------------------+
 
 
 +---------------------------------------------------------------------------------+
@@ -71,7 +71,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+
 ; Generated Files                                                                 ;
 +---------------------------------------------------------------------------------+
-; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim//ula_16b.vho ;
+; /home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/questa/ula_16b.vo ;
 +---------------------------------------------------------------------------------+
 
 
@@ -81,27 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Copyright (C) 2023  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Dec 18 19:50:06 2024
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim/ ula_16b -c ula_16b
+    Info: Processing started: Thu Jan 23 10:18:09 2025
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off ula_16b -c ula_16b
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file ula_16b.vho in folder "/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/qsim//" for EDA simulation tool
+Info (204019): Generated file ula_16b.vo in folder "/home/leema/codeclusterfuck/Logic-Circuits/2.5/ULA/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 592 megabytes
-    Info: Processing ended: Wed Dec 18 19:50:06 2024
+    Info: Processing ended: Thu Jan 23 10:18:09 2025
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
