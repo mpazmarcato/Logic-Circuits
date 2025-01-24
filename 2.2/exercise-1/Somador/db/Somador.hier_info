@@ -24,15 +24,15 @@ Sub => B_inverted[5].IN1
 Sub => B_inverted[6].IN1
 Sub => B_inverted[7].IN1
 Sub => full_adder:FA0.Cin
-Sum[0] <= full_adder:FA0.Sum
-Sum[1] <= full_adder:FA1.Sum
-Sum[2] <= full_adder:FA2.Sum
-Sum[3] <= full_adder:FA3.Sum
-Sum[4] <= full_adder:FA4.Sum
-Sum[5] <= full_adder:FA5.Sum
-Sum[6] <= full_adder:FA6.Sum
-Sum[7] <= full_adder:FA7.Sum
-Cout <= full_adder:FA7.Cout
+Sum[0] << full_adder:FA0.Sum
+Sum[1] << full_adder:FA1.Sum
+Sum[2] << full_adder:FA2.Sum
+Sum[3] << full_adder:FA3.Sum
+Sum[4] << full_adder:FA4.Sum
+Sum[5] << full_adder:FA5.Sum
+Sum[6] << full_adder:FA6.Sum
+Sum[7] << full_adder:FA7.Sum
+Cout << full_adder:FA7.Cout
 
 
 |add_sub_8bit|full_adder:FA0

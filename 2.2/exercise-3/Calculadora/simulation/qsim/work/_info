@@ -86,7 +86,7 @@ R6
 DEx4 work 28 calculadora_8bit_vhd_vec_tst 0 22 56SQ3WM1JUCzjcA>AP9W72
 !i122 3
 l53
-Z23 L34 134
+L34 134
 VWZWkC><Yak:nPP5<T9o3C2
 !s100 A683[L3zW[4hjHi`=7_Az2
 R11
@@ -100,26 +100,26 @@ R22
 R16
 R17
 Ecalculator_8bit
-Z24 w1733342361
+Z23 w1734835638
 R2
 R3
 R4
 R5
 R6
 R7
-!i122 24
-R0
+!i122 30
+Z24 d/home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-3/Calculadora/simulation/qsim
 R8
 R9
 l0
 R10
-VGjNok4fS=e@JV6ENE`Dgl0
-!s100 6A>F>5Ug?OT<dgICDmB?l0
+V5bMmVFeSeMNBEz83>Y^<Q3
+!s100 l10IKl<nX20EcRoSIJ1MS2
 R11
 32
-Z25 !s110 1733342361
+Z25 !s110 1734835638
 !i10b 1
-Z26 !s108 1733342361.000000
+Z26 !s108 1734835638.000000
 R14
 R15
 !i113 1
@@ -132,12 +132,12 @@ R4
 R5
 R6
 R7
-DEx4 work 15 calculator_8bit 0 22 GjNok4fS=e@JV6ENE`Dgl0
-!i122 24
-l186
-L119 664
-Vj_PanDf^?Rg<kAjF_Va;20
-!s100 LchDK`Pj1U_JJn8V@bhOF0
+DEx4 work 15 calculator_8bit 0 22 5bMmVFeSeMNBEz83>Y^<Q3
+!i122 30
+l232
+L141 1014
+V;IE?54@5`27<><AdjV9ZH1
+!s100 kTdIXGMO804j1d=K?cl2;3
 R11
 32
 R25
@@ -149,13 +149,13 @@ R15
 R16
 R17
 Ecalculator_8bit_vhd_vec_tst
-Z27 w1733342360
+Z27 w1734835637
 R5
 R6
-!i122 25
-R0
-Z28 8Waveform4.vwf.vht
-Z29 FWaveform4.vwf.vht
+!i122 31
+R24
+Z28 8Waveform6.vwf.vht
+Z29 FWaveform6.vwf.vht
 l0
 R20
 V;QaTV]DBH=ChGHcWLA47N1
@@ -165,8 +165,8 @@ R11
 R25
 !i10b 1
 R26
-Z30 !s90 -work|work|Waveform4.vwf.vht|
-Z31 !s107 Waveform4.vwf.vht|
+Z30 !s90 -work|work|Waveform6.vwf.vht|
+Z31 !s107 Waveform6.vwf.vht|
 !i113 1
 R16
 R17
@@ -174,11 +174,11 @@ Acalculator_8bit_arch
 R5
 R6
 Z32 DEx4 work 27 calculator_8bit_vhd_vec_tst 0 22 ;QaTV]DBH=ChGHcWLA47N1
-!i122 25
-l53
-R23
-VPXAU=42TOhd^8BPOKC6EA3
-!s100 mHQGWF8L<e_LgZTfNgMza3
+!i122 31
+l55
+Z33 L34 137
+Z34 V@lN7=8NO`HPBQ5VYOhi1`0
+Z35 !s100 1G3G9AMk2]iV3hcjmeoWS1
 R11
 32
 R25
@@ -190,15 +190,15 @@ R31
 R16
 R17
 Ehard_block
-R24
+R23
 R2
 R3
 R4
 R5
 R6
 R7
-!i122 24
-R0
+!i122 30
+R24
 R8
 R9
 l0
@@ -223,7 +223,7 @@ R5
 R6
 R7
 DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
-!i122 24
+!i122 30
 l65
 L51 20
 Via>5o7W??azG@W@@eFOTF0

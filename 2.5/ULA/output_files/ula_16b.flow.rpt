@@ -1,5 +1,5 @@
 Flow report for ula_16b
-Thu Jan 23 10:18:09 2025
+Thu Jan 23 12:14:44 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 23 10:18:09 2025          ;
+; Flow Status                        ; Successful - Thu Jan 23 12:14:44 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; ula_16b                                        ;
 ; Top-level Entity Name              ; view_altera                                    ;
@@ -52,7 +52,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 65 / 114,480 ( < 1 % )                         ;
 ;     Dedicated logic registers      ; 0 / 114,480 ( 0 % )                            ;
 ; Total registers                    ; 0                                              ;
-; Total pins                         ; 96 / 529 ( 18 % )                              ;
+; Total pins                         ; 94 / 529 ( 18 % )                              ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 0 / 3,981,312 ( 0 % )                          ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/23/2025 10:17:51 ;
+; Start date & time ; 01/23/2025 12:14:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; ula_16b             ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 4931004179385.173763827153949          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 246488365131966.173764526007903        ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_timing_analysis               ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
@@ -101,26 +101,26 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 441 MB              ; 00:00:13                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 1740 MB             ; 00:00:11                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 429 MB              ; 00:00:22                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 1575 MB             ; 00:00:20                           ;
 ; Assembler            ; 00:00:02     ; 1.0                     ; 361 MB              ; 00:00:02                           ;
-; Timing Analyzer      ; 00:00:01     ; 1.1                     ; 657 MB              ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 584 MB              ; 00:00:00                           ;
-; Total                ; 00:00:15     ; --                      ; --                  ; 00:00:27                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 585 MB              ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 581 MB              ; 00:00:00                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:45                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                                    ;
-+----------------------+------------------+--------------------+--------------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name            ; OS Version         ; Processor type ;
-+----------------------+------------------+--------------------+--------------------+----------------+
-; Analysis & Synthesis ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Fitter               ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Assembler            ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; Timing Analyzer      ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-; EDA Netlist Writer   ; archlinux        ; \S{PRETTY_NAME} \r ; \S{PRETTY_NAME} \r ; x86_64         ;
-+----------------------+------------------+--------------------+--------------------+----------------+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++----------------------+------------------+----------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
++----------------------+------------------+----------------+------------+----------------+
+; Analysis & Synthesis ; marinaLinux      ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Fitter               ; marinaLinux      ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Assembler            ; marinaLinux      ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; Timing Analyzer      ; marinaLinux      ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
+; EDA Netlist Writer   ; marinaLinux      ; Ubuntu 22.04.5 ; 22         ; x86_64         ;
++----------------------+------------------+----------------+------------+----------------+
 
 
 ------------

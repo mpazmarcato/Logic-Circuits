@@ -22,24 +22,6 @@ architecture Behavioral of calculator_8bit is
     signal temp_S : STD_LOGIC_VECTOR(7 downto 0); -- Sinal intermediário para resultado
     signal result_bcd : STD_LOGIC_VECTOR(11 downto 0); -- Para exibição em BCD
 
-    -- Função para converter 4 bits (hexadecimal) em 7 segmentos
-    function hex_to_7seg(input : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
-    begin
-        case input is
-            when "0000" => return "1000000"; -- 0
-            when "0001" => return "1111001"; -- 1
-            when "0010" => return "0100100"; -- 2
-            when "0011" => return "0110000"; -- 3
-            when "0100" => return "0011001"; -- 4
-            when "0101" => return "0010010"; -- 5
-            when "0110" => return "0000010"; -- 6
-            when "0111" => return "1111000"; -- 7
-            when "1000" => return "0000000"; -- 8
-            when "1001" => return "0010000"; -- 9
-            when others => return "1111111"; -- Desligado (todos apagados)
-        end case;
-    end function;
-
 begin
 
     -- Inverte B se OP = '1' (realizando o complemento de dois)
@@ -84,14 +66,6 @@ begin
             end if;
         end loop;
         result_bcd <= bcd; -- Atribuição final do resultado para o sinal result_bcd
-    end process;
-
-    -- Conversão para displays de 7 segmentos
-    process(result_bcd)
-    begin
-        Display(6 downto 0)   <= hex_to_7seg(result_bcd(3 downto 0));  -- Dígito menos significativo
-        Display(13 downto 7)  <= hex_to_7seg(result_bcd(7 downto 4));  -- Dígito do meio
-        Display(20 downto 14) <= hex_to_7seg(result_bcd(11 downto 8)); -- Dígito mais significativo
     end process;
 
 end Behavioral;

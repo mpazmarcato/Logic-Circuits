@@ -1,7 +1,7 @@
 onerror {exit -code 1}
 vlib work
 vcom -work work Calculadora.vho
-vcom -work work Waveform4.vwf.vht
+vcom -work work Waveform6.vwf.vht
 vsim  -c -t 1ps -L cycloneive -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.calculator_8bit_vhd_vec_tst
 vcd file -direction Calculadora.msim.vcd
 vcd add -internal calculator_8bit_vhd_vec_tst/*

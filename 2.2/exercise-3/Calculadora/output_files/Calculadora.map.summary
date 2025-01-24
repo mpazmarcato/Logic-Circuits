@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Mon Dec  9 14:17:00 2024
+Analysis & Synthesis Status : Successful - Sat Dec 21 23:46:02 2024
 Quartus Prime Version : 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 Revision Name : Calculadora
 Top-level Entity Name : calculator_8bit
 Family : Cyclone IV E
-Total logic elements : 62
-    Total combinational functions : 62
+Total logic elements : 17
+    Total combinational functions : 17
     Dedicated logic registers : 0
 Total registers : 0
 Total pins : 48

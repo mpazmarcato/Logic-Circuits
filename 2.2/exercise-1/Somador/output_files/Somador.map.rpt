@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Somador
-Mon Dec  2 15:31:07 2024
+Thu Jan 16 14:03:57 2025
 Quartus Prime Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                        ;
 +------------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Dec  2 15:31:07 2024          ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan 16 14:03:57 2025          ;
 ; Quartus Prime Version              ; 23.1std.0 Build 991 11/28/2023 SC Lite Edition ;
 ; Revision Name                      ; Somador                                        ;
 ; Top-level Entity Name              ; add_sub_8bit                                   ;
@@ -65,6 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
 ; Top-level entity name                                            ; add_sub_8bit       ; Somador            ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
@@ -161,14 +162,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                           ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
-; Somador.vhd                      ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador.vhd       ;         ;
-; Somador8bits.vhdl                ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador8bits.vhdl ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
+; Somador.vhd                      ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador.vhd       ;         ;
+; Somador8bits.vhdl                ; yes             ; User VHDL File  ; /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador8bits.vhdl ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -268,18 +269,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition
-    Info: Processing started: Mon Dec  2 15:31:00 2024
+    Info: Processing started: Thu Jan 16 14:03:52 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Somador -c Somador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Somador.vhd
-    Info (12022): Found design unit 1: full_adder-Behavioral File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador.vhd Line: 14
-    Info (12023): Found entity 1: full_adder File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador.vhd Line: 4
+    Info (12022): Found design unit 1: full_adder-Behavioral File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador.vhd Line: 14
+    Info (12023): Found entity 1: full_adder File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file Somador8bits.vhdl
-    Info (12022): Found design unit 1: add_sub_8bit-Structural File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador8bits.vhdl Line: 14
-    Info (12023): Found entity 1: add_sub_8bit File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador8bits.vhdl Line: 4
+    Info (12022): Found design unit 1: add_sub_8bit-Structural File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador8bits.vhdl Line: 14
+    Info (12023): Found entity 1: add_sub_8bit File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador8bits.vhdl Line: 4
 Info (12127): Elaborating entity "add_sub_8bit" for the top level hierarchy
-Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:FA0" File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/2.2/Somador/Somador8bits.vhdl Line: 24
+Info (12128): Elaborating entity "full_adder" for hierarchy "full_adder:FA0" File: /home/marina/Documents/2024_2_CircuitosLogicos/unidade02/Logic-Circuits/2.2/exercise-1/Somador/Somador8bits.vhdl Line: 24
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -288,9 +289,9 @@ Info (21057): Implemented 42 device resources after synthesis - the final resour
     Info (21059): Implemented 9 output pins
     Info (21061): Implemented 16 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 439 megabytes
-    Info: Processing ended: Mon Dec  2 15:31:07 2024
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Peak virtual memory: 429 megabytes
+    Info: Processing ended: Thu Jan 16 14:03:57 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:14
 
 

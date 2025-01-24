@@ -10,7 +10,7 @@ entity view_altera is
 				
 				-- Board Outputs
 				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector(6 downto 0);
-				LEDR	: out std_logic_vector(17 downto 0)			-- LEDs (for debugging)
+				LEDR	: out std_logic_vector(15 downto 0)			-- LEDs (for debugging)
 		);
 end entity view_altera;
 
@@ -74,7 +74,7 @@ begin
 				);
 
 		-- Drive LEDs for debugging 
-		LEDR <= SW; -- Just echo switches
+		LEDR <= Result; -- Just echo switches
 
 		-- Drive the 7-seg displays
 		-- Split the 16-bit result into four 4-bit nibbles
