@@ -1,0 +1,4074 @@
+// Copyright (C) 2023  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 23.1std.0 Build 991 11/28/2023 SC Lite Edition"
+
+// DATE "01/27/2025 20:46:33"
+
+// 
+// Device: Altera EP4CE115F29C7 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for Questa Intel FPGA (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module altera_fronted (
+	clk,
+	SW,
+	KEY,
+	LEDR,
+	LEDG,
+	HEX);
+input 	clk;
+input 	[15:0] SW;
+input 	[3:0] KEY;
+output 	[15:0] LEDR;
+output 	LEDG;
+output 	[6:0] HEX;
+
+// Design Ports Information
+// KEY[1]	=>  Location: PIN_M7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// KEY[2]	=>  Location: PIN_AE21,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// KEY[3]	=>  Location: PIN_G20,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[0]	=>  Location: PIN_F14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[1]	=>  Location: PIN_C14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[2]	=>  Location: PIN_C12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[3]	=>  Location: PIN_B11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[4]	=>  Location: PIN_D12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[5]	=>  Location: PIN_J14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[6]	=>  Location: PIN_J12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[7]	=>  Location: PIN_D13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[8]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[9]	=>  Location: PIN_G14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[10]	=>  Location: PIN_J13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[11]	=>  Location: PIN_A12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[12]	=>  Location: PIN_D14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[13]	=>  Location: PIN_E14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[14]	=>  Location: PIN_A11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDR[15]	=>  Location: PIN_H14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// LEDG	=>  Location: PIN_G12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[0]	=>  Location: PIN_F10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[1]	=>  Location: PIN_D11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[2]	=>  Location: PIN_G7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[3]	=>  Location: PIN_G11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[4]	=>  Location: PIN_J10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[5]	=>  Location: PIN_G10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// HEX[6]	=>  Location: PIN_C11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// clk	=>  Location: PIN_J1,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// KEY[0]	=>  Location: PIN_H12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[1]	=>  Location: PIN_C10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[0]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[2]	=>  Location: PIN_G13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[3]	=>  Location: PIN_A6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[4]	=>  Location: PIN_F11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[5]	=>  Location: PIN_D10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[6]	=>  Location: PIN_B6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[7]	=>  Location: PIN_A7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[8]	=>  Location: PIN_B7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[9]	=>  Location: PIN_E12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[10]	=>  Location: PIN_A10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[11]	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[12]	=>  Location: PIN_C9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[13]	=>  Location: PIN_B10,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[14]	=>  Location: PIN_D9,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// SW[15]	=>  Location: PIN_F12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \KEY[1]~input_o ;
+wire \KEY[2]~input_o ;
+wire \KEY[3]~input_o ;
+wire \LEDR[0]~output_o ;
+wire \LEDR[1]~output_o ;
+wire \LEDR[2]~output_o ;
+wire \LEDR[3]~output_o ;
+wire \LEDR[4]~output_o ;
+wire \LEDR[5]~output_o ;
+wire \LEDR[6]~output_o ;
+wire \LEDR[7]~output_o ;
+wire \LEDR[8]~output_o ;
+wire \LEDR[9]~output_o ;
+wire \LEDR[10]~output_o ;
+wire \LEDR[11]~output_o ;
+wire \LEDR[12]~output_o ;
+wire \LEDR[13]~output_o ;
+wire \LEDR[14]~output_o ;
+wire \LEDR[15]~output_o ;
+wire \LEDG~output_o ;
+wire \HEX[0]~output_o ;
+wire \HEX[1]~output_o ;
+wire \HEX[2]~output_o ;
+wire \HEX[3]~output_o ;
+wire \HEX[4]~output_o ;
+wire \HEX[5]~output_o ;
+wire \HEX[6]~output_o ;
+wire \clk~input_o ;
+wire \clk~inputclkctrl_outclk ;
+wire \median_inst|div|counter[0]~16_combout ;
+wire \KEY[0]~input_o ;
+wire \SW[15]~input_o ;
+wire \B[15]~feeder_combout ;
+wire \state.INPUT_B~feeder_combout ;
+wire \state.INPUT_B~q ;
+wire \Selector4~1_combout ;
+wire \A[15]~feeder_combout ;
+wire \Selector3~0_combout ;
+wire \SW[14]~input_o ;
+wire \SW[13]~input_o ;
+wire \A[13]~feeder_combout ;
+wire \B[13]~feeder_combout ;
+wire \SW[12]~input_o ;
+wire \SW[11]~input_o ;
+wire \B[11]~feeder_combout ;
+wire \A[11]~feeder_combout ;
+wire \SW[10]~input_o ;
+wire \B[10]~feeder_combout ;
+wire \A[10]~feeder_combout ;
+wire \SW[9]~input_o ;
+wire \B[9]~feeder_combout ;
+wire \A[9]~feeder_combout ;
+wire \SW[8]~input_o ;
+wire \B[8]~feeder_combout ;
+wire \SW[7]~input_o ;
+wire \A[7]~feeder_combout ;
+wire \SW[6]~input_o ;
+wire \SW[5]~input_o ;
+wire \SW[4]~input_o ;
+wire \SW[3]~input_o ;
+wire \SW[2]~input_o ;
+wire \SW[1]~input_o ;
+wire \SW[0]~input_o ;
+wire \median_inst|div|current_A[1]~16_cout ;
+wire \median_inst|div|current_A[1]~18 ;
+wire \median_inst|div|current_A[2]~20 ;
+wire \median_inst|div|current_A[3]~22 ;
+wire \median_inst|div|current_A[4]~24 ;
+wire \median_inst|div|current_A[5]~26 ;
+wire \median_inst|div|current_A[6]~28 ;
+wire \median_inst|div|current_A[7]~30 ;
+wire \median_inst|div|current_A[8]~32 ;
+wire \median_inst|div|current_A[9]~34 ;
+wire \median_inst|div|current_A[10]~36 ;
+wire \median_inst|div|current_A[11]~38 ;
+wire \median_inst|div|current_A[12]~40 ;
+wire \median_inst|div|current_A[13]~42 ;
+wire \median_inst|div|current_A[14]~44 ;
+wire \median_inst|div|current_A[15]~45_combout ;
+wire \median_inst|div|current_A[15]~feeder_combout ;
+wire \median_inst|div|current_A[14]~43_combout ;
+wire \median_inst|div|current_A[14]~feeder_combout ;
+wire \median_inst|div|current_A[13]~41_combout ;
+wire \median_inst|div|current_A[13]~feeder_combout ;
+wire \median_inst|div|current_A[12]~39_combout ;
+wire \median_inst|div|current_A[12]~feeder_combout ;
+wire \median_inst|div|current_A[11]~37_combout ;
+wire \median_inst|div|current_A[11]~feeder_combout ;
+wire \median_inst|div|current_A[10]~35_combout ;
+wire \median_inst|div|current_A[10]~feeder_combout ;
+wire \median_inst|div|current_A[9]~33_combout ;
+wire \median_inst|div|current_A[9]~feeder_combout ;
+wire \median_inst|div|current_A[8]~31_combout ;
+wire \median_inst|div|current_A[8]~feeder_combout ;
+wire \median_inst|div|current_A[7]~29_combout ;
+wire \median_inst|div|current_A[7]~feeder_combout ;
+wire \median_inst|div|current_A[6]~27_combout ;
+wire \median_inst|div|current_A[6]~feeder_combout ;
+wire \median_inst|div|current_A[5]~25_combout ;
+wire \median_inst|div|current_A[5]~feeder_combout ;
+wire \median_inst|div|current_A[4]~23_combout ;
+wire \median_inst|div|current_A[4]~feeder_combout ;
+wire \median_inst|div|current_A[3]~21_combout ;
+wire \median_inst|div|current_A[3]~feeder_combout ;
+wire \median_inst|div|current_A[2]~19_combout ;
+wire \median_inst|div|current_A[2]~feeder_combout ;
+wire \median_inst|div|current_A[1]~17_combout ;
+wire \median_inst|div|current_A[1]~feeder_combout ;
+wire \median_inst|div|current_A[1]~_wirecell_combout ;
+wire \median_inst|div|Add0~1_cout ;
+wire \median_inst|div|Add0~2_combout ;
+wire \median_inst|div|Add0~3 ;
+wire \median_inst|div|Add0~4_combout ;
+wire \median_inst|div|Add0~5 ;
+wire \median_inst|div|Add0~6_combout ;
+wire \median_inst|div|Add0~7 ;
+wire \median_inst|div|Add0~8_combout ;
+wire \median_inst|div|Add0~9 ;
+wire \median_inst|div|Add0~10_combout ;
+wire \median_inst|div|Add0~11 ;
+wire \median_inst|div|Add0~12_combout ;
+wire \median_inst|div|Add0~13 ;
+wire \median_inst|div|Add0~14_combout ;
+wire \median_inst|div|Add0~15 ;
+wire \median_inst|div|Add0~16_combout ;
+wire \median_inst|div|Add0~17 ;
+wire \median_inst|div|Add0~18_combout ;
+wire \median_inst|div|Add0~19 ;
+wire \median_inst|div|Add0~20_combout ;
+wire \median_inst|div|Add0~21 ;
+wire \median_inst|div|Add0~22_combout ;
+wire \median_inst|div|Add0~23 ;
+wire \median_inst|div|Add0~24_combout ;
+wire \median_inst|div|Add0~25 ;
+wire \median_inst|div|Add0~26_combout ;
+wire \median_inst|div|Add0~27 ;
+wire \median_inst|div|Add0~28_combout ;
+wire \median_inst|div|LessThan0~3_combout ;
+wire \median_inst|div|LessThan0~1_combout ;
+wire \median_inst|div|LessThan0~0_combout ;
+wire \median_inst|div|LessThan0~2_combout ;
+wire \median_inst|div|LessThan0~4_combout ;
+wire \median_inst|div|done~0_combout ;
+wire \median_inst|div|done~q ;
+wire \Selector4~0_combout ;
+wire \state.ACTIVE~q ;
+wire \Selector1~0_combout ;
+wire \state.IDLE~q ;
+wire \state.INPUT_A~0_combout ;
+wire \state.INPUT_A~q ;
+wire \Selector0~0_combout ;
+wire \Selector0~1_combout ;
+wire \start~q ;
+wire \median_inst|div|counter~18_combout ;
+wire \median_inst|div|state~feeder_combout ;
+wire \median_inst|div|state~q ;
+wire \median_inst|div|counter[0]~17 ;
+wire \median_inst|div|counter[1]~19_combout ;
+wire \median_inst|div|counter[1]~20 ;
+wire \median_inst|div|counter[2]~21_combout ;
+wire \median_inst|div|counter[2]~22 ;
+wire \median_inst|div|counter[3]~23_combout ;
+wire \median_inst|div|counter[3]~24 ;
+wire \median_inst|div|counter[4]~25_combout ;
+wire \median_inst|div|counter[4]~26 ;
+wire \median_inst|div|counter[5]~27_combout ;
+wire \median_inst|div|counter[5]~28 ;
+wire \median_inst|div|counter[6]~29_combout ;
+wire \median_inst|div|counter[6]~30 ;
+wire \median_inst|div|counter[7]~31_combout ;
+wire \median_inst|div|counter[7]~32 ;
+wire \median_inst|div|counter[8]~33_combout ;
+wire \median_inst|div|counter[8]~34 ;
+wire \median_inst|div|counter[9]~35_combout ;
+wire \median_inst|div|counter[9]~36 ;
+wire \median_inst|div|counter[10]~37_combout ;
+wire \median_inst|div|counter[10]~38 ;
+wire \median_inst|div|counter[11]~39_combout ;
+wire \median_inst|div|counter[11]~40 ;
+wire \median_inst|div|counter[12]~41_combout ;
+wire \median_inst|div|counter[12]~42 ;
+wire \median_inst|div|counter[13]~43_combout ;
+wire \median_inst|div|counter[13]~44 ;
+wire \median_inst|div|counter[14]~45_combout ;
+wire \median_inst|div|counter[14]~46 ;
+wire \median_inst|div|counter[15]~47_combout ;
+wire \HEX~0_combout ;
+wire \HEX[0]~reg0_q ;
+wire \HEX[1]~reg0feeder_combout ;
+wire \HEX[1]~reg0_q ;
+wire \HEX~1_combout ;
+wire \HEX[3]~reg0_q ;
+wire \HEX[4]~3_combout ;
+wire \HEX[4]~reg0_q ;
+wire \HEX[5]~4_combout ;
+wire \HEX[5]~reg0_q ;
+wire \HEX~2_combout ;
+wire \HEX[6]~reg0_q ;
+wire [15:0] B;
+wire [15:0] A;
+wire [15:0] \median_inst|div|counter ;
+wire [15:0] \median_inst|div|current_A ;
+
+
+hard_block auto_generated_inst(
+	.devpor(devpor),
+	.devclrn(devclrn),
+	.devoe(devoe));
+
+// Location: IOOBUF_X45_Y73_N2
+cycloneive_io_obuf \LEDR[0]~output (
+	.i(\median_inst|div|counter [0]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[0]~output .bus_hold = "false";
+defparam \LEDR[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X52_Y73_N2
+cycloneive_io_obuf \LEDR[1]~output (
+	.i(\median_inst|div|counter [1]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[1]~output .bus_hold = "false";
+defparam \LEDR[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X52_Y73_N16
+cycloneive_io_obuf \LEDR[2]~output (
+	.i(\median_inst|div|counter [2]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[2]~output .bus_hold = "false";
+defparam \LEDR[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X42_Y73_N9
+cycloneive_io_obuf \LEDR[3]~output (
+	.i(\median_inst|div|counter [3]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[3]~output .bus_hold = "false";
+defparam \LEDR[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X52_Y73_N23
+cycloneive_io_obuf \LEDR[4]~output (
+	.i(\median_inst|div|counter [4]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[4]~output .bus_hold = "false";
+defparam \LEDR[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X49_Y73_N23
+cycloneive_io_obuf \LEDR[5]~output (
+	.i(\median_inst|div|counter [5]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[5]~output .bus_hold = "false";
+defparam \LEDR[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X40_Y73_N9
+cycloneive_io_obuf \LEDR[6]~output (
+	.i(\median_inst|div|counter [6]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[6]~output .bus_hold = "false";
+defparam \LEDR[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X54_Y73_N9
+cycloneive_io_obuf \LEDR[7]~output (
+	.i(\median_inst|div|counter [7]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[7]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[7]~output .bus_hold = "false";
+defparam \LEDR[7]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X54_Y73_N2
+cycloneive_io_obuf \LEDR[8]~output (
+	.i(\median_inst|div|counter [8]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[8]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[8]~output .bus_hold = "false";
+defparam \LEDR[8]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X47_Y73_N16
+cycloneive_io_obuf \LEDR[9]~output (
+	.i(\median_inst|div|counter [9]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[9]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[9]~output .bus_hold = "false";
+defparam \LEDR[9]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X40_Y73_N2
+cycloneive_io_obuf \LEDR[10]~output (
+	.i(\median_inst|div|counter [10]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[10]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[10]~output .bus_hold = "false";
+defparam \LEDR[10]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X47_Y73_N2
+cycloneive_io_obuf \LEDR[11]~output (
+	.i(\median_inst|div|counter [11]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[11]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[11]~output .bus_hold = "false";
+defparam \LEDR[11]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X52_Y73_N9
+cycloneive_io_obuf \LEDR[12]~output (
+	.i(\median_inst|div|counter [12]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[12]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[12]~output .bus_hold = "false";
+defparam \LEDR[12]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X45_Y73_N9
+cycloneive_io_obuf \LEDR[13]~output (
+	.i(\median_inst|div|counter [13]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[13]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[13]~output .bus_hold = "false";
+defparam \LEDR[13]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X42_Y73_N2
+cycloneive_io_obuf \LEDR[14]~output (
+	.i(\median_inst|div|counter [14]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[14]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[14]~output .bus_hold = "false";
+defparam \LEDR[14]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X49_Y73_N16
+cycloneive_io_obuf \LEDR[15]~output (
+	.i(\median_inst|div|counter [15]),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDR[15]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDR[15]~output .bus_hold = "false";
+defparam \LEDR[15]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X27_Y73_N9
+cycloneive_io_obuf \LEDG~output (
+	.i(\median_inst|div|done~q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\LEDG~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \LEDG~output .bus_hold = "false";
+defparam \LEDG~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X20_Y73_N2
+cycloneive_io_obuf \HEX[0]~output (
+	.i(\HEX[0]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[0]~output .bus_hold = "false";
+defparam \HEX[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y73_N9
+cycloneive_io_obuf \HEX[1]~output (
+	.i(\HEX[1]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[1]~output .bus_hold = "false";
+defparam \HEX[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X9_Y73_N2
+cycloneive_io_obuf \HEX[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[2]~output .bus_hold = "false";
+defparam \HEX[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X25_Y73_N16
+cycloneive_io_obuf \HEX[3]~output (
+	.i(\HEX[3]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[3]~output .bus_hold = "false";
+defparam \HEX[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X20_Y73_N23
+cycloneive_io_obuf \HEX[4]~output (
+	.i(\HEX[4]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[4]~output .bus_hold = "false";
+defparam \HEX[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X20_Y73_N9
+cycloneive_io_obuf \HEX[5]~output (
+	.i(\HEX[5]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[5]~output .bus_hold = "false";
+defparam \HEX[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y73_N2
+cycloneive_io_obuf \HEX[6]~output (
+	.i(\HEX[6]~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\HEX[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \HEX[6]~output .bus_hold = "false";
+defparam \HEX[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y36_N8
+cycloneive_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: CLKCTRL_G2
+cycloneive_clkctrl \clk~inputclkctrl (
+	.ena(vcc),
+	.inclk({vcc,vcc,vcc,\clk~input_o }),
+	.clkselect(2'b00),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.outclk(\clk~inputclkctrl_outclk ));
+// synopsys translate_off
+defparam \clk~inputclkctrl .clock_type = "global clock";
+defparam \clk~inputclkctrl .ena_register_mode = "none";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N0
+cycloneive_lcell_comb \median_inst|div|counter[0]~16 (
+// Equation(s):
+// \median_inst|div|counter[0]~16_combout  = \median_inst|div|counter [0] $ (VCC)
+// \median_inst|div|counter[0]~17  = CARRY(\median_inst|div|counter [0])
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(\median_inst|div|counter[0]~16_combout ),
+	.cout(\median_inst|div|counter[0]~17 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[0]~16 .lut_mask = 16'h33CC;
+defparam \median_inst|div|counter[0]~16 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: IOIBUF_X25_Y73_N22
+cycloneive_io_ibuf \KEY[0]~input (
+	.i(KEY[0]),
+	.ibar(gnd),
+	.o(\KEY[0]~input_o ));
+// synopsys translate_off
+defparam \KEY[0]~input .bus_hold = "false";
+defparam \KEY[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X33_Y73_N8
+cycloneive_io_ibuf \SW[15]~input (
+	.i(SW[15]),
+	.ibar(gnd),
+	.o(\SW[15]~input_o ));
+// synopsys translate_off
+defparam \SW[15]~input .bus_hold = "false";
+defparam \SW[15]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N14
+cycloneive_lcell_comb \B[15]~feeder (
+// Equation(s):
+// \B[15]~feeder_combout  = \SW[15]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[15]~input_o ),
+	.cin(gnd),
+	.combout(\B[15]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[15]~feeder .lut_mask = 16'hFF00;
+defparam \B[15]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X33_Y69_N28
+cycloneive_lcell_comb \state.INPUT_B~feeder (
+// Equation(s):
+// \state.INPUT_B~feeder_combout  = \state.INPUT_A~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\state.INPUT_A~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\state.INPUT_B~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \state.INPUT_B~feeder .lut_mask = 16'hF0F0;
+defparam \state.INPUT_B~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X33_Y69_N29
+dffeas \state.INPUT_B (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\state.INPUT_B~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\KEY[0]~input_o ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.INPUT_B~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.INPUT_B .is_wysiwyg = "true";
+defparam \state.INPUT_B .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X33_Y69_N24
+cycloneive_lcell_comb \Selector4~1 (
+// Equation(s):
+// \Selector4~1_combout  = (\KEY[0]~input_o  & \state.INPUT_B~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\KEY[0]~input_o ),
+	.datad(\state.INPUT_B~q ),
+	.cin(gnd),
+	.combout(\Selector4~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector4~1 .lut_mask = 16'hF000;
+defparam \Selector4~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N15
+dffeas \B[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[15]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[15] .is_wysiwyg = "true";
+defparam \B[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N20
+cycloneive_lcell_comb \A[15]~feeder (
+// Equation(s):
+// \A[15]~feeder_combout  = \SW[15]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[15]~input_o ),
+	.cin(gnd),
+	.combout(\A[15]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[15]~feeder .lut_mask = 16'hFF00;
+defparam \A[15]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X33_Y69_N22
+cycloneive_lcell_comb \Selector3~0 (
+// Equation(s):
+// \Selector3~0_combout  = (\KEY[0]~input_o  & \state.INPUT_A~q )
+
+	.dataa(gnd),
+	.datab(\KEY[0]~input_o ),
+	.datac(\state.INPUT_A~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\Selector3~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector3~0 .lut_mask = 16'hC0C0;
+defparam \Selector3~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N21
+dffeas \A[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[15]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[15] .is_wysiwyg = "true";
+defparam \A[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X23_Y73_N22
+cycloneive_io_ibuf \SW[14]~input (
+	.i(SW[14]),
+	.ibar(gnd),
+	.o(\SW[14]~input_o ));
+// synopsys translate_off
+defparam \SW[14]~input .bus_hold = "false";
+defparam \SW[14]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N17
+dffeas \A[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[14]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[14] .is_wysiwyg = "true";
+defparam \A[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N31
+dffeas \B[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[14]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[14] .is_wysiwyg = "true";
+defparam \B[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X38_Y73_N8
+cycloneive_io_ibuf \SW[13]~input (
+	.i(SW[13]),
+	.ibar(gnd),
+	.o(\SW[13]~input_o ));
+// synopsys translate_off
+defparam \SW[13]~input .bus_hold = "false";
+defparam \SW[13]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N4
+cycloneive_lcell_comb \A[13]~feeder (
+// Equation(s):
+// \A[13]~feeder_combout  = \SW[13]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[13]~input_o ),
+	.cin(gnd),
+	.combout(\A[13]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[13]~feeder .lut_mask = 16'hFF00;
+defparam \A[13]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N5
+dffeas \A[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[13]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[13] .is_wysiwyg = "true";
+defparam \A[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N22
+cycloneive_lcell_comb \B[13]~feeder (
+// Equation(s):
+// \B[13]~feeder_combout  = \SW[13]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[13]~input_o ),
+	.cin(gnd),
+	.combout(\B[13]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[13]~feeder .lut_mask = 16'hFF00;
+defparam \B[13]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N23
+dffeas \B[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[13]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[13] .is_wysiwyg = "true";
+defparam \B[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X23_Y73_N15
+cycloneive_io_ibuf \SW[12]~input (
+	.i(SW[12]),
+	.ibar(gnd),
+	.o(\SW[12]~input_o ));
+// synopsys translate_off
+defparam \SW[12]~input .bus_hold = "false";
+defparam \SW[12]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N1
+dffeas \A[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[12]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[12] .is_wysiwyg = "true";
+defparam \A[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N7
+dffeas \B[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[12]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[12] .is_wysiwyg = "true";
+defparam \B[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X38_Y73_N22
+cycloneive_io_ibuf \SW[11]~input (
+	.i(SW[11]),
+	.ibar(gnd),
+	.o(\SW[11]~input_o ));
+// synopsys translate_off
+defparam \SW[11]~input .bus_hold = "false";
+defparam \SW[11]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N6
+cycloneive_lcell_comb \B[11]~feeder (
+// Equation(s):
+// \B[11]~feeder_combout  = \SW[11]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[11]~input_o ),
+	.cin(gnd),
+	.combout(\B[11]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[11]~feeder .lut_mask = 16'hFF00;
+defparam \B[11]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N7
+dffeas \B[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[11]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[11] .is_wysiwyg = "true";
+defparam \B[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N8
+cycloneive_lcell_comb \A[11]~feeder (
+// Equation(s):
+// \A[11]~feeder_combout  = \SW[11]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[11]~input_o ),
+	.cin(gnd),
+	.combout(\A[11]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[11]~feeder .lut_mask = 16'hFF00;
+defparam \A[11]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N9
+dffeas \A[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[11]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[11] .is_wysiwyg = "true";
+defparam \A[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X38_Y73_N1
+cycloneive_io_ibuf \SW[10]~input (
+	.i(SW[10]),
+	.ibar(gnd),
+	.o(\SW[10]~input_o ));
+// synopsys translate_off
+defparam \SW[10]~input .bus_hold = "false";
+defparam \SW[10]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N30
+cycloneive_lcell_comb \B[10]~feeder (
+// Equation(s):
+// \B[10]~feeder_combout  = \SW[10]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[10]~input_o ),
+	.cin(gnd),
+	.combout(\B[10]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[10]~feeder .lut_mask = 16'hFF00;
+defparam \B[10]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N31
+dffeas \B[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[10]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[10] .is_wysiwyg = "true";
+defparam \B[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X36_Y69_N12
+cycloneive_lcell_comb \A[10]~feeder (
+// Equation(s):
+// \A[10]~feeder_combout  = \SW[10]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[10]~input_o ),
+	.cin(gnd),
+	.combout(\A[10]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[10]~feeder .lut_mask = 16'hFF00;
+defparam \A[10]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X36_Y69_N13
+dffeas \A[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[10]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[10] .is_wysiwyg = "true";
+defparam \A[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X33_Y73_N1
+cycloneive_io_ibuf \SW[9]~input (
+	.i(SW[9]),
+	.ibar(gnd),
+	.o(\SW[9]~input_o ));
+// synopsys translate_off
+defparam \SW[9]~input .bus_hold = "false";
+defparam \SW[9]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N10
+cycloneive_lcell_comb \B[9]~feeder (
+// Equation(s):
+// \B[9]~feeder_combout  = \SW[9]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[9]~input_o ),
+	.cin(gnd),
+	.combout(\B[9]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[9]~feeder .lut_mask = 16'hFF00;
+defparam \B[9]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N11
+dffeas \B[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[9]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[9] .is_wysiwyg = "true";
+defparam \B[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N24
+cycloneive_lcell_comb \A[9]~feeder (
+// Equation(s):
+// \A[9]~feeder_combout  = \SW[9]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[9]~input_o ),
+	.cin(gnd),
+	.combout(\A[9]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[9]~feeder .lut_mask = 16'hFF00;
+defparam \A[9]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N25
+dffeas \A[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[9]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[9] .is_wysiwyg = "true";
+defparam \A[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X29_Y73_N8
+cycloneive_io_ibuf \SW[8]~input (
+	.i(SW[8]),
+	.ibar(gnd),
+	.o(\SW[8]~input_o ));
+// synopsys translate_off
+defparam \SW[8]~input .bus_hold = "false";
+defparam \SW[8]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N7
+dffeas \A[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[8]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[8] .is_wysiwyg = "true";
+defparam \A[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N22
+cycloneive_lcell_comb \B[8]~feeder (
+// Equation(s):
+// \B[8]~feeder_combout  = \SW[8]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[8]~input_o ),
+	.cin(gnd),
+	.combout(\B[8]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \B[8]~feeder .lut_mask = 16'hFF00;
+defparam \B[8]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N23
+dffeas \B[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\B[8]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[8] .is_wysiwyg = "true";
+defparam \B[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X29_Y73_N1
+cycloneive_io_ibuf \SW[7]~input (
+	.i(SW[7]),
+	.ibar(gnd),
+	.o(\SW[7]~input_o ));
+// synopsys translate_off
+defparam \SW[7]~input .bus_hold = "false";
+defparam \SW[7]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LCCOMB_X34_Y69_N12
+cycloneive_lcell_comb \A[7]~feeder (
+// Equation(s):
+// \A[7]~feeder_combout  = \SW[7]~input_o 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\SW[7]~input_o ),
+	.cin(gnd),
+	.combout(\A[7]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \A[7]~feeder .lut_mask = 16'hFF00;
+defparam \A[7]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X34_Y69_N13
+dffeas \A[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\A[7]~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[7] .is_wysiwyg = "true";
+defparam \A[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N9
+dffeas \B[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[7]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[7] .is_wysiwyg = "true";
+defparam \B[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X27_Y73_N22
+cycloneive_io_ibuf \SW[6]~input (
+	.i(SW[6]),
+	.ibar(gnd),
+	.o(\SW[6]~input_o ));
+// synopsys translate_off
+defparam \SW[6]~input .bus_hold = "false";
+defparam \SW[6]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N21
+dffeas \A[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[6]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[6] .is_wysiwyg = "true";
+defparam \A[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N3
+dffeas \B[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[6]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[6] .is_wysiwyg = "true";
+defparam \B[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X35_Y73_N22
+cycloneive_io_ibuf \SW[5]~input (
+	.i(SW[5]),
+	.ibar(gnd),
+	.o(\SW[5]~input_o ));
+// synopsys translate_off
+defparam \SW[5]~input .bus_hold = "false";
+defparam \SW[5]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N23
+dffeas \A[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[5]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[5] .is_wysiwyg = "true";
+defparam \A[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N1
+dffeas \B[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[5]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[5] .is_wysiwyg = "true";
+defparam \B[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X31_Y73_N8
+cycloneive_io_ibuf \SW[4]~input (
+	.i(SW[4]),
+	.ibar(gnd),
+	.o(\SW[4]~input_o ));
+// synopsys translate_off
+defparam \SW[4]~input .bus_hold = "false";
+defparam \SW[4]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N31
+dffeas \A[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[4]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[4] .is_wysiwyg = "true";
+defparam \A[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N15
+dffeas \B[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[4]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[4] .is_wysiwyg = "true";
+defparam \B[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X27_Y73_N15
+cycloneive_io_ibuf \SW[3]~input (
+	.i(SW[3]),
+	.ibar(gnd),
+	.o(\SW[3]~input_o ));
+// synopsys translate_off
+defparam \SW[3]~input .bus_hold = "false";
+defparam \SW[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N5
+dffeas \B[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[3]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[3] .is_wysiwyg = "true";
+defparam \B[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N19
+dffeas \A[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[3]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[3] .is_wysiwyg = "true";
+defparam \A[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X38_Y73_N15
+cycloneive_io_ibuf \SW[2]~input (
+	.i(SW[2]),
+	.ibar(gnd),
+	.o(\SW[2]~input_o ));
+// synopsys translate_off
+defparam \SW[2]~input .bus_hold = "false";
+defparam \SW[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N11
+dffeas \B[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[2]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[2] .is_wysiwyg = "true";
+defparam \B[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N25
+dffeas \A[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[2]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[2] .is_wysiwyg = "true";
+defparam \A[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X35_Y73_N15
+cycloneive_io_ibuf \SW[1]~input (
+	.i(SW[1]),
+	.ibar(gnd),
+	.o(\SW[1]~input_o ));
+// synopsys translate_off
+defparam \SW[1]~input .bus_hold = "false";
+defparam \SW[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N27
+dffeas \B[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[1]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[1] .is_wysiwyg = "true";
+defparam \B[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N29
+dffeas \A[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[1]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[1] .is_wysiwyg = "true";
+defparam \A[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X31_Y73_N1
+cycloneive_io_ibuf \SW[0]~input (
+	.i(SW[0]),
+	.ibar(gnd),
+	.o(\SW[0]~input_o ));
+// synopsys translate_off
+defparam \SW[0]~input .bus_hold = "false";
+defparam \SW[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N13
+dffeas \B[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[0]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector4~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(B[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \B[0] .is_wysiwyg = "true";
+defparam \B[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X35_Y69_N17
+dffeas \A[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(gnd),
+	.asdata(\SW[0]~input_o ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(vcc),
+	.ena(\Selector3~0_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(A[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \A[0] .is_wysiwyg = "true";
+defparam \A[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N0
+cycloneive_lcell_comb \median_inst|div|current_A[1]~16 (
+// Equation(s):
+// \median_inst|div|current_A[1]~16_cout  = CARRY((B[0] & A[0]))
+
+	.dataa(B[0]),
+	.datab(A[0]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(),
+	.cout(\median_inst|div|current_A[1]~16_cout ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[1]~16 .lut_mask = 16'h0088;
+defparam \median_inst|div|current_A[1]~16 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N2
+cycloneive_lcell_comb \median_inst|div|current_A[1]~17 (
+// Equation(s):
+// \median_inst|div|current_A[1]~17_combout  = (B[1] & ((A[1] & (\median_inst|div|current_A[1]~16_cout  & VCC)) # (!A[1] & (!\median_inst|div|current_A[1]~16_cout )))) # (!B[1] & ((A[1] & (!\median_inst|div|current_A[1]~16_cout )) # (!A[1] & 
+// ((\median_inst|div|current_A[1]~16_cout ) # (GND)))))
+// \median_inst|div|current_A[1]~18  = CARRY((B[1] & (!A[1] & !\median_inst|div|current_A[1]~16_cout )) # (!B[1] & ((!\median_inst|div|current_A[1]~16_cout ) # (!A[1]))))
+
+	.dataa(B[1]),
+	.datab(A[1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[1]~16_cout ),
+	.combout(\median_inst|div|current_A[1]~17_combout ),
+	.cout(\median_inst|div|current_A[1]~18 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[1]~17 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[1]~17 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N4
+cycloneive_lcell_comb \median_inst|div|current_A[2]~19 (
+// Equation(s):
+// \median_inst|div|current_A[2]~19_combout  = ((B[2] $ (A[2] $ (!\median_inst|div|current_A[1]~18 )))) # (GND)
+// \median_inst|div|current_A[2]~20  = CARRY((B[2] & ((A[2]) # (!\median_inst|div|current_A[1]~18 ))) # (!B[2] & (A[2] & !\median_inst|div|current_A[1]~18 )))
+
+	.dataa(B[2]),
+	.datab(A[2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[1]~18 ),
+	.combout(\median_inst|div|current_A[2]~19_combout ),
+	.cout(\median_inst|div|current_A[2]~20 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[2]~19 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[2]~19 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N6
+cycloneive_lcell_comb \median_inst|div|current_A[3]~21 (
+// Equation(s):
+// \median_inst|div|current_A[3]~21_combout  = (B[3] & ((A[3] & (\median_inst|div|current_A[2]~20  & VCC)) # (!A[3] & (!\median_inst|div|current_A[2]~20 )))) # (!B[3] & ((A[3] & (!\median_inst|div|current_A[2]~20 )) # (!A[3] & 
+// ((\median_inst|div|current_A[2]~20 ) # (GND)))))
+// \median_inst|div|current_A[3]~22  = CARRY((B[3] & (!A[3] & !\median_inst|div|current_A[2]~20 )) # (!B[3] & ((!\median_inst|div|current_A[2]~20 ) # (!A[3]))))
+
+	.dataa(B[3]),
+	.datab(A[3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[2]~20 ),
+	.combout(\median_inst|div|current_A[3]~21_combout ),
+	.cout(\median_inst|div|current_A[3]~22 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[3]~21 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[3]~21 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N8
+cycloneive_lcell_comb \median_inst|div|current_A[4]~23 (
+// Equation(s):
+// \median_inst|div|current_A[4]~23_combout  = ((A[4] $ (B[4] $ (!\median_inst|div|current_A[3]~22 )))) # (GND)
+// \median_inst|div|current_A[4]~24  = CARRY((A[4] & ((B[4]) # (!\median_inst|div|current_A[3]~22 ))) # (!A[4] & (B[4] & !\median_inst|div|current_A[3]~22 )))
+
+	.dataa(A[4]),
+	.datab(B[4]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[3]~22 ),
+	.combout(\median_inst|div|current_A[4]~23_combout ),
+	.cout(\median_inst|div|current_A[4]~24 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[4]~23 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[4]~23 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N10
+cycloneive_lcell_comb \median_inst|div|current_A[5]~25 (
+// Equation(s):
+// \median_inst|div|current_A[5]~25_combout  = (A[5] & ((B[5] & (\median_inst|div|current_A[4]~24  & VCC)) # (!B[5] & (!\median_inst|div|current_A[4]~24 )))) # (!A[5] & ((B[5] & (!\median_inst|div|current_A[4]~24 )) # (!B[5] & 
+// ((\median_inst|div|current_A[4]~24 ) # (GND)))))
+// \median_inst|div|current_A[5]~26  = CARRY((A[5] & (!B[5] & !\median_inst|div|current_A[4]~24 )) # (!A[5] & ((!\median_inst|div|current_A[4]~24 ) # (!B[5]))))
+
+	.dataa(A[5]),
+	.datab(B[5]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[4]~24 ),
+	.combout(\median_inst|div|current_A[5]~25_combout ),
+	.cout(\median_inst|div|current_A[5]~26 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[5]~25 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[5]~25 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N12
+cycloneive_lcell_comb \median_inst|div|current_A[6]~27 (
+// Equation(s):
+// \median_inst|div|current_A[6]~27_combout  = ((A[6] $ (B[6] $ (!\median_inst|div|current_A[5]~26 )))) # (GND)
+// \median_inst|div|current_A[6]~28  = CARRY((A[6] & ((B[6]) # (!\median_inst|div|current_A[5]~26 ))) # (!A[6] & (B[6] & !\median_inst|div|current_A[5]~26 )))
+
+	.dataa(A[6]),
+	.datab(B[6]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[5]~26 ),
+	.combout(\median_inst|div|current_A[6]~27_combout ),
+	.cout(\median_inst|div|current_A[6]~28 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[6]~27 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[6]~27 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N14
+cycloneive_lcell_comb \median_inst|div|current_A[7]~29 (
+// Equation(s):
+// \median_inst|div|current_A[7]~29_combout  = (A[7] & ((B[7] & (\median_inst|div|current_A[6]~28  & VCC)) # (!B[7] & (!\median_inst|div|current_A[6]~28 )))) # (!A[7] & ((B[7] & (!\median_inst|div|current_A[6]~28 )) # (!B[7] & 
+// ((\median_inst|div|current_A[6]~28 ) # (GND)))))
+// \median_inst|div|current_A[7]~30  = CARRY((A[7] & (!B[7] & !\median_inst|div|current_A[6]~28 )) # (!A[7] & ((!\median_inst|div|current_A[6]~28 ) # (!B[7]))))
+
+	.dataa(A[7]),
+	.datab(B[7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[6]~28 ),
+	.combout(\median_inst|div|current_A[7]~29_combout ),
+	.cout(\median_inst|div|current_A[7]~30 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[7]~29 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[7]~29 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N16
+cycloneive_lcell_comb \median_inst|div|current_A[8]~31 (
+// Equation(s):
+// \median_inst|div|current_A[8]~31_combout  = ((A[8] $ (B[8] $ (!\median_inst|div|current_A[7]~30 )))) # (GND)
+// \median_inst|div|current_A[8]~32  = CARRY((A[8] & ((B[8]) # (!\median_inst|div|current_A[7]~30 ))) # (!A[8] & (B[8] & !\median_inst|div|current_A[7]~30 )))
+
+	.dataa(A[8]),
+	.datab(B[8]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[7]~30 ),
+	.combout(\median_inst|div|current_A[8]~31_combout ),
+	.cout(\median_inst|div|current_A[8]~32 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[8]~31 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[8]~31 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N18
+cycloneive_lcell_comb \median_inst|div|current_A[9]~33 (
+// Equation(s):
+// \median_inst|div|current_A[9]~33_combout  = (B[9] & ((A[9] & (\median_inst|div|current_A[8]~32  & VCC)) # (!A[9] & (!\median_inst|div|current_A[8]~32 )))) # (!B[9] & ((A[9] & (!\median_inst|div|current_A[8]~32 )) # (!A[9] & 
+// ((\median_inst|div|current_A[8]~32 ) # (GND)))))
+// \median_inst|div|current_A[9]~34  = CARRY((B[9] & (!A[9] & !\median_inst|div|current_A[8]~32 )) # (!B[9] & ((!\median_inst|div|current_A[8]~32 ) # (!A[9]))))
+
+	.dataa(B[9]),
+	.datab(A[9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[8]~32 ),
+	.combout(\median_inst|div|current_A[9]~33_combout ),
+	.cout(\median_inst|div|current_A[9]~34 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[9]~33 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[9]~33 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N20
+cycloneive_lcell_comb \median_inst|div|current_A[10]~35 (
+// Equation(s):
+// \median_inst|div|current_A[10]~35_combout  = ((B[10] $ (A[10] $ (!\median_inst|div|current_A[9]~34 )))) # (GND)
+// \median_inst|div|current_A[10]~36  = CARRY((B[10] & ((A[10]) # (!\median_inst|div|current_A[9]~34 ))) # (!B[10] & (A[10] & !\median_inst|div|current_A[9]~34 )))
+
+	.dataa(B[10]),
+	.datab(A[10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[9]~34 ),
+	.combout(\median_inst|div|current_A[10]~35_combout ),
+	.cout(\median_inst|div|current_A[10]~36 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[10]~35 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[10]~35 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N22
+cycloneive_lcell_comb \median_inst|div|current_A[11]~37 (
+// Equation(s):
+// \median_inst|div|current_A[11]~37_combout  = (B[11] & ((A[11] & (\median_inst|div|current_A[10]~36  & VCC)) # (!A[11] & (!\median_inst|div|current_A[10]~36 )))) # (!B[11] & ((A[11] & (!\median_inst|div|current_A[10]~36 )) # (!A[11] & 
+// ((\median_inst|div|current_A[10]~36 ) # (GND)))))
+// \median_inst|div|current_A[11]~38  = CARRY((B[11] & (!A[11] & !\median_inst|div|current_A[10]~36 )) # (!B[11] & ((!\median_inst|div|current_A[10]~36 ) # (!A[11]))))
+
+	.dataa(B[11]),
+	.datab(A[11]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[10]~36 ),
+	.combout(\median_inst|div|current_A[11]~37_combout ),
+	.cout(\median_inst|div|current_A[11]~38 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[11]~37 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[11]~37 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N24
+cycloneive_lcell_comb \median_inst|div|current_A[12]~39 (
+// Equation(s):
+// \median_inst|div|current_A[12]~39_combout  = ((A[12] $ (B[12] $ (!\median_inst|div|current_A[11]~38 )))) # (GND)
+// \median_inst|div|current_A[12]~40  = CARRY((A[12] & ((B[12]) # (!\median_inst|div|current_A[11]~38 ))) # (!A[12] & (B[12] & !\median_inst|div|current_A[11]~38 )))
+
+	.dataa(A[12]),
+	.datab(B[12]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[11]~38 ),
+	.combout(\median_inst|div|current_A[12]~39_combout ),
+	.cout(\median_inst|div|current_A[12]~40 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[12]~39 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[12]~39 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N26
+cycloneive_lcell_comb \median_inst|div|current_A[13]~41 (
+// Equation(s):
+// \median_inst|div|current_A[13]~41_combout  = (A[13] & ((B[13] & (\median_inst|div|current_A[12]~40  & VCC)) # (!B[13] & (!\median_inst|div|current_A[12]~40 )))) # (!A[13] & ((B[13] & (!\median_inst|div|current_A[12]~40 )) # (!B[13] & 
+// ((\median_inst|div|current_A[12]~40 ) # (GND)))))
+// \median_inst|div|current_A[13]~42  = CARRY((A[13] & (!B[13] & !\median_inst|div|current_A[12]~40 )) # (!A[13] & ((!\median_inst|div|current_A[12]~40 ) # (!B[13]))))
+
+	.dataa(A[13]),
+	.datab(B[13]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[12]~40 ),
+	.combout(\median_inst|div|current_A[13]~41_combout ),
+	.cout(\median_inst|div|current_A[13]~42 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[13]~41 .lut_mask = 16'h9617;
+defparam \median_inst|div|current_A[13]~41 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N28
+cycloneive_lcell_comb \median_inst|div|current_A[14]~43 (
+// Equation(s):
+// \median_inst|div|current_A[14]~43_combout  = ((A[14] $ (B[14] $ (!\median_inst|div|current_A[13]~42 )))) # (GND)
+// \median_inst|div|current_A[14]~44  = CARRY((A[14] & ((B[14]) # (!\median_inst|div|current_A[13]~42 ))) # (!A[14] & (B[14] & !\median_inst|div|current_A[13]~42 )))
+
+	.dataa(A[14]),
+	.datab(B[14]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|current_A[13]~42 ),
+	.combout(\median_inst|div|current_A[14]~43_combout ),
+	.cout(\median_inst|div|current_A[14]~44 ));
+// synopsys translate_off
+defparam \median_inst|div|current_A[14]~43 .lut_mask = 16'h698E;
+defparam \median_inst|div|current_A[14]~43 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X35_Y69_N30
+cycloneive_lcell_comb \median_inst|div|current_A[15]~45 (
+// Equation(s):
+// \median_inst|div|current_A[15]~45_combout  = B[15] $ (\median_inst|div|current_A[14]~44  $ (A[15]))
+
+	.dataa(B[15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(A[15]),
+	.cin(\median_inst|div|current_A[14]~44 ),
+	.combout(\median_inst|div|current_A[15]~45_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[15]~45 .lut_mask = 16'hA55A;
+defparam \median_inst|div|current_A[15]~45 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N6
+cycloneive_lcell_comb \median_inst|div|current_A[15]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[15]~feeder_combout  = \median_inst|div|current_A[15]~45_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[15]~45_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[15]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[15]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[15]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N0
+cycloneive_lcell_comb \median_inst|div|current_A[14]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[14]~feeder_combout  = \median_inst|div|current_A[14]~43_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[14]~43_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[14]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[14]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[14]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N20
+cycloneive_lcell_comb \median_inst|div|current_A[13]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[13]~feeder_combout  = \median_inst|div|current_A[13]~41_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[13]~41_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[13]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[13]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[13]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N10
+cycloneive_lcell_comb \median_inst|div|current_A[12]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[12]~feeder_combout  = \median_inst|div|current_A[12]~39_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[12]~39_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[12]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[12]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[12]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N0
+cycloneive_lcell_comb \median_inst|div|current_A[11]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[11]~feeder_combout  = \median_inst|div|current_A[11]~37_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[11]~37_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[11]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[11]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[11]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N26
+cycloneive_lcell_comb \median_inst|div|current_A[10]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[10]~feeder_combout  = \median_inst|div|current_A[10]~35_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[10]~35_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[10]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[10]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[10]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N8
+cycloneive_lcell_comb \median_inst|div|current_A[9]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[9]~feeder_combout  = \median_inst|div|current_A[9]~33_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[9]~33_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[9]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[9]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[9]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N2
+cycloneive_lcell_comb \median_inst|div|current_A[8]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[8]~feeder_combout  = \median_inst|div|current_A[8]~31_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[8]~31_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[8]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[8]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[8]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N12
+cycloneive_lcell_comb \median_inst|div|current_A[7]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[7]~feeder_combout  = \median_inst|div|current_A[7]~29_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[7]~29_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[7]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[7]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[7]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N14
+cycloneive_lcell_comb \median_inst|div|current_A[6]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[6]~feeder_combout  = \median_inst|div|current_A[6]~27_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[6]~27_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[6]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[6]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[6]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N4
+cycloneive_lcell_comb \median_inst|div|current_A[5]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[5]~feeder_combout  = \median_inst|div|current_A[5]~25_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[5]~25_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[5]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[5]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[5]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N14
+cycloneive_lcell_comb \median_inst|div|current_A[4]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[4]~feeder_combout  = \median_inst|div|current_A[4]~23_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[4]~23_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[4]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[4]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[4]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N28
+cycloneive_lcell_comb \median_inst|div|current_A[3]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[3]~feeder_combout  = \median_inst|div|current_A[3]~21_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[3]~21_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[3]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[3]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[3]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N6
+cycloneive_lcell_comb \median_inst|div|current_A[2]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[2]~feeder_combout  = \median_inst|div|current_A[2]~19_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[2]~19_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[2]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[2]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[2]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N16
+cycloneive_lcell_comb \median_inst|div|current_A[1]~feeder (
+// Equation(s):
+// \median_inst|div|current_A[1]~feeder_combout  = \median_inst|div|current_A[1]~17_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A[1]~17_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[1]~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[1]~feeder .lut_mask = 16'hFF00;
+defparam \median_inst|div|current_A[1]~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N30
+cycloneive_lcell_comb \median_inst|div|current_A[1]~_wirecell (
+// Equation(s):
+// \median_inst|div|current_A[1]~_wirecell_combout  = !\median_inst|div|current_A [1]
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A [1]),
+	.cin(gnd),
+	.combout(\median_inst|div|current_A[1]~_wirecell_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|current_A[1]~_wirecell .lut_mask = 16'h00FF;
+defparam \median_inst|div|current_A[1]~_wirecell .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X38_Y69_N17
+dffeas \median_inst|div|current_A[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[1]~feeder_combout ),
+	.asdata(\median_inst|div|current_A[1]~_wirecell_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[1] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N2
+cycloneive_lcell_comb \median_inst|div|Add0~1 (
+// Equation(s):
+// \median_inst|div|Add0~1_cout  = CARRY(\median_inst|div|current_A [1])
+
+	.dataa(\median_inst|div|current_A [1]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(gnd),
+	.combout(),
+	.cout(\median_inst|div|Add0~1_cout ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~1 .lut_mask = 16'h00AA;
+defparam \median_inst|div|Add0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N4
+cycloneive_lcell_comb \median_inst|div|Add0~2 (
+// Equation(s):
+// \median_inst|div|Add0~2_combout  = (\median_inst|div|current_A [2] & (\median_inst|div|Add0~1_cout  & VCC)) # (!\median_inst|div|current_A [2] & (!\median_inst|div|Add0~1_cout ))
+// \median_inst|div|Add0~3  = CARRY((!\median_inst|div|current_A [2] & !\median_inst|div|Add0~1_cout ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~1_cout ),
+	.combout(\median_inst|div|Add0~2_combout ),
+	.cout(\median_inst|div|Add0~3 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~2 .lut_mask = 16'hC303;
+defparam \median_inst|div|Add0~2 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X38_Y69_N7
+dffeas \median_inst|div|current_A[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[2]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~2_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[2] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N6
+cycloneive_lcell_comb \median_inst|div|Add0~4 (
+// Equation(s):
+// \median_inst|div|Add0~4_combout  = (\median_inst|div|current_A [3] & ((GND) # (!\median_inst|div|Add0~3 ))) # (!\median_inst|div|current_A [3] & (\median_inst|div|Add0~3  $ (GND)))
+// \median_inst|div|Add0~5  = CARRY((\median_inst|div|current_A [3]) # (!\median_inst|div|Add0~3 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [3]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~3 ),
+	.combout(\median_inst|div|Add0~4_combout ),
+	.cout(\median_inst|div|Add0~5 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~4 .lut_mask = 16'h3CCF;
+defparam \median_inst|div|Add0~4 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X38_Y69_N29
+dffeas \median_inst|div|current_A[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[3]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~4_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[3] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N8
+cycloneive_lcell_comb \median_inst|div|Add0~6 (
+// Equation(s):
+// \median_inst|div|Add0~6_combout  = (\median_inst|div|current_A [4] & (\median_inst|div|Add0~5  & VCC)) # (!\median_inst|div|current_A [4] & (!\median_inst|div|Add0~5 ))
+// \median_inst|div|Add0~7  = CARRY((!\median_inst|div|current_A [4] & !\median_inst|div|Add0~5 ))
+
+	.dataa(\median_inst|div|current_A [4]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~5 ),
+	.combout(\median_inst|div|Add0~6_combout ),
+	.cout(\median_inst|div|Add0~7 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~6 .lut_mask = 16'hA505;
+defparam \median_inst|div|Add0~6 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X38_Y69_N15
+dffeas \median_inst|div|current_A[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[4]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~6_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[4] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N10
+cycloneive_lcell_comb \median_inst|div|Add0~8 (
+// Equation(s):
+// \median_inst|div|Add0~8_combout  = (\median_inst|div|current_A [5] & ((GND) # (!\median_inst|div|Add0~7 ))) # (!\median_inst|div|current_A [5] & (\median_inst|div|Add0~7  $ (GND)))
+// \median_inst|div|Add0~9  = CARRY((\median_inst|div|current_A [5]) # (!\median_inst|div|Add0~7 ))
+
+	.dataa(\median_inst|div|current_A [5]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~7 ),
+	.combout(\median_inst|div|Add0~8_combout ),
+	.cout(\median_inst|div|Add0~9 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~8 .lut_mask = 16'h5AAF;
+defparam \median_inst|div|Add0~8 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N5
+dffeas \median_inst|div|current_A[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[5]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~8_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[5] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N12
+cycloneive_lcell_comb \median_inst|div|Add0~10 (
+// Equation(s):
+// \median_inst|div|Add0~10_combout  = (\median_inst|div|current_A [6] & (\median_inst|div|Add0~9  & VCC)) # (!\median_inst|div|current_A [6] & (!\median_inst|div|Add0~9 ))
+// \median_inst|div|Add0~11  = CARRY((!\median_inst|div|current_A [6] & !\median_inst|div|Add0~9 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [6]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~9 ),
+	.combout(\median_inst|div|Add0~10_combout ),
+	.cout(\median_inst|div|Add0~11 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~10 .lut_mask = 16'hC303;
+defparam \median_inst|div|Add0~10 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N15
+dffeas \median_inst|div|current_A[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[6]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~10_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[6] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N14
+cycloneive_lcell_comb \median_inst|div|Add0~12 (
+// Equation(s):
+// \median_inst|div|Add0~12_combout  = (\median_inst|div|current_A [7] & ((GND) # (!\median_inst|div|Add0~11 ))) # (!\median_inst|div|current_A [7] & (\median_inst|div|Add0~11  $ (GND)))
+// \median_inst|div|Add0~13  = CARRY((\median_inst|div|current_A [7]) # (!\median_inst|div|Add0~11 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~11 ),
+	.combout(\median_inst|div|Add0~12_combout ),
+	.cout(\median_inst|div|Add0~13 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~12 .lut_mask = 16'h3CCF;
+defparam \median_inst|div|Add0~12 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N13
+dffeas \median_inst|div|current_A[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[7]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~12_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[7] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N16
+cycloneive_lcell_comb \median_inst|div|Add0~14 (
+// Equation(s):
+// \median_inst|div|Add0~14_combout  = (\median_inst|div|current_A [8] & (\median_inst|div|Add0~13  & VCC)) # (!\median_inst|div|current_A [8] & (!\median_inst|div|Add0~13 ))
+// \median_inst|div|Add0~15  = CARRY((!\median_inst|div|current_A [8] & !\median_inst|div|Add0~13 ))
+
+	.dataa(\median_inst|div|current_A [8]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~13 ),
+	.combout(\median_inst|div|Add0~14_combout ),
+	.cout(\median_inst|div|Add0~15 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~14 .lut_mask = 16'hA505;
+defparam \median_inst|div|Add0~14 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N3
+dffeas \median_inst|div|current_A[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[8]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~14_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[8] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N18
+cycloneive_lcell_comb \median_inst|div|Add0~16 (
+// Equation(s):
+// \median_inst|div|Add0~16_combout  = (\median_inst|div|current_A [9] & ((GND) # (!\median_inst|div|Add0~15 ))) # (!\median_inst|div|current_A [9] & (\median_inst|div|Add0~15  $ (GND)))
+// \median_inst|div|Add0~17  = CARRY((\median_inst|div|current_A [9]) # (!\median_inst|div|Add0~15 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~15 ),
+	.combout(\median_inst|div|Add0~16_combout ),
+	.cout(\median_inst|div|Add0~17 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~16 .lut_mask = 16'h3CCF;
+defparam \median_inst|div|Add0~16 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N9
+dffeas \median_inst|div|current_A[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[9]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~16_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[9] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N20
+cycloneive_lcell_comb \median_inst|div|Add0~18 (
+// Equation(s):
+// \median_inst|div|Add0~18_combout  = (\median_inst|div|current_A [10] & (\median_inst|div|Add0~17  & VCC)) # (!\median_inst|div|current_A [10] & (!\median_inst|div|Add0~17 ))
+// \median_inst|div|Add0~19  = CARRY((!\median_inst|div|current_A [10] & !\median_inst|div|Add0~17 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~17 ),
+	.combout(\median_inst|div|Add0~18_combout ),
+	.cout(\median_inst|div|Add0~19 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~18 .lut_mask = 16'hC303;
+defparam \median_inst|div|Add0~18 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N27
+dffeas \median_inst|div|current_A[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[10]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~18_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[10] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N22
+cycloneive_lcell_comb \median_inst|div|Add0~20 (
+// Equation(s):
+// \median_inst|div|Add0~20_combout  = (\median_inst|div|current_A [11] & ((GND) # (!\median_inst|div|Add0~19 ))) # (!\median_inst|div|current_A [11] & (\median_inst|div|Add0~19  $ (GND)))
+// \median_inst|div|Add0~21  = CARRY((\median_inst|div|current_A [11]) # (!\median_inst|div|Add0~19 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [11]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~19 ),
+	.combout(\median_inst|div|Add0~20_combout ),
+	.cout(\median_inst|div|Add0~21 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~20 .lut_mask = 16'h3CCF;
+defparam \median_inst|div|Add0~20 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N1
+dffeas \median_inst|div|current_A[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[11]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~20_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[11] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N24
+cycloneive_lcell_comb \median_inst|div|Add0~22 (
+// Equation(s):
+// \median_inst|div|Add0~22_combout  = (\median_inst|div|current_A [12] & (\median_inst|div|Add0~21  & VCC)) # (!\median_inst|div|current_A [12] & (!\median_inst|div|Add0~21 ))
+// \median_inst|div|Add0~23  = CARRY((!\median_inst|div|current_A [12] & !\median_inst|div|Add0~21 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [12]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~21 ),
+	.combout(\median_inst|div|Add0~22_combout ),
+	.cout(\median_inst|div|Add0~23 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~22 .lut_mask = 16'hC303;
+defparam \median_inst|div|Add0~22 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N11
+dffeas \median_inst|div|current_A[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[12]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~22_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[12] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N26
+cycloneive_lcell_comb \median_inst|div|Add0~24 (
+// Equation(s):
+// \median_inst|div|Add0~24_combout  = (\median_inst|div|current_A [13] & ((GND) # (!\median_inst|div|Add0~23 ))) # (!\median_inst|div|current_A [13] & (\median_inst|div|Add0~23  $ (GND)))
+// \median_inst|div|Add0~25  = CARRY((\median_inst|div|current_A [13]) # (!\median_inst|div|Add0~23 ))
+
+	.dataa(\median_inst|div|current_A [13]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~23 ),
+	.combout(\median_inst|div|Add0~24_combout ),
+	.cout(\median_inst|div|Add0~25 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~24 .lut_mask = 16'h5AAF;
+defparam \median_inst|div|Add0~24 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N21
+dffeas \median_inst|div|current_A[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[13]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~24_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[13] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N28
+cycloneive_lcell_comb \median_inst|div|Add0~26 (
+// Equation(s):
+// \median_inst|div|Add0~26_combout  = (\median_inst|div|current_A [14] & (\median_inst|div|Add0~25  & VCC)) # (!\median_inst|div|current_A [14] & (!\median_inst|div|Add0~25 ))
+// \median_inst|div|Add0~27  = CARRY((!\median_inst|div|current_A [14] & !\median_inst|div|Add0~25 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|current_A [14]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|Add0~25 ),
+	.combout(\median_inst|div|Add0~26_combout ),
+	.cout(\median_inst|div|Add0~27 ));
+// synopsys translate_off
+defparam \median_inst|div|Add0~26 .lut_mask = 16'hC303;
+defparam \median_inst|div|Add0~26 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X39_Y69_N1
+dffeas \median_inst|div|current_A[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[14]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~26_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[14] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X39_Y69_N30
+cycloneive_lcell_comb \median_inst|div|Add0~28 (
+// Equation(s):
+// \median_inst|div|Add0~28_combout  = \median_inst|div|Add0~27  $ (\median_inst|div|current_A [15])
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\median_inst|div|current_A [15]),
+	.cin(\median_inst|div|Add0~27 ),
+	.combout(\median_inst|div|Add0~28_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|Add0~28 .lut_mask = 16'h0FF0;
+defparam \median_inst|div|Add0~28 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N7
+dffeas \median_inst|div|current_A[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|current_A[15]~feeder_combout ),
+	.asdata(\median_inst|div|Add0~28_combout ),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(\median_inst|div|state~q ),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|current_A [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|current_A[15] .is_wysiwyg = "true";
+defparam \median_inst|div|current_A[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N30
+cycloneive_lcell_comb \median_inst|div|LessThan0~3 (
+// Equation(s):
+// \median_inst|div|LessThan0~3_combout  = (\median_inst|div|current_A [15]) # ((\median_inst|div|current_A [14]) # (\median_inst|div|current_A [13]))
+
+	.dataa(\median_inst|div|current_A [15]),
+	.datab(gnd),
+	.datac(\median_inst|div|current_A [14]),
+	.datad(\median_inst|div|current_A [13]),
+	.cin(gnd),
+	.combout(\median_inst|div|LessThan0~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|LessThan0~3 .lut_mask = 16'hFFFA;
+defparam \median_inst|div|LessThan0~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N18
+cycloneive_lcell_comb \median_inst|div|LessThan0~1 (
+// Equation(s):
+// \median_inst|div|LessThan0~1_combout  = (\median_inst|div|current_A [7]) # ((\median_inst|div|current_A [6]) # ((\median_inst|div|current_A [5]) # (\median_inst|div|current_A [8])))
+
+	.dataa(\median_inst|div|current_A [7]),
+	.datab(\median_inst|div|current_A [6]),
+	.datac(\median_inst|div|current_A [5]),
+	.datad(\median_inst|div|current_A [8]),
+	.cin(gnd),
+	.combout(\median_inst|div|LessThan0~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|LessThan0~1 .lut_mask = 16'hFFFE;
+defparam \median_inst|div|LessThan0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X38_Y69_N0
+cycloneive_lcell_comb \median_inst|div|LessThan0~0 (
+// Equation(s):
+// \median_inst|div|LessThan0~0_combout  = (\median_inst|div|current_A [2]) # ((\median_inst|div|current_A [1]) # ((\median_inst|div|current_A [4]) # (\median_inst|div|current_A [3])))
+
+	.dataa(\median_inst|div|current_A [2]),
+	.datab(\median_inst|div|current_A [1]),
+	.datac(\median_inst|div|current_A [4]),
+	.datad(\median_inst|div|current_A [3]),
+	.cin(gnd),
+	.combout(\median_inst|div|LessThan0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|LessThan0~0 .lut_mask = 16'hFFFE;
+defparam \median_inst|div|LessThan0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N16
+cycloneive_lcell_comb \median_inst|div|LessThan0~2 (
+// Equation(s):
+// \median_inst|div|LessThan0~2_combout  = (\median_inst|div|current_A [10]) # ((\median_inst|div|current_A [11]) # ((\median_inst|div|current_A [9]) # (\median_inst|div|current_A [12])))
+
+	.dataa(\median_inst|div|current_A [10]),
+	.datab(\median_inst|div|current_A [11]),
+	.datac(\median_inst|div|current_A [9]),
+	.datad(\median_inst|div|current_A [12]),
+	.cin(gnd),
+	.combout(\median_inst|div|LessThan0~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|LessThan0~2 .lut_mask = 16'hFFFE;
+defparam \median_inst|div|LessThan0~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N24
+cycloneive_lcell_comb \median_inst|div|LessThan0~4 (
+// Equation(s):
+// \median_inst|div|LessThan0~4_combout  = (\median_inst|div|LessThan0~3_combout ) # ((\median_inst|div|LessThan0~1_combout ) # ((\median_inst|div|LessThan0~0_combout ) # (\median_inst|div|LessThan0~2_combout )))
+
+	.dataa(\median_inst|div|LessThan0~3_combout ),
+	.datab(\median_inst|div|LessThan0~1_combout ),
+	.datac(\median_inst|div|LessThan0~0_combout ),
+	.datad(\median_inst|div|LessThan0~2_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|LessThan0~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|LessThan0~4 .lut_mask = 16'hFFFE;
+defparam \median_inst|div|LessThan0~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N28
+cycloneive_lcell_comb \median_inst|div|done~0 (
+// Equation(s):
+// \median_inst|div|done~0_combout  = (\median_inst|div|done~q ) # (!\median_inst|div|LessThan0~4_combout )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\median_inst|div|done~q ),
+	.datad(\median_inst|div|LessThan0~4_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|done~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|done~0 .lut_mask = 16'hF0FF;
+defparam \median_inst|div|done~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N29
+dffeas \median_inst|div|done (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|done~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|done~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|done .is_wysiwyg = "true";
+defparam \median_inst|div|done .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N8
+cycloneive_lcell_comb \Selector4~0 (
+// Equation(s):
+// \Selector4~0_combout  = (\KEY[0]~input_o  & ((\state.INPUT_B~q ) # ((!\median_inst|div|done~q  & \state.ACTIVE~q )))) # (!\KEY[0]~input_o  & (!\median_inst|div|done~q  & (\state.ACTIVE~q )))
+
+	.dataa(\KEY[0]~input_o ),
+	.datab(\median_inst|div|done~q ),
+	.datac(\state.ACTIVE~q ),
+	.datad(\state.INPUT_B~q ),
+	.cin(gnd),
+	.combout(\Selector4~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector4~0 .lut_mask = 16'hBA30;
+defparam \Selector4~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N9
+dffeas \state.ACTIVE (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector4~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.ACTIVE~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.ACTIVE .is_wysiwyg = "true";
+defparam \state.ACTIVE .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N20
+cycloneive_lcell_comb \Selector1~0 (
+// Equation(s):
+// \Selector1~0_combout  = (\state.ACTIVE~q  & (((!\median_inst|div|done~q )))) # (!\state.ACTIVE~q  & ((\KEY[0]~input_o ) # ((\state.IDLE~q ))))
+
+	.dataa(\KEY[0]~input_o ),
+	.datab(\state.ACTIVE~q ),
+	.datac(\state.IDLE~q ),
+	.datad(\median_inst|div|done~q ),
+	.cin(gnd),
+	.combout(\Selector1~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector1~0 .lut_mask = 16'h32FE;
+defparam \Selector1~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N21
+dffeas \state.IDLE (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector1~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.IDLE~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.IDLE .is_wysiwyg = "true";
+defparam \state.IDLE .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N26
+cycloneive_lcell_comb \state.INPUT_A~0 (
+// Equation(s):
+// \state.INPUT_A~0_combout  = !\state.IDLE~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\state.IDLE~q ),
+	.cin(gnd),
+	.combout(\state.INPUT_A~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \state.INPUT_A~0 .lut_mask = 16'h00FF;
+defparam \state.INPUT_A~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N27
+dffeas \state.INPUT_A (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\state.INPUT_A~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\KEY[0]~input_o ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\state.INPUT_A~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \state.INPUT_A .is_wysiwyg = "true";
+defparam \state.INPUT_A .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N18
+cycloneive_lcell_comb \Selector0~0 (
+// Equation(s):
+// \Selector0~0_combout  = (\state.ACTIVE~q  & !\median_inst|div|done~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\state.ACTIVE~q ),
+	.datad(\median_inst|div|done~q ),
+	.cin(gnd),
+	.combout(\Selector0~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector0~0 .lut_mask = 16'h00F0;
+defparam \Selector0~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N6
+cycloneive_lcell_comb \Selector0~1 (
+// Equation(s):
+// \Selector0~1_combout  = (\Selector0~0_combout ) # ((\start~q  & ((\state.INPUT_A~q ) # (\state.INPUT_B~q ))))
+
+	.dataa(\state.INPUT_A~q ),
+	.datab(\state.INPUT_B~q ),
+	.datac(\start~q ),
+	.datad(\Selector0~0_combout ),
+	.cin(gnd),
+	.combout(\Selector0~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \Selector0~1 .lut_mask = 16'hFFE0;
+defparam \Selector0~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N7
+dffeas start(
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\Selector0~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\start~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam start.is_wysiwyg = "true";
+defparam start.power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N22
+cycloneive_lcell_comb \median_inst|div|counter~18 (
+// Equation(s):
+// \median_inst|div|counter~18_combout  = (\median_inst|div|state~q  & ((\median_inst|div|LessThan0~4_combout ))) # (!\median_inst|div|state~q  & (\start~q ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|state~q ),
+	.datac(\start~q ),
+	.datad(\median_inst|div|LessThan0~4_combout ),
+	.cin(gnd),
+	.combout(\median_inst|div|counter~18_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|counter~18 .lut_mask = 16'hFC30;
+defparam \median_inst|div|counter~18 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: LCCOMB_X40_Y69_N28
+cycloneive_lcell_comb \median_inst|div|state~feeder (
+// Equation(s):
+// \median_inst|div|state~feeder_combout  = \median_inst|div|counter~18_combout 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\median_inst|div|counter~18_combout ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\median_inst|div|state~feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|state~feeder .lut_mask = 16'hF0F0;
+defparam \median_inst|div|state~feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X40_Y69_N29
+dffeas \median_inst|div|state (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|state~feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|state~q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|state .is_wysiwyg = "true";
+defparam \median_inst|div|state .power_up = "low";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N1
+dffeas \median_inst|div|counter[0] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[0]~16_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[0] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[0] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N2
+cycloneive_lcell_comb \median_inst|div|counter[1]~19 (
+// Equation(s):
+// \median_inst|div|counter[1]~19_combout  = (\median_inst|div|counter [1] & (!\median_inst|div|counter[0]~17 )) # (!\median_inst|div|counter [1] & ((\median_inst|div|counter[0]~17 ) # (GND)))
+// \median_inst|div|counter[1]~20  = CARRY((!\median_inst|div|counter[0]~17 ) # (!\median_inst|div|counter [1]))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [1]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[0]~17 ),
+	.combout(\median_inst|div|counter[1]~19_combout ),
+	.cout(\median_inst|div|counter[1]~20 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[1]~19 .lut_mask = 16'h3C3F;
+defparam \median_inst|div|counter[1]~19 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N3
+dffeas \median_inst|div|counter[1] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[1]~19_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[1] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[1] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N4
+cycloneive_lcell_comb \median_inst|div|counter[2]~21 (
+// Equation(s):
+// \median_inst|div|counter[2]~21_combout  = (\median_inst|div|counter [2] & (\median_inst|div|counter[1]~20  $ (GND))) # (!\median_inst|div|counter [2] & (!\median_inst|div|counter[1]~20  & VCC))
+// \median_inst|div|counter[2]~22  = CARRY((\median_inst|div|counter [2] & !\median_inst|div|counter[1]~20 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [2]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[1]~20 ),
+	.combout(\median_inst|div|counter[2]~21_combout ),
+	.cout(\median_inst|div|counter[2]~22 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[2]~21 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[2]~21 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N5
+dffeas \median_inst|div|counter[2] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[2]~21_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[2] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[2] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N6
+cycloneive_lcell_comb \median_inst|div|counter[3]~23 (
+// Equation(s):
+// \median_inst|div|counter[3]~23_combout  = (\median_inst|div|counter [3] & (!\median_inst|div|counter[2]~22 )) # (!\median_inst|div|counter [3] & ((\median_inst|div|counter[2]~22 ) # (GND)))
+// \median_inst|div|counter[3]~24  = CARRY((!\median_inst|div|counter[2]~22 ) # (!\median_inst|div|counter [3]))
+
+	.dataa(\median_inst|div|counter [3]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[2]~22 ),
+	.combout(\median_inst|div|counter[3]~23_combout ),
+	.cout(\median_inst|div|counter[3]~24 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[3]~23 .lut_mask = 16'h5A5F;
+defparam \median_inst|div|counter[3]~23 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N7
+dffeas \median_inst|div|counter[3] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[3]~23_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[3] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[3] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N8
+cycloneive_lcell_comb \median_inst|div|counter[4]~25 (
+// Equation(s):
+// \median_inst|div|counter[4]~25_combout  = (\median_inst|div|counter [4] & (\median_inst|div|counter[3]~24  $ (GND))) # (!\median_inst|div|counter [4] & (!\median_inst|div|counter[3]~24  & VCC))
+// \median_inst|div|counter[4]~26  = CARRY((\median_inst|div|counter [4] & !\median_inst|div|counter[3]~24 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [4]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[3]~24 ),
+	.combout(\median_inst|div|counter[4]~25_combout ),
+	.cout(\median_inst|div|counter[4]~26 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[4]~25 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[4]~25 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N9
+dffeas \median_inst|div|counter[4] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[4]~25_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [4]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[4] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[4] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N10
+cycloneive_lcell_comb \median_inst|div|counter[5]~27 (
+// Equation(s):
+// \median_inst|div|counter[5]~27_combout  = (\median_inst|div|counter [5] & (!\median_inst|div|counter[4]~26 )) # (!\median_inst|div|counter [5] & ((\median_inst|div|counter[4]~26 ) # (GND)))
+// \median_inst|div|counter[5]~28  = CARRY((!\median_inst|div|counter[4]~26 ) # (!\median_inst|div|counter [5]))
+
+	.dataa(\median_inst|div|counter [5]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[4]~26 ),
+	.combout(\median_inst|div|counter[5]~27_combout ),
+	.cout(\median_inst|div|counter[5]~28 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[5]~27 .lut_mask = 16'h5A5F;
+defparam \median_inst|div|counter[5]~27 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N11
+dffeas \median_inst|div|counter[5] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[5]~27_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [5]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[5] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[5] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N12
+cycloneive_lcell_comb \median_inst|div|counter[6]~29 (
+// Equation(s):
+// \median_inst|div|counter[6]~29_combout  = (\median_inst|div|counter [6] & (\median_inst|div|counter[5]~28  $ (GND))) # (!\median_inst|div|counter [6] & (!\median_inst|div|counter[5]~28  & VCC))
+// \median_inst|div|counter[6]~30  = CARRY((\median_inst|div|counter [6] & !\median_inst|div|counter[5]~28 ))
+
+	.dataa(\median_inst|div|counter [6]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[5]~28 ),
+	.combout(\median_inst|div|counter[6]~29_combout ),
+	.cout(\median_inst|div|counter[6]~30 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[6]~29 .lut_mask = 16'hA50A;
+defparam \median_inst|div|counter[6]~29 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N13
+dffeas \median_inst|div|counter[6] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[6]~29_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [6]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[6] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[6] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N14
+cycloneive_lcell_comb \median_inst|div|counter[7]~31 (
+// Equation(s):
+// \median_inst|div|counter[7]~31_combout  = (\median_inst|div|counter [7] & (!\median_inst|div|counter[6]~30 )) # (!\median_inst|div|counter [7] & ((\median_inst|div|counter[6]~30 ) # (GND)))
+// \median_inst|div|counter[7]~32  = CARRY((!\median_inst|div|counter[6]~30 ) # (!\median_inst|div|counter [7]))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [7]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[6]~30 ),
+	.combout(\median_inst|div|counter[7]~31_combout ),
+	.cout(\median_inst|div|counter[7]~32 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[7]~31 .lut_mask = 16'h3C3F;
+defparam \median_inst|div|counter[7]~31 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N15
+dffeas \median_inst|div|counter[7] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[7]~31_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [7]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[7] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[7] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N16
+cycloneive_lcell_comb \median_inst|div|counter[8]~33 (
+// Equation(s):
+// \median_inst|div|counter[8]~33_combout  = (\median_inst|div|counter [8] & (\median_inst|div|counter[7]~32  $ (GND))) # (!\median_inst|div|counter [8] & (!\median_inst|div|counter[7]~32  & VCC))
+// \median_inst|div|counter[8]~34  = CARRY((\median_inst|div|counter [8] & !\median_inst|div|counter[7]~32 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [8]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[7]~32 ),
+	.combout(\median_inst|div|counter[8]~33_combout ),
+	.cout(\median_inst|div|counter[8]~34 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[8]~33 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[8]~33 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N17
+dffeas \median_inst|div|counter[8] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[8]~33_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [8]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[8] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[8] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N18
+cycloneive_lcell_comb \median_inst|div|counter[9]~35 (
+// Equation(s):
+// \median_inst|div|counter[9]~35_combout  = (\median_inst|div|counter [9] & (!\median_inst|div|counter[8]~34 )) # (!\median_inst|div|counter [9] & ((\median_inst|div|counter[8]~34 ) # (GND)))
+// \median_inst|div|counter[9]~36  = CARRY((!\median_inst|div|counter[8]~34 ) # (!\median_inst|div|counter [9]))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [9]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[8]~34 ),
+	.combout(\median_inst|div|counter[9]~35_combout ),
+	.cout(\median_inst|div|counter[9]~36 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[9]~35 .lut_mask = 16'h3C3F;
+defparam \median_inst|div|counter[9]~35 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N19
+dffeas \median_inst|div|counter[9] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[9]~35_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [9]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[9] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[9] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N20
+cycloneive_lcell_comb \median_inst|div|counter[10]~37 (
+// Equation(s):
+// \median_inst|div|counter[10]~37_combout  = (\median_inst|div|counter [10] & (\median_inst|div|counter[9]~36  $ (GND))) # (!\median_inst|div|counter [10] & (!\median_inst|div|counter[9]~36  & VCC))
+// \median_inst|div|counter[10]~38  = CARRY((\median_inst|div|counter [10] & !\median_inst|div|counter[9]~36 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [10]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[9]~36 ),
+	.combout(\median_inst|div|counter[10]~37_combout ),
+	.cout(\median_inst|div|counter[10]~38 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[10]~37 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[10]~37 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N21
+dffeas \median_inst|div|counter[10] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[10]~37_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [10]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[10] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[10] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N22
+cycloneive_lcell_comb \median_inst|div|counter[11]~39 (
+// Equation(s):
+// \median_inst|div|counter[11]~39_combout  = (\median_inst|div|counter [11] & (!\median_inst|div|counter[10]~38 )) # (!\median_inst|div|counter [11] & ((\median_inst|div|counter[10]~38 ) # (GND)))
+// \median_inst|div|counter[11]~40  = CARRY((!\median_inst|div|counter[10]~38 ) # (!\median_inst|div|counter [11]))
+
+	.dataa(\median_inst|div|counter [11]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[10]~38 ),
+	.combout(\median_inst|div|counter[11]~39_combout ),
+	.cout(\median_inst|div|counter[11]~40 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[11]~39 .lut_mask = 16'h5A5F;
+defparam \median_inst|div|counter[11]~39 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N23
+dffeas \median_inst|div|counter[11] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[11]~39_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [11]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[11] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[11] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N24
+cycloneive_lcell_comb \median_inst|div|counter[12]~41 (
+// Equation(s):
+// \median_inst|div|counter[12]~41_combout  = (\median_inst|div|counter [12] & (\median_inst|div|counter[11]~40  $ (GND))) # (!\median_inst|div|counter [12] & (!\median_inst|div|counter[11]~40  & VCC))
+// \median_inst|div|counter[12]~42  = CARRY((\median_inst|div|counter [12] & !\median_inst|div|counter[11]~40 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [12]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[11]~40 ),
+	.combout(\median_inst|div|counter[12]~41_combout ),
+	.cout(\median_inst|div|counter[12]~42 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[12]~41 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[12]~41 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N25
+dffeas \median_inst|div|counter[12] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[12]~41_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [12]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[12] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[12] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N26
+cycloneive_lcell_comb \median_inst|div|counter[13]~43 (
+// Equation(s):
+// \median_inst|div|counter[13]~43_combout  = (\median_inst|div|counter [13] & (!\median_inst|div|counter[12]~42 )) # (!\median_inst|div|counter [13] & ((\median_inst|div|counter[12]~42 ) # (GND)))
+// \median_inst|div|counter[13]~44  = CARRY((!\median_inst|div|counter[12]~42 ) # (!\median_inst|div|counter [13]))
+
+	.dataa(\median_inst|div|counter [13]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[12]~42 ),
+	.combout(\median_inst|div|counter[13]~43_combout ),
+	.cout(\median_inst|div|counter[13]~44 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[13]~43 .lut_mask = 16'h5A5F;
+defparam \median_inst|div|counter[13]~43 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N27
+dffeas \median_inst|div|counter[13] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[13]~43_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [13]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[13] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[13] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N28
+cycloneive_lcell_comb \median_inst|div|counter[14]~45 (
+// Equation(s):
+// \median_inst|div|counter[14]~45_combout  = (\median_inst|div|counter [14] & (\median_inst|div|counter[13]~44  $ (GND))) # (!\median_inst|div|counter [14] & (!\median_inst|div|counter[13]~44  & VCC))
+// \median_inst|div|counter[14]~46  = CARRY((\median_inst|div|counter [14] & !\median_inst|div|counter[13]~44 ))
+
+	.dataa(gnd),
+	.datab(\median_inst|div|counter [14]),
+	.datac(gnd),
+	.datad(vcc),
+	.cin(\median_inst|div|counter[13]~44 ),
+	.combout(\median_inst|div|counter[14]~45_combout ),
+	.cout(\median_inst|div|counter[14]~46 ));
+// synopsys translate_off
+defparam \median_inst|div|counter[14]~45 .lut_mask = 16'hC30C;
+defparam \median_inst|div|counter[14]~45 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N29
+dffeas \median_inst|div|counter[14] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[14]~45_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [14]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[14] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[14] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X41_Y69_N30
+cycloneive_lcell_comb \median_inst|div|counter[15]~47 (
+// Equation(s):
+// \median_inst|div|counter[15]~47_combout  = \median_inst|div|counter [15] $ (\median_inst|div|counter[14]~46 )
+
+	.dataa(\median_inst|div|counter [15]),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.cin(\median_inst|div|counter[14]~46 ),
+	.combout(\median_inst|div|counter[15]~47_combout ),
+	.cout());
+// synopsys translate_off
+defparam \median_inst|div|counter[15]~47 .lut_mask = 16'h5A5A;
+defparam \median_inst|div|counter[15]~47 .sum_lutc_input = "cin";
+// synopsys translate_on
+
+// Location: FF_X41_Y69_N31
+dffeas \median_inst|div|counter[15] (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\median_inst|div|counter[15]~47_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\median_inst|div|state~q ),
+	.sload(gnd),
+	.ena(\median_inst|div|counter~18_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\median_inst|div|counter [15]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \median_inst|div|counter[15] .is_wysiwyg = "true";
+defparam \median_inst|div|counter[15] .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N22
+cycloneive_lcell_comb \HEX~0 (
+// Equation(s):
+// \HEX~0_combout  = (\state.INPUT_B~q ) # (!\state.IDLE~q )
+
+	.dataa(gnd),
+	.datab(\state.IDLE~q ),
+	.datac(gnd),
+	.datad(\state.INPUT_B~q ),
+	.cin(gnd),
+	.combout(\HEX~0_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX~0 .lut_mask = 16'hFF33;
+defparam \HEX~0 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N23
+dffeas \HEX[0]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[0]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[0]~reg0 .is_wysiwyg = "true";
+defparam \HEX[0]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N24
+cycloneive_lcell_comb \HEX[1]~reg0feeder (
+// Equation(s):
+// \HEX[1]~reg0feeder_combout  = \state.INPUT_B~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\state.INPUT_B~q ),
+	.cin(gnd),
+	.combout(\HEX[1]~reg0feeder_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX[1]~reg0feeder .lut_mask = 16'hFF00;
+defparam \HEX[1]~reg0feeder .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N25
+dffeas \HEX[1]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX[1]~reg0feeder_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[1]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[1]~reg0 .is_wysiwyg = "true";
+defparam \HEX[1]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N10
+cycloneive_lcell_comb \HEX~1 (
+// Equation(s):
+// \HEX~1_combout  = (\state.INPUT_A~q ) # (!\state.IDLE~q )
+
+	.dataa(gnd),
+	.datab(\state.IDLE~q ),
+	.datac(\state.INPUT_A~q ),
+	.datad(gnd),
+	.cin(gnd),
+	.combout(\HEX~1_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX~1 .lut_mask = 16'hF3F3;
+defparam \HEX~1 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N11
+dffeas \HEX[3]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[3]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[3]~reg0 .is_wysiwyg = "true";
+defparam \HEX[3]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N4
+cycloneive_lcell_comb \HEX[4]~3 (
+// Equation(s):
+// \HEX[4]~3_combout  = !\state.IDLE~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\state.IDLE~q ),
+	.cin(gnd),
+	.combout(\HEX[4]~3_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX[4]~3 .lut_mask = 16'h00FF;
+defparam \HEX[4]~3 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N5
+dffeas \HEX[4]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX[4]~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[4]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[4]~reg0 .is_wysiwyg = "true";
+defparam \HEX[4]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N14
+cycloneive_lcell_comb \HEX[5]~4 (
+// Equation(s):
+// \HEX[5]~4_combout  = !\state.IDLE~q 
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(\state.IDLE~q ),
+	.cin(gnd),
+	.combout(\HEX[5]~4_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX[5]~4 .lut_mask = 16'h00FF;
+defparam \HEX[5]~4 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N15
+dffeas \HEX[5]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX[5]~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[5]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[5]~reg0 .is_wysiwyg = "true";
+defparam \HEX[5]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: LCCOMB_X32_Y69_N12
+cycloneive_lcell_comb \HEX~2 (
+// Equation(s):
+// \HEX~2_combout  = (\state.ACTIVE~q ) # (!\state.IDLE~q )
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(\state.ACTIVE~q ),
+	.datad(\state.IDLE~q ),
+	.cin(gnd),
+	.combout(\HEX~2_combout ),
+	.cout());
+// synopsys translate_off
+defparam \HEX~2 .lut_mask = 16'hF0FF;
+defparam \HEX~2 .sum_lutc_input = "datac";
+// synopsys translate_on
+
+// Location: FF_X32_Y69_N13
+dffeas \HEX[6]~reg0 (
+	.clk(\clk~inputclkctrl_outclk ),
+	.d(\HEX~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\HEX[6]~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \HEX[6]~reg0 .is_wysiwyg = "true";
+defparam \HEX[6]~reg0 .power_up = "low";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y45_N22
+cycloneive_io_ibuf \KEY[1]~input (
+	.i(KEY[1]),
+	.ibar(gnd),
+	.o(\KEY[1]~input_o ));
+// synopsys translate_off
+defparam \KEY[1]~input .bus_hold = "false";
+defparam \KEY[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X85_Y0_N1
+cycloneive_io_ibuf \KEY[2]~input (
+	.i(KEY[2]),
+	.ibar(gnd),
+	.o(\KEY[2]~input_o ));
+// synopsys translate_off
+defparam \KEY[2]~input .bus_hold = "false";
+defparam \KEY[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X74_Y73_N15
+cycloneive_io_ibuf \KEY[3]~input (
+	.i(KEY[3]),
+	.ibar(gnd),
+	.o(\KEY[3]~input_o ));
+// synopsys translate_off
+defparam \KEY[3]~input .bus_hold = "false";
+defparam \KEY[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign LEDR[0] = \LEDR[0]~output_o ;
+
+assign LEDR[1] = \LEDR[1]~output_o ;
+
+assign LEDR[2] = \LEDR[2]~output_o ;
+
+assign LEDR[3] = \LEDR[3]~output_o ;
+
+assign LEDR[4] = \LEDR[4]~output_o ;
+
+assign LEDR[5] = \LEDR[5]~output_o ;
+
+assign LEDR[6] = \LEDR[6]~output_o ;
+
+assign LEDR[7] = \LEDR[7]~output_o ;
+
+assign LEDR[8] = \LEDR[8]~output_o ;
+
+assign LEDR[9] = \LEDR[9]~output_o ;
+
+assign LEDR[10] = \LEDR[10]~output_o ;
+
+assign LEDR[11] = \LEDR[11]~output_o ;
+
+assign LEDR[12] = \LEDR[12]~output_o ;
+
+assign LEDR[13] = \LEDR[13]~output_o ;
+
+assign LEDR[14] = \LEDR[14]~output_o ;
+
+assign LEDR[15] = \LEDR[15]~output_o ;
+
+assign LEDG = \LEDG~output_o ;
+
+assign HEX[0] = \HEX[0]~output_o ;
+
+assign HEX[1] = \HEX[1]~output_o ;
+
+assign HEX[2] = \HEX[2]~output_o ;
+
+assign HEX[3] = \HEX[3]~output_o ;
+
+assign HEX[4] = \HEX[4]~output_o ;
+
+assign HEX[5] = \HEX[5]~output_o ;
+
+assign HEX[6] = \HEX[6]~output_o ;
+
+endmodule
+
+module hard_block (
+
+	devpor,
+	devclrn,
+	devoe);
+
+// Design Ports Information
+// ~ALTERA_ASDO_DATA1~	=>  Location: PIN_F4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_FLASH_nCE_nCSO~	=>  Location: PIN_E2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DCLK~	=>  Location: PIN_P3,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_DATA0~	=>  Location: PIN_N7,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ~ALTERA_nCEO~	=>  Location: PIN_P28,	 I/O Standard: 2.5 V,	 Current Strength: 8mA
+
+input 	devpor;
+input 	devclrn;
+input 	devoe;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+wire \~ALTERA_ASDO_DATA1~~padout ;
+wire \~ALTERA_FLASH_nCE_nCSO~~padout ;
+wire \~ALTERA_DATA0~~padout ;
+wire \~ALTERA_ASDO_DATA1~~ibuf_o ;
+wire \~ALTERA_FLASH_nCE_nCSO~~ibuf_o ;
+wire \~ALTERA_DATA0~~ibuf_o ;
+
+
+endmodule

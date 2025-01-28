@@ -1,0 +1,7 @@
+
+State Machine - |altera_fronted|state
+Name state.ACTIVE state.INPUT_B state.INPUT_A state.IDLE 
+state.IDLE 0 0 0 0 
+state.INPUT_A 0 0 1 1 
+state.INPUT_B 0 1 0 1 
+state.ACTIVE 1 0 0 1 

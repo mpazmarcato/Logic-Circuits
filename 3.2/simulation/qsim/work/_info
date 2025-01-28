@@ -1,0 +1,342 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leema/codeclusterfuck/Logic-Circuits/3.2/simulation/qsim
+Ealtera_fronted
+Z1 w1738022225
+Z2 DPx10 cycloneive 20 cycloneive_atom_pack 0 22 WOh:M[al;oVzG5c`<He>D0
+Z3 DPx10 cycloneive 21 cycloneive_components 0 22 zGMDhP>8e@2k@f0e<PY]k2
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx6 altera 11 dffeas_pack 0 22 dc5N=DKXMMTVYdUQ@D3FA2
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z9 DPx6 altera 28 altera_primitives_components 0 22 ca:ehlQAg4;_gVV:^8MAg3
+!i122 12
+R0
+Z10 8div.vho
+Z11 Fdiv.vho
+l0
+Z12 L80 1
+VhMIzi^<1HUA?i]n8I7z^`3
+!s100 5[LMNRViVTg7[zaH;N?E83
+Z13 OV;C;2020.1;71
+32
+Z14 !s110 1738022226
+!i10b 1
+Z15 !s108 1738022226.000000
+Z16 !s90 -work|work|div.vho|
+Z17 !s107 div.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 14 altera_fronted 0 22 hMIzi^<1HUA?i]n8I7z^`3
+!i122 12
+l367
+L139 3609
+V;9H]VGeS<aj]:lbNT6LZ91
+!s100 2XL<b@E3mh^Ffi^JF=@Ri0
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Ealtera_fronted_vhd_vec_tst
+R1
+R7
+R8
+!i122 13
+R0
+Z20 8Waveform2.vwf.vht
+Z21 FWaveform2.vwf.vht
+l0
+Z22 L32 1
+VWjSDgkR8PKLK2SOLLDnRo0
+!s100 3UeB43R3e0kflb2bn9DzI1
+R13
+32
+R14
+!i10b 1
+R15
+Z23 !s90 -work|work|Waveform2.vwf.vht|
+!s107 Waveform2.vwf.vht|
+!i113 1
+R18
+R19
+Aaltera_fronted_arch
+R7
+R8
+DEx4 work 26 altera_fronted_vhd_vec_tst 0 22 WjSDgkR8PKLK2SOLLDnRo0
+!i122 13
+l53
+L34 187
+VgIZPU3gDRLzO3Dk7k3KZz3
+!s100 O?F5BXI52>6U^3I5`0B`n2
+R13
+32
+R14
+!i10b 1
+R15
+R23
+Z24 !s107 Waveform2.vwf.vht|
+!i113 1
+R18
+R19
+Ediv
+Z25 w1738017869
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+!i122 8
+R0
+R10
+R11
+l0
+R12
+V=>2]5NIFZJCC803dfYHO?3
+!s100 MU=<13V4I=`jefUV<zYZg2
+R13
+32
+Z26 !s110 1738017869
+!i10b 1
+Z27 !s108 1738017869.000000
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 3 div 0 22 =>2]5NIFZJCC803dfYHO?3
+!i122 8
+l324
+L145 2522
+V`^]AR6IDO9>2>6HFH04hQ3
+!s100 LZ^<oh6AhFbZmQ;KE:ZSz1
+R13
+32
+R26
+!i10b 1
+R27
+R16
+R17
+!i113 1
+R18
+R19
+Ediv_vhd_vec_tst
+Z28 w1738017868
+R7
+R8
+!i122 9
+R0
+Z29 8Waveform.vwf.vht
+Z30 FWaveform.vwf.vht
+l0
+R22
+VF^0mO>X`;`LUJGB_nWMeo2
+!s100 >`P97]9fbK7NzLW@IzPhG0
+R13
+32
+R26
+!i10b 1
+R27
+Z31 !s90 -work|work|Waveform.vwf.vht|
+Z32 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Adiv_arch
+R7
+R8
+DEx4 work 15 div_vhd_vec_tst 0 22 F^0mO>X`;`LUJGB_nWMeo2
+!i122 9
+l53
+L34 246
+VH]lPX[;ZO@ZY5mm;9g=TK2
+!s100 <8551adRCM<UANEIi80o53
+R13
+32
+R26
+!i10b 1
+R27
+R31
+R32
+!i113 1
+R18
+R19
+Ehard_block
+R1
+R4
+R2
+R6
+R7
+R8
+R3
+!i122 12
+R0
+R10
+R11
+l0
+L35 1
+VB]0;STalBkCB1_B4BXQDW2
+!s100 >mXi5[`cD`bFC`UBKA<om3
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R4
+R2
+R6
+R7
+R8
+R3
+DEx4 work 10 hard_block 0 22 B]0;STalBkCB1_B4BXQDW2
+!i122 12
+l65
+L51 20
+Via>5o7W??azG@W@@eFOTF0
+!s100 [5;Wd8QGQ>@2NGoJ1I]Y43
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Emedian
+Z33 w1738019172
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+!i122 10
+R0
+R10
+R11
+l0
+R12
+V30E9JdODDO]LoSbA[?2E;0
+!s100 nPLO]Pflc927TUVk5Tk9Z3
+R13
+32
+Z34 !s110 1738019172
+!i10b 1
+Z35 !s108 1738019172.000000
+R16
+R17
+!i113 1
+R18
+R19
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+DEx4 work 6 median 0 22 30E9JdODDO]LoSbA[?2E;0
+!i122 10
+l339
+L145 2571
+V7nQN2FCdz=IV]LB^Q;GiY0
+!s100 B6k3D`nW:odWQmW^X3Lic1
+R13
+32
+R34
+!i10b 1
+R35
+R16
+R17
+!i113 1
+R18
+R19
+Emedian_vhd_vec_tst
+Z36 w1738019171
+R7
+R8
+!i122 11
+R0
+Z37 8Waveform1.vwf.vht
+Z38 FWaveform1.vwf.vht
+l0
+R22
+V4E4?WNW4Wzl`7YXc2W=DT2
+!s100 ehHW=B8:GF?6Dz>5BzfoN2
+R13
+32
+R34
+!i10b 1
+R35
+Z39 !s90 -work|work|Waveform1.vwf.vht|
+Z40 !s107 Waveform1.vwf.vht|
+!i113 1
+R18
+R19
+Amedian_arch
+R7
+R8
+DEx4 work 18 median_vhd_vec_tst 0 22 4E4?WNW4Wzl`7YXc2W=DT2
+!i122 11
+l53
+L34 242
+VnV5R>C^dIRD68PETOgH`S1
+!s100 <EQC;5]hOofkfI^jag@n60
+R13
+32
+R34
+!i10b 1
+R35
+R39
+R40
+!i113 1
+R18
+R19
