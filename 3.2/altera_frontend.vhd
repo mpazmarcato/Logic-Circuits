@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity altera_fronted is
+entity altera_frontend is
     Port (
         clk  : in STD_LOGIC;
         SW   : in STD_LOGIC_VECTOR(15 downto 0);
@@ -11,9 +11,9 @@ entity altera_fronted is
         LEDG : out STD_LOGIC;
         HEX  : out STD_LOGIC_VECTOR(6 downto 0)
     );
-end entity altera_fronted;
+end entity altera_frontend;
 
-architecture Behavioral of altera_fronted is
+architecture Behavioral of altera_frontend is
     type state_type is (IDLE, INPUT_A, INPUT_B, ACTIVE);
     signal state  : state_type := IDLE;
     signal A      : STD_LOGIC_VECTOR(15 downto 0);

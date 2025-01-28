@@ -1,4 +1,4 @@
-|altera_fronted
+|altera_frontend
 clk => median:median_inst.clk
 clk => B[0].CLK
 clk => B[1].CLK
@@ -141,7 +141,7 @@ HEX[5] <= HEX[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 HEX[6] <= HEX[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|altera_fronted|median:median_inst
+|altera_frontend|median:median_inst
 clk => div:div.clk
 start => div:div.start
 A[0] => Add0.IN16
@@ -195,7 +195,7 @@ count[15] <= div:div.count[15]
 done <= div:div.done
 
 
-|altera_fronted|median:median_inst|div:div
+|altera_frontend|median:median_inst|div:div
 clk => state.CLK
 clk => counter[0].CLK
 clk => counter[1].CLK

@@ -1,5 +1,5 @@
 
-State Machine - |altera_fronted|state
+State Machine - |altera_frontend|state
 Name state.ACTIVE state.INPUT_B state.INPUT_A state.IDLE 
 state.IDLE 0 0 0 0 
 state.INPUT_A 0 0 1 1 
