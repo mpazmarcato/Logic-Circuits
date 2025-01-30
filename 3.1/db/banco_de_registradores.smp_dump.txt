@@ -1,0 +1,14 @@
+
+State Machine - |altera_frontend|state
+Name state.RESET_S state.VIEW_VALUE state.WRITE_VALUE state.IDLE state.READ_ID 
+state.READ_ID 0 0 0 0 0 
+state.IDLE 0 0 0 1 1 
+state.WRITE_VALUE 0 0 1 0 1 
+state.VIEW_VALUE 0 1 0 0 1 
+state.RESET_S 1 0 0 0 1 
+
+State Machine - |altera_frontend|banco_registradores:banco_registradores_inst|state
+Name state.WRITE state.READ state.IDLE 
+state.IDLE 0 0 0 
+state.READ 0 1 1 
+state.WRITE 1 0 1 
