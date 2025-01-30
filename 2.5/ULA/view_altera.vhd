@@ -3,90 +3,106 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity view_altera is
-		port (
-				-- Board Inputs
-				SW		: in	std_logic_vector(17 downto 0);	-- Switches on DE2-115
-				KEY		: in	std_logic_vector(3 downto 0);		-- Pushbuttons 
-				
-				-- Board Outputs
-				HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector(6 downto 0);
-				LEDR	: out std_logic_vector(15 downto 0)			-- LEDs (for debugging)
-		);
+    port (
+        -- Board Inputs
+        clk     : in std_logic;
+        SW      : in std_logic_vector(15 downto 0);  -- Switches on DE2-115
+        KEY     : in std_logic_vector(3 downto 0);   -- Pushbuttons 
+        
+        -- Board Outputs
+        HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : out std_logic_vector(6 downto 0);
+        LEDR    : out std_logic_vector(15 downto 0)  -- LEDs (for debugging)
+    );
 end entity view_altera;
 
 architecture rtl of view_altera is
 
-		signal M, S1, S0 : std_logic;
-		signal A_7bit		 : std_logic_vector(6 downto 0);
-		signal B_7bit		 : std_logic_vector(6 downto 0);
-		signal A_16bit	 : std_logic_vector(15 downto 0);
-		signal B_16bit	 : std_logic_vector(15 downto 0);
-		signal Result		 : std_logic_vector(15 downto 0);
-		signal Cout			 : std_logic;
+    type state_type is (IDLE, INPUT_A, INPUT_B, INPUT_S, RESULT);
+    signal state : state_type := IDLE;
 
-		function hex_to_7seg(input : STD_LOGIC_VECTOR(3 downto 0)) return STD_LOGIC_VECTOR is
-		begin
-				case input is
-						when "0000" => return "1000000"; -- 0
-						when "0001" => return "1111001"; -- 1
-						when "0010" => return "0100100"; -- 2
-						when "0011" => return "0110000"; -- 3
-						when "0100" => return "0011001"; -- 4
-						when "0101" => return "0010010"; -- 5
-						when "0110" => return "0000010"; -- 6
-						when "0111" => return "1111000"; -- 7
-						when "1000" => return "0000000"; -- 8
-						when "1001" => return "0010000"; -- 9
-						when "1010" => return "0001000"; -- A
-						when "1011" => return "0000011"; -- b
-						when "1100" => return "1000110"; -- C
-						when "1101" => return "0100001"; -- d
-						when "1110" => return "0000110"; -- E
-						when "1111" => return "0001110"; -- F
-						when others => return "1111111"; -- all off
-				end case;
-		end function;
+    signal A, B                                           : std_logic_vector(15 downto 0) := (others => '0');
+    signal M, S1, S0                                      : std_logic := '0';
+    signal A_button, B_button, S_button, R_button         : std_logic := '0';
+    signal A_button_last, B_button_last, S_button_last, R_button_last : std_logic := '0';
+
+    signal selector_display                               : std_logic_vector(15 downto 0) := (others => '0');
+    signal display_num                                    : std_logic_vector(15 downto 0) := (others => '0');
+    signal Cout                                           : std_logic;
+    signal R                                              : std_logic_vector(15 downto 0) := (others => '0');
 
 begin
 
-		M  <= SW(2);
-		S1 <= SW(1);
-		S0 <= SW(0);
+    -- Assign buttons
+    A_button <= KEY(0);
+    B_button <= KEY(1);
+    S_button <= KEY(2);
+    R_button <= KEY(3);
 
-		-- Extract operands A and B from switches
-		-- A is from SW(9 downto 3) and B is from SW(16 downto 10)
-		A_7bit <= SW(9 downto 3);
-		B_7bit <= SW(16 downto 10);
+    process(SW, B_button, S_button, R_button)
+    begin
+        if rising_edge(clk) then
+            if A_button = '0' and A_button_last = '1' then
+                A <= SW;
+                state <= INPUT_A;
+            elsif B_button = '0' and B_button_last = '1' then
+                B <= SW;  
+                state <= INPUT_B;
+            elsif S_button = '0' and S_button_last = '1' then
+                M <= SW(2);
+                S1 <= SW(1);
+                S0 <= SW(0);
+                state <= INPUT_S;  
+            elsif R_button = '0' and R_button_last = '1' then
+                state <= RESULT;
+            end if;
 
-		-- Zero-extend the 7-bit inputs to 16 bits
-		A_16bit <= (15 downto 7 => '0') & A_7bit;
-		B_16bit <= (15 downto 7 => '0') & B_7bit;
+            A_button_last <= A_button;
+            B_button_last <= B_button;
+            S_button_last <= S_button;
+            R_button_last <= R_button;
+        end if;
+    end process;
 
-		u_ula: entity work.ula_16b
-				port map(
-						M			 => M,
-						S1		 => S1,
-						S0		 => S0,
-						A			 => A_16bit,
-						B			 => B_16bit,
-						Result => Result,
-						Cout	 => Cout
-				);
+    -- HEX4 displays current state
+    with state select 
+        HEX4 <= "1111111" when IDLE,    -- Off
+                "0001000" when INPUT_A, -- A
+                "1100000" when INPUT_B, -- b
+                "0010010" when INPUT_S, -- 5 (represents S)
+                "1000000" when RESULT;  -- 0
 
-		-- Drive LEDs for debugging 
-		LEDR <= Result; -- Just echo switches
+    selector_display(0) <= S0;
+    selector_display(1) <= S1;
+    selector_display(2) <= M;
 
-		-- Drive the 7-seg displays
-		-- Split the 16-bit result into four 4-bit nibbles
-		HEX0 <= hex_to_7seg(Result(3 downto 0));
-		HEX1 <= hex_to_7seg(Result(7 downto 4));
-		HEX2 <= hex_to_7seg(Result(11 downto 8));
-		HEX3 <= hex_to_7seg(Result(15 downto 12));
+    with state select
+        display_num <= (others => '0')  when IDLE,
+                       A                when INPUT_A,
+                       B                when INPUT_B,
+                       selector_display when INPUT_S,
+                       R                when RESULT;
 
-		-- Turn off the unused displays
-		HEX4 <= "1111111";
-		HEX5 <= "1111111";
-		HEX6 <= "1111111";
-		HEX7 <= "1111111";
+    hex_to_7seg_inst: entity work.hex_to_7seg
+     port map(
+        num => display_num,
+        HEX0 => HEX0,
+        HEX1 => HEX1,
+        HEX2 => HEX2,
+        HEX3 => HEX3
+    );
+
+    ula_16b_inst: entity work.ula_16b
+     port map(
+        M => M,
+        S1 => S1,
+        S0 => S0,
+        A => A,
+        B => B,
+        Result => R,
+        Cout => Cout
+    );
+
+    -- LEDs display the current number (for debugging)
+    LEDR <= display_num;
 
 end architecture rtl;

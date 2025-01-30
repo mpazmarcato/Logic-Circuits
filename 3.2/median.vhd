@@ -5,10 +5,8 @@ use IEEE.numeric_std.all;
 entity median is
     Port (
         clk   : in  STD_LOGIC;
-        start : in  STD_LOGIC;
         A, B  : in  STD_LOGIC_VECTOR(15 downto 0);
-        count : out STD_LOGIC_VECTOR(15 downto 0);
-        done  : out STD_LOGIC
+        count : out STD_LOGIC_VECTOR(15 downto 0)
     );
 end median;
 
@@ -21,11 +19,9 @@ begin
     div: entity work.div
         port map(
             clk => clk,
-            start => start,
             A => sum,
             B => "0000000000000010",
-            count => count,
-            done => done
+            count => count
         );
 
 

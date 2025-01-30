@@ -1,7 +1,7 @@
 
 State Machine - |altera_frontend|state
-Name state.ACTIVE state.INPUT_B state.INPUT_A state.IDLE 
-state.IDLE 0 0 0 0 
-state.INPUT_A 0 0 1 1 
+Name state.SHOW_RESULT state.INPUT_B state.IDLE state.INPUT_A 
+state.INPUT_A 0 0 0 0 
+state.IDLE 0 0 1 1 
 state.INPUT_B 0 1 0 1 
-state.ACTIVE 1 0 0 1 
+state.SHOW_RESULT 1 0 0 1 

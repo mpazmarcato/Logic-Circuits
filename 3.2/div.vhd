@@ -5,10 +5,8 @@ use IEEE.NUMERIC_STD.ALL;
 entity div is
     Port (
         clk   : in  STD_LOGIC;
-        start : in  STD_LOGIC;
         A, B  : in  STD_LOGIC_VECTOR(15 downto 0);
-        count : out STD_LOGIC_VECTOR(15 downto 0);
-        done  : out STD_LOGIC
+        count : out STD_LOGIC_VECTOR(15 downto 0)
     );
 end div;
 
@@ -17,6 +15,7 @@ architecture Behavioral of div is
     signal state     : state_type := IDLE;
     signal current_A : unsigned(15 downto 0);
     signal counter   : unsigned(15 downto 0);
+	 signal done 		: STD_LOGIC := '0';
 begin
 
     process(clk)
@@ -25,11 +24,9 @@ begin
             case state is
                 when IDLE =>
                     done <= '0';
-                    if start = '1' then
-                        current_A <= unsigned(A);
-                        counter   <= (others => '0');
-                        state     <= ACTIVE;
-                    end if;
+                    current_A <= unsigned(A);
+                    counter   <= (others => '0');
+                    state     <= ACTIVE;
 
                 when ACTIVE =>
                     if unsigned(B) = 0 then
@@ -48,6 +45,8 @@ begin
         end if;
     end process;
 
-    count <= std_logic_vector(counter);
+    with done select
+        count <= (others => '0')           when '0',
+                 std_logic_vector(counter) when '1';
 
 end Behavioral;
